@@ -9,16 +9,20 @@
         <link rel="stylesheet" href="CSSs/cavecera.css">
         <link rel="stylesheet" href="CSSs/index.css">
         <link rel="stylesheet" href="CSSs/prins.css">
+        <link rel="stylesheet" href="iniciosecion.css">
+        <link rel="stylesheet" href="CSSs/armadonosabe.css">
+        <script async src="scripts/CargarNoticias.js"></script>
 
-    <body>
+</head>
+<body>
 
         <div class="cabecera">
             <img src="recursos/logo_texto.png" alt="logo_texto" style="width: 200px;">
             <div  class="menu-barra">
                 <a href="index.html" class="menu-item">Inicio</a>
                 <a href="#" class="menu-item">Nosotros</a>
-                <a href="#" class="menu-item">Servicios</a>
-                <a href="" class="menu-item">Contacto</a>
+                <a class="menu-item" onclick="mostrarPopup('popup-registro')">Registro</a>
+                <a class="menu-item" onclick="mostrarPopup('popup-login')">Iniciar Sesión</a>
                 <a href="camino.html" class="menu-item">armado</a>
             </div>
         </div>
@@ -28,16 +32,61 @@
 
         <div class="contenido_1">
             <div class="imagen_con_boton">
-                <img src="recursos/fondo_inicio.jpg" alt="fondo_inicio">
-                <a href="">
+              
+                <button id="abrir-seleccionador"> selecciona un procesador</button>
 
-            </a>
-            </div>
+                <div id="seleeccionador" class="seleeccionador">
+                  <div class="seleeccionador-content">
+                    <span class="cerrar-seleccionador">&times;</span>
+                    <h2>Formulario</h2>
+                    <form action="#">
+                        <select id="opciones" name="opciones" multiple>
+        <option value="opcion1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+        <option value="opcion3">Opción 3</option>
+ 
+    </select><br><br>
+    <div id="contenido" style="display: none;">
+      <img src="" id="imagen" alt="Imagen">
+      <p id="texto"></p>
+    </div>
+    <input type="submit" value="Enviar">
+                    </form>
+                  </div>
+                </div>  
+    </div>
 
+        <div class="pie">
+          <p>ag  dw</p><hr> <p>dwa</p> <hr> <p>aw</p>
         </div>
-        <div pie_pag>
-            <br><br><br><br><br><hr>
+        <script>document.getElementById('abrir-seleccionador').addEventListener('click', function() {
+            document.getElementById('seleeccionador').style.display = 'block';
+          });
+          
+          document.getElementsByClassName('cerrar-seleccionador')[0].addEventListener('click', function() {
+            document.getElementById('seleeccionador').style.display = 'none';
+          });
 
-        </div>
-    </body>
+
+          document.getElementById('opciones').addEventListener('change', function() {
+  var opcionSeleccionada = this.value;
+  var contenido = document.getElementById('contenido');
+  var imagen = document.getElementById('imagen');
+  var texto = document.getElementById('texto');
+  
+  if (opcionSeleccionada === 'opcion1') {
+    imagen.src = 'imagen1.jpg'; 
+    texto.textContent = 'Texto para la opción 1.';
+  } else if (opcionSeleccionada === 'opcion2') {
+    imagen.src = 'imagen2.jpg'; 
+    texto.textContent = 'Texto para la opción 2.';
+  } else if (opcionSeleccionada === 'opcion3') {
+    imagen.src = 'imagen3.jpg';
+    texto.textContent = 'Texto para la opción 3.';
+  }
+  
+  contenido.style.display = 'block';
+});
+          </script>
+</body>
 </html>

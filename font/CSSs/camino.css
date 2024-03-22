@@ -13,7 +13,7 @@
     margin-top: 200px;
     color:white;
     text-align:center ;
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .botom p {
@@ -28,4 +28,5 @@
     .scale-up-top-right
 }
 
-.botom:hover{animación:scale-up-center 1s; } @keyframes centro de ampliación{ 0%{transform:scale(.5)} 100%{transform:scale(1)} }
+.botom:hover{animacion:scale-up-center 1s; } @keyframes centro de ampliación{ 0%{transform:scale(.5)} 100%{transform:scale(1)} 
+}
