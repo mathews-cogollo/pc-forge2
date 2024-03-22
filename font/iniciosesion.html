@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ventana flotante con HTML y CSS</title>
+  <link rel="stylesheet" href="CSSs/iniciosecion.css">
+</head>
+<body>
+
+
+  <button id="abrir">iniciar sesion</button>
+
+ <div class="cont-inicioses">
+  <div class="inicioses">
+      <h2>inicio sesion</h2>
+
+      <label for="email">Correo electrónico:</label><br>
+      <input type="email" id="email" name="email" required><br>
+>
+      <label for="contraseña">contraseña:</label><br>
+      <input type="contraseña" id="contraseña" name="contraseña" required><br>
+
+      <button id="cerrar">terminar</button>
+  </div>
+</div>
+<script>
+  document.getElementById('abrir').addEventListener('click', function() {
+    document.getElementById('inicioses').style.display = 'block';
+  });
+
+  document.getElementById('cerrar').addEventListener('click', function() {
+    document.getElementById('inicioses').style.display = 'none';
+  });
+  </script>
+</body>
+</html>
