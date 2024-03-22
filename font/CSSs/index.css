@@ -4,29 +4,45 @@
     z-index: 1;
 }
 .contenido_1{
-    display: flex;
-    justify-content: center;
     overflow: hidden;
   }
 
 .imagen_con_botom {
     position: relative;
+    display: flex;
+
 }
 
 .imagen_con_boton .botom {
     position: absolute;
-    top: 80%;
+    top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ffffff; /* Cambia el color de fondo del botón según tu diseño */
-    padding: 20px 40px; /* Ajusta el padding según sea necesario */
+    background-color: #000000; /* Cambia el color de fondo del botón según tu diseño */
+    padding: 4vh 5vw; /* Ajusta el padding según sea necesario */
     color: #000000; /* Cambia el color del texto del botón según tu diseño */
     text-decoration: none; /* Elimina el subrayado del texto */
+    color: chocolate;
 }
 
+
+
+.lema{
+  position: absolute;
+  color: white;
+  font-size: xxx-large;
+  -webkit-text-stroke: 4px rgba(0, 0, 0, 0.295);
+  top: 20%;
+  right: 20vw;
+  left: 20vw;
+  width: 59vw;
+  text-align: justify;
+  word-wrap: break-word;
+  text-align: center;
+}
 .news{
   position: absolute;
-  top: 95%;
+  top: 150%;
   left: 0;
   right: 0;
   z-index: 152;
@@ -42,10 +58,7 @@
   width: 20vw;
   filter: blur(0px)
 }
-a{
-  text-decoration: none;
-  color: white;
-}
+
 .news-container {
   text-align: center;
   display: flex; /* Utiliza flexbox para colocar los elementos en horizontal */
@@ -61,9 +74,7 @@ a{
 }
 
 .newsInfo {
-
   padding: 12px;
-
   background-color: rgb(48, 48, 48);
   width: 20%; /* Establece el ancho de newsInfo */
   margin-left: 10px; /* Agrega un margen a la izquierda para separar la imagen del texto */
@@ -76,5 +87,4 @@ a{
 .fecha{
   font-size: x-small;
   text-align: right;
-
 }
