@@ -2,6 +2,7 @@
 <html lang="en">
         <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,8 +10,10 @@
         <link rel="stylesheet" href="CSSs/index.css">
         <link rel="stylesheet" href="CSSs/prins.css">
         <link rel="stylesheet" href="iniciosecion.css">
+        <script src="scripts/CargarNoticias.js"></script>
 
-    <body>
+</head>
+<body>
 
         <div class="cabecera">
             <img src="recursos/logo_texto.png" alt="logo_texto" style="width: 200px;">
@@ -18,7 +21,7 @@
                 <a href="index.html" class="menu-item">Inicio</a>
                 <a href="#" class="menu-item">Nosotros</a>
                 <a href="#" class="menu-item">Servicios</a>
-                <a href="iniciosesion.html" class="menu-item">Contacto</a>
+                <a href="iniciosesion.html" class="menu-item">iniciar sesion</a>
                 <a href="camino.html" class="menu-item">armado</a>
             </div>
         </div>
@@ -27,14 +30,22 @@
 
 
         <div class="contenido_1">
-          <a href="camino.html" class="botom">empezar</a>
-          <div class="news">
-              <p>
-          </div>
-      </div>
+            <div class="imagen_con_boton">
+                <img src="recursos/fondo_inicio.jpg" alt="fondo_inicio">
+                <a href="camino.html">
+                <h1 class="botom" >empezar</h1>
+                </a>
+                <div class="news">
+                    <div id="news-container" class="news-container">
+                        <!-- Aquí se cargarán las noticias -->
+                    </div>
+                </div>
+            </div>
+    </div>
+
 
         <div class="pie">
           <p>ag  dw</p><hr> <p>dwa</p> <hr> <p>aw</p>
-      </div>
-    </body>
+        </div>
+</body>
 </html>
