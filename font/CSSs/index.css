@@ -39,9 +39,8 @@
   flex-direction: row;
 }
 .news img{
-  max-width: 270px;
-  max-height: 270px;
-
+  width: 20vw;
+  filter: blur(0px)
 }
 a{
   text-decoration: none;
@@ -53,6 +52,7 @@ a{
   flex-wrap: nowrap; /* Evita que se envuelvan a una nueva línea si el espacio es insuficiente */
   overflow-x: auto; /* Agrega un scroll horizontal si el contenido excede el ancho del contenedor */
   width: 100%;
+  max-height: fit-content;
   margin: 0 auto; /* Centra el contenedor horizontalmente */
 }
 
