@@ -1,0 +1,16 @@
+.inicioses{
+    flex-direction:column;
+    background-color: chocolate;
+    color:black;
+    padding: 10px;
+    display:flex;
+    margin-top:100px;
+    justify-content: space-around;
+    border: 60px;
+    
+}
+ .cont-inicioses{
+   
+justify-content: space-evenly;
+
+ }

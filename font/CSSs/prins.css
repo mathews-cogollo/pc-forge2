@@ -1,0 +1,60 @@
+body {
+    overflow: auto;
+    margin: 0;
+    background-color: rgb(59, 59, 59);
+}
+*::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+    height: 10px; /* Height of the scrollbar */
+    position: fixed; /* Position the scrollbar fixed */
+    top: 0; /* Position the scrollbar at the top */
+    right: 0; /* Position the scrollbar at the right */
+    z-index: 1000; /* Set the z-index to a high value to ensure the scrollbar is on top of the content */
+}
+*::-webkit-scrollbar-thumb {
+    background-color: rgb(353535); /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Border radius of the scrollbar thumb */
+}
+*::-webkit-scrollbar-track {
+    background-color: black; /* Color of the scrollbar track */
+ /* Border radius of the scrollbar track */
+}
+
+.botom {
+    margin: 10px;
+    border: 6px solid rgb(0, 0, 0) ;
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    background-color: rgb(0, 0, 0);
+    text-decoration: none;
+    color:white;
+    font-size: 20px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .botom:hover{
+    background-color: #ff8412;
+    pointer-events: painted;
+    color:black;
+    padding: 60;
+    margin-top: 15;
+    font-size: xx-large;
+  }
+
+  .pie{
+    background-color:rgb(0, 0, 0);
+    color: #ffffff;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    text-align: center;
+    height: 20vh;
+  }
+
+hr{
+    height: 80px;
+}

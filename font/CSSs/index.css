@@ -1,0 +1,38 @@
+.contenido_1 img {
+
+    filter: blur(3px);
+    z-index: 1;
+}
+.contenido_1{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+.imagen_con_botom {
+    position: relative;
+}
+
+.imagen_con_boton .botom {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff; /* Cambia el color de fondo del botón según tu diseño */
+    padding: 20px 40px; /* Ajusta el padding según sea necesario */
+    color: #000000; /* Cambia el color del texto del botón según tu diseño */
+    text-decoration: none; /* Elimina el subrayado del texto */
+}
+
+.news{
+  position: absolute;
+  top: 95%;
+  left: 0;
+  right: 0;
+  z-index: 152;
+  background-color: rgb(180, 24, 24);
+  width: 100%;
+  height: 400px;
+  margin: 2em auto;
+
+}

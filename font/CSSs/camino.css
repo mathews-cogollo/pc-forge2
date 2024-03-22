@@ -1,0 +1,31 @@
+.botorines {
+    border: 0px solid rgb(175, 6, 232);
+    padding: 10px;
+    display:flex;
+    flex-direction: row;
+    margin-top:100px;
+    justify-content: space-around;
+}
+
+
+
+.parrafo{
+    margin-top: 200px;
+    color:white;
+    text-align:center ;
+    font-size: 40px;
+}
+
+.botom p {
+    display: none;
+    transition: display 0.3s ease; /* Transición suave durante 0.3 segundos */
+}
+.botom:hover > p {
+    display: block;
+    font-size: x-large;
+    text-justify: distribute;
+    background-color: #ff8412;
+    .scale-up-top-right
+}
+
+.botom:hover{animación:scale-up-center 1s; } @keyframes centro de ampliación{ 0%{transform:scale(.5)} 100%{transform:scale(1)} }
