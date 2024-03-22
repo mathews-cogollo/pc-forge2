@@ -25,8 +25,11 @@
     font-size: x-large;
     text-justify: distribute;
     background-color: #ff8412;
-    .scale-up-top-right
 }
+<<<<<<< HEAD
 
 .botom:hover{animacion:scale-up-center 1s; } @keyframes centro de ampliación{ 0%{transform:scale(.5)} 100%{transform:scale(1)} 
 }
+=======
+.botom:hover{animation:scale-up-center 1s; } @keyframes scale-up-center{ 0%{transform:scale(.5)} 100%{transform:scale(1)} }
+>>>>>>> bbbbd01294072d7430c04bb78cc474be5fa889b7
