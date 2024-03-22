@@ -1,15 +1,31 @@
+@font-face {
+  font-family: 'Neons';
+  src: local('recursos/Neons.ttf'),
+       url('recursos/Neons.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 body {
     overflow: auto;
     margin: 0;
     background-color: rgb(59, 59, 59);
+    font-family: 'Neons', sans-serif;
+}
+a{
+
+  text-decoration: none;
+  color: rgb(255, 255, 255);
 }
 *::-webkit-scrollbar {
-    width: 10px; /* Width of the scrollbar */
-    height: 10px; /* Height of the scrollbar */
-    position: fixed; /* Position the scrollbar fixed */
-    top: 0; /* Position the scrollbar at the top */
-    right: 0; /* Position the scrollbar at the right */
-    z-index: 1000; /* Set the z-index to a high value to ensure the scrollbar is on top of the content */
+    width: 10px;
+    height: 10px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
 }
 *::-webkit-scrollbar-thumb {
     background-color: chocolate; /* Color of the scrollbar thumb */
@@ -35,7 +51,7 @@ body {
     background-color: black;
     color: white;
   }
-  .botom:hover{animation:scale-up-center 0.4s; } @keyframes scale-up-center{ 0%{transform:scale(.5)} 100%{transform:scale(1)}}
+
   .botom:hover{
     background-color: #ff8412;
     pointer-events: painted;

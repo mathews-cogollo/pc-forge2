@@ -15,22 +15,24 @@
 
 .imagen_con_boton .botom {
     position: absolute;
-    top: 80%;
+    top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ffffff; /* Cambia el color de fondo del botón según tu diseño */
-    padding: 20px 40px; /* Ajusta el padding según sea necesario */
+    background-color: #000000; /* Cambia el color de fondo del botón según tu diseño */
+    padding: 4vh 5vw; /* Ajusta el padding según sea necesario */
     color: #000000; /* Cambia el color del texto del botón según tu diseño */
     text-decoration: none; /* Elimina el subrayado del texto */
+    color: chocolate;
 }
 
+
+
 .lema{
-  font-family: Arial, Helvetica, sans-serif;
   position: absolute;
   color: white;
   font-size: xxx-large;
   -webkit-text-stroke: 4px black;
-  top: 25%;
+  top: 20%;
   right: 20vw;
   left: 20vw;
   width: 59vw;
@@ -40,7 +42,7 @@
 }
 .news{
   position: absolute;
-  top: 95%;
+  top: 150%;
   left: 0;
   right: 0;
   z-index: 152;
@@ -56,10 +58,7 @@
   width: 20vw;
   filter: blur(0px)
 }
-a{
-  text-decoration: none;
-  color: white;
-}
+
 .news-container {
   text-align: center;
   display: flex; /* Utiliza flexbox para colocar los elementos en horizontal */
