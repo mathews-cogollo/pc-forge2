@@ -6,9 +6,9 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="CSSs/prins.css">
         <link rel="stylesheet" href="CSSs/cavecera.css">
         <link rel="stylesheet" href="CSSs/index.css">
-        <link rel="stylesheet" href="CSSs/prins.css">
         <script async src="scripts/CargarNoticias.js"></script>
 
 
@@ -35,16 +35,41 @@
             <div class="imagen_con_boton">
                 <img src="recursos/fondo_inicio.jpg" alt="fondo_inicio">
                 <div class="lema">
-                    <h2>dawhoaw</h2>
+                    <h2 id="textoLema"></h2>
+                    <script>
+                        // Lista de lemas
+                        var lemas = [
+                            "Potencia y rendimiento, juntos en cada PC.",
+                            "Innovación personalizada para tu experiencia digital.",
+                            "Forjando la excelencia, una PC a la vez.",
+                            "Tu visión tecnológica, nuestra pasión por la perfección.",
+                            "Construyendo conexiones, impulsando el futuro.",
+                            "Calidad que se ve, rendimiento que se siente: PC Forge.",
+                            "Cada clic, cada comando, una PC diseñada para ti.",
+                            "Explora, crea, domina: con PC Forge, el poder es tuyo.",
+                            "La evolución de la informática, ensamblada para ti.",
+                            "Diseño sin fronteras, rendimiento sin límites."
+                        ];
+
+                        // Obtener un índice aleatorio
+                        var indiceAleatorio = Math.floor(Math.random() * lemas.length);
+
+                        // Obtener el elemento donde se mostrará el lema
+                        var lemaElemento = document.getElementById('textoLema');
+
+                        // Mostrar el lema aleatorio en el elemento
+                        lemaElemento.innerText = lemas[indiceAleatorio];
+                    </script>
                 </div>
-                <a href="camino.html">
-                <div class="botom"><h1>empezar</h1></div>
+                <a href="camino.html" class="botom">
+                empezar
                 </a>
                 <div class="news">
                     <div id="news-container" class="news-container">
                         <!-- Aquí se cargarán las noticias -->
                     </div>
                 </div>
+
             </div>
                 <div id="popup-login" class="popup">
                     <h2>Iniciar Sesión</h2>
@@ -82,7 +107,9 @@
 
 
     </div>
-
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
         <div class="pie">
           <p>ag  dw</p><hr> <p>dwa</p> <hr> <p>aw</p>
         </div>
