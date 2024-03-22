@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="CSSs/index.css">
         <link rel="stylesheet" href="CSSs/prins.css">
         <link rel="stylesheet" href="iniciosecion.css">
-        <script src="scripts/CargarNoticias.js"></script>
+        <script async src="scripts/CargarNoticias.js"></script>
 
 </head>
 <body>
@@ -20,8 +20,8 @@
             <div  class="menu-barra">
                 <a href="index.html" class="menu-item">Inicio</a>
                 <a href="#" class="menu-item">Nosotros</a>
-                <a href="#" class="menu-item">Servicios</a>
-                <a href="iniciosesion.html" class="menu-item">iniciar sesion</a>
+                <a class="menu-item" onclick="mostrarPopup('popup-registro')">Registro</a>
+                <a class="menu-item" onclick="mostrarPopup('popup-login')">Iniciar Sesión</a>
                 <a href="camino.html" class="menu-item">armado</a>
             </div>
         </div>
@@ -41,8 +41,42 @@
                     </div>
                 </div>
             </div>
-    </div>
+                <div id="popup-login" class="popup">
+                    <h2>Iniciar Sesión</h2>
+                    <div class="close" onclick="ocultarPopup('popup-login')">&times;</div>
+                    <form action="#" method="post" class="formulario-login">
+                        <input type="text" name="usuario" placeholder="Usuario">
+                        <input type="password" name="contraseña" placeholder="Contraseña">
+                        <input type="submit" value="Iniciar Sesión">
+                    </form>
+                </div>
 
+                <div id="popup-registro" class="popup">
+                    <h2>Registro</h2>
+                    <div class="close" onclick="ocultarPopup('popup-registro')">&times;</div>
+                    <form action="#" method="post" class="formulario-registro">
+                        <input type="text" name="nombre" placeholder="Nombre">
+                        <input type="text" name="apellido" placeholder="Apellido">
+                        <input type="text" name="correo" placeholder="Correo Electrónico">
+                        <input type="password" name="contraseña" placeholder="Contraseña">
+                        <input type="submit" value="Registrarse">
+                    </form>
+                </div>
+
+                <script>
+                    function mostrarPopup(idPopup) {
+                        var popup = document.getElementById(idPopup);
+                        popup.style.display = "block";
+                    }
+                    function ocultarPopup(idPopup) {
+                        var popup = document.getElementById(idPopup);
+                        popup.style.display = "none";
+                    }
+                </script>
+
+
+
+    </div>
 
         <div class="pie">
           <p>ag  dw</p><hr> <p>dwa</p> <hr> <p>aw</p>

@@ -12,11 +12,11 @@ body {
     z-index: 1000; /* Set the z-index to a high value to ensure the scrollbar is on top of the content */
 }
 *::-webkit-scrollbar-thumb {
-    background-color: rgb(353535); /* Color of the scrollbar thumb */
+    background-color: chocolate; /* Color of the scrollbar thumb */
     border-radius: 5px; /* Border radius of the scrollbar thumb */
 }
 *::-webkit-scrollbar-track {
-    background-color: black; /* Color of the scrollbar track */
+    background-color: 50; /* Color of the scrollbar track */
  /* Border radius of the scrollbar track */
 }
 
