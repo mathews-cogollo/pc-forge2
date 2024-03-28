@@ -7,12 +7,12 @@ var noticiasJSON = {
       "imagen": "recursos/logo_martillo.png",
       "resumen": "El alcalde cortó la cinta en la inauguración del nuevo centro comunitario, que promete ser un espacio de reunión para los residentes del barrio.",
       "fecha": "2024-03-22",
-      "enlace": "enlace_a_la_noticia_1"
+      "enlace": ""
     },
     {
       "id": 2,
       "titulo": "Lanzamiento de nueva línea de productos",
-      "imagen": "recursos/logo_Pr.png",
+      "imagen": "recursos/logo_texto.png",
       "resumen": "La empresa líder en tecnología anunció el lanzamiento de una emocionante línea de productos que promete revolucionar el mercado.",
       "fecha": "2024-03-22",
       "enlace": "enlace_a_la_noticia_2"
@@ -45,6 +45,14 @@ var noticiasJSON = {
       "id": 6,
       "titulo": "Nueva ley de protección ambiental",
       "imagen": "recursos/logo_Pr.png",
+      "resumen": "El gobierno anunció la aprobación de una nueva ley de protección ambiental que busca salvaguardar los recursos naturales y mitigar el impacto del cambio climático.",
+      "fecha": "2024-03-22",
+      "enlace": "enlace_a_la_noticia_3"
+    },
+    {
+      "id": 7,
+      "titulo": "Nueva ley de protección ambiental",
+      "imagen": "recursos/logo_martillo.png",
       "resumen": "El gobierno anunció la aprobación de una nueva ley de protección ambiental que busca salvaguardar los recursos naturales y mitigar el impacto del cambio climático.",
       "fecha": "2024-03-22",
       "enlace": "enlace_a_la_noticia_3"
