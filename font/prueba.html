@@ -49,21 +49,20 @@ body {
 <body>
 <div class="window" id="window1">Ventana 1</div>
 <div class="window" id="window2">Ventana 2</div>
-<div class="anchorage" id="anchorage"></div> <!-- Elemento visual para el área de anclaje -->
+<div class="anchorage" id="anchorage1" data-x="200" data-y="300" data-distance="50"></div>
+<div class="anchorage" id="anchorage2" data-x="400" data-y="200" data-distance="100"></div>
+
 
 
 <script>
-    const window1 = document.getElementById('window1');
-const window2 = document.getElementById('window2');
+// Obtener todas las ventanas
+const windows = document.querySelectorAll('.window');
 
-// Inicializar las posiciones iniciales
-let offsetX1 = 0;
-let offsetY1 = 0;
-let offsetX2 = 0;
-let offsetY2 = 0;
-const anchorage = document.getElementById('anchorage');
+// Inicializar las posiciones iniciales de cada ventana
+const windowOffsets = {};
 
-// Definir la distancia de anclaje (en píxeles) para cada ventana
+// Definir el área de anclaje y la distancia de anclaje para cada ventana
+const anchorages = document.querySelectorAll('.anchorage');
 const anchorDistance = 50;
 
 // Función para calcular la distancia entre dos puntos
@@ -101,57 +100,48 @@ function updateWindowPosition(window, anchorage) {
     }
 }
 
-// Agregar eventos de arrastre a las ventanas
-window1.addEventListener('mousemove', () => updateWindowPosition(window1, anchorage));
-window2.addEventListener('mousemove', () => updateWindowPosition(window2, anchorage));
+// Función para iniciar el arrastre de una ventana
+function startDragWindow(e) {
+    const window = e.currentTarget;
+    const windowRect = window.getBoundingClientRect();
 
-// Agregar eventos de arrastre a las ventanas
-window1.addEventListener('mousedown', startDragWindow1);
-window2.addEventListener('mousedown', startDragWindow2);
+    windowOffsets[window.id] = {
+        offsetX: e.clientX - windowRect.left,
+        offsetY: e.clientY - windowRect.top
+    };
 
-// Función para iniciar el arrastre de la ventana 1
-function startDragWindow1(e) {
-    offsetX1 = e.clientX - window1.getBoundingClientRect().left;
-    offsetY1 = e.clientY - window1.getBoundingClientRect().top;
-    window.addEventListener('mousemove', dragWindow1);
-    window.addEventListener('mouseup', stopDragWindow1);
+    window.addEventListener('mousemove', dragWindow);
+    window.addEventListener('mouseup', stopDragWindow);
 }
 
-// Función para arrastrar la ventana 1
-function dragWindow1(e) {
-    let x = e.clientX - offsetX1;
-    let y = e.clientY - offsetY1;
-    window1.style.left = x + 'px';
-    window1.style.top = y + 'px';
+// Función para arrastrar una ventana
+function dragWindow(e) {
+    const window = e.currentTarget;
+    const offset = windowOffsets[window.id];
+
+    const x = e.clientX - offset.offsetX;
+    const y = e.clientY - offset.offsetY;
+
+    window.style.left = x + 'px';
+    window.style.top = y + 'px';
+
+    // Actualizar la posición de la ventana si está cerca del área de anclaje
+    anchorages.forEach(anchorage => updateWindowPosition(window, anchorage));
 }
 
-// Función para detener el arrastre de la ventana 1
-function stopDragWindow1() {
-    window.removeEventListener('mousemove', dragWindow1);
-    window.removeEventListener('mouseup', stopDragWindow1);
+// Función para detener el arrastre de una ventana
+function stopDragWindow(e) {
+    const window = e.currentTarget;
+
+    window.removeEventListener('mousemove', dragWindow);
+    window.removeEventListener('mouseup', stopDragWindow);
 }
 
-// Función para iniciar el arrastre de la ventana 2
-function startDragWindow2(e) {
-    offsetX2 = e.clientX - window2.getBoundingClientRect().left;
-    offsetY2 = e.clientY - window2.getBoundingClientRect().top;
-    window.addEventListener('mousemove', dragWindow2);
-    window.addEventListener('mouseup', stopDragWindow2);
-}
+// Agregar eventos de arrastre a todas las ventanas
+windows.forEach(window => {
+    window.addEventListener('mousedown', startDragWindow);
+});
 
-// Función para arrastrar la ventana  2
-function dragWindow2(e) {
-    let x = e.clientX - offsetX2;
-    let y = e.clientY - offsetY2;
-    window2.style.left = x + 'px';
-    window2.style.top = y + 'px';
-}
-
-// Función para detener el arrastre de la ventana 2
-function stopDragWindow2() {
-    window.removeEventListener('mousemove', dragWindow2);
-    window.removeEventListener('mouseup', stopDragWindow2);
-}
 </script>
 </body>
 </html>
