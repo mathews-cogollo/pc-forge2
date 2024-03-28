@@ -16,11 +16,41 @@
     border: 2px solid darkblue;
     position: absolute;
     cursor: pointer;
-}</style>
+}
+body {
+    margin: 0;
+    padding: 0;
+    position: relative; /* Asegura que los elementos posicionados dentro del cuerpo se basen en él */
+}
+
+.window {
+    width: 200px;
+    height: 150px;
+    background-color: lightblue;
+    border: 2px solid darkblue;
+    position: absolute;
+    cursor: pointer;
+}
+
+.anchorage {
+    width: 300px;
+    height: 200px;
+    background-color: rgba(255, 0, 0, 0.3); /* Color transparente rojo para el área de anclaje */
+    border: 2px dashed red; /* Borde punteado rojo para el área de anclaje */
+    position: absolute;
+    top: 50px; /* Posición superior del área de anclaje */
+    left: 50px; /* Posición izquierda del área de anclaje */
+    z-index: -1; /* Asegura que el área de anclaje esté detrás de las ventanas */
+}
+
+</style>
+
 </head>
 <body>
 <div class="window" id="window1">Ventana 1</div>
 <div class="window" id="window2">Ventana 2</div>
+<div class="anchorage" id="anchorage"></div> <!-- Elemento visual para el área de anclaje -->
+
 
 <script>
     const window1 = document.getElementById('window1');
@@ -31,6 +61,49 @@ let offsetX1 = 0;
 let offsetY1 = 0;
 let offsetX2 = 0;
 let offsetY2 = 0;
+const anchorage = document.getElementById('anchorage');
+
+// Definir la distancia de anclaje (en píxeles) para cada ventana
+const anchorDistance = 50;
+
+// Función para calcular la distancia entre dos puntos
+function calculateDistance(x1, y1, x2, y2) {
+    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+}
+
+// Función para verificar si la ventana está cerca del área de anclaje
+function isNearAnchorage(window, anchorage) {
+    const windowRect = window.getBoundingClientRect();
+    const anchorageRect = anchorage.getBoundingClientRect();
+
+    const windowCenterX = windowRect.left + windowRect.width / 2;
+    const windowCenterY = windowRect.top + windowRect.height / 2;
+
+    const anchorageCenterX = anchorageRect.left + anchorageRect.width / 2;
+    const anchorageCenterY = anchorageRect.top + anchorageRect.height / 2;
+
+    const distance = calculateDistance(windowCenterX, windowCenterY, anchorageCenterX, anchorageCenterY);
+
+    return distance <= anchorDistance;
+}
+
+// Función para actualizar la posición de la ventana si está cerca del área de anclaje
+function updateWindowPosition(window, anchorage) {
+    if (isNearAnchorage(window, anchorage)) {
+        const anchorageRect = anchorage.getBoundingClientRect();
+        const windowRect = window.getBoundingClientRect();
+
+        const newX = anchorageRect.left + (anchorageRect.width - windowRect.width) / 2;
+        const newY = anchorageRect.top + (anchorageRect.height - windowRect.height) / 2;
+
+        window.style.left = newX + 'px';
+        window.style.top = newY + 'px';
+    }
+}
+
+// Agregar eventos de arrastre a las ventanas
+window1.addEventListener('mousemove', () => updateWindowPosition(window1, anchorage));
+window2.addEventListener('mousemove', () => updateWindowPosition(window2, anchorage));
 
 // Agregar eventos de arrastre a las ventanas
 window1.addEventListener('mousedown', startDragWindow1);
