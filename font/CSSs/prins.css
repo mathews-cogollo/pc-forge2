@@ -1,18 +1,11 @@
-@font-face {
-  font-family: 'Neons';
-  src: local('recursos/Neons.ttf'),
-       url('recursos/Neons.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+
 
 
 body {
     overflow: auto;
     margin: 0;
     background-color: rgb(59, 59, 59);
-    font-family: 'Neons', sans-serif;
+    font-family: sans-serif;
 }
 a{
 
