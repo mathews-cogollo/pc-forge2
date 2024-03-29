@@ -84,6 +84,3 @@ var noticiasJSON = {
   }
 
   // Llamar a la función para cargar las noticias al cargar la página
-  window.onload = function() {
-    cargarNoticias();
-  };
