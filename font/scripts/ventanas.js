@@ -1,6 +1,6 @@
 
 var compensasionX = 335;
-var compensasionY = 50;
+var compensasionY = 170;
 
 const ventanas = document.querySelectorAll('.ventana');
 const anclajes = document.querySelectorAll('.anclaje');
@@ -53,7 +53,7 @@ function arrastrarVentana(e) {
     const x = e.clientX - offset.offsetX;
     const y = e.clientY - offset.offsetY;
     ventana.style.left = x - compensasionX + 'px';
-    ventana.style.top = y -compensasionY + 'px';
+    ventana.style.top = y - compensasionY + 'px';
 }
 
 function detenerArrastreVentana(e) {
@@ -61,10 +61,16 @@ function detenerArrastreVentana(e) {
     ventana.style.zIndex = '1';
     ventana.removeEventListener('mousemove', arrastrarVentana);
     ventana.removeEventListener('mouseup', detenerArrastreVentana);
-    anclajes.forEach(anclaje => {
-        actualizarPosicionVentana(ventana, anclaje);
-    });
+    const anclaElimina = document.querySelector('.ancla-elimina');
+    if (estaCercaDelAnclaje(ventana, anclaElimina)) {
+        ventana.remove();
+    } else {
+        anclajes.forEach(anclaje => {
+            actualizarPosicionVentana(ventana, anclaje);
+        });
+    }
 }
+
 
 function crearVentana() {
     const nuevaVentana = document.createElement('div');
@@ -92,3 +98,5 @@ document.getElementById('formCrearVentanas').addEventListener('submit', function
 ventanas.forEach(ventana => {
     ventana.addEventListener('mousedown', iniciarArrastreVentana);
 });
+
+

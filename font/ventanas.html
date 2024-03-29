@@ -10,21 +10,36 @@
 <script async src="scripts/ventanas.js"></script>
 </head>
 <body>
-
-    <div cont-ancla>
-        <div class="anclaje"></div>
-        <div class="anclaje"></div>
-        <div class="anclaje"></div>
-        <div class="anclaje"></div>
+    <div class="cabecera">
+        <a href="index.html">
+        <img src="recursos/logo_Pn.png" alt="logo_texto" style="width: 80px;">
+        <img src="recursos/logo_texto.png" alt="logo_texto" style="width: 200px;">
+        </a>
+        <div  class="menu-barra">
+            <a href="index.html" class="menu-item">Inicio</a>
+            <a href="#" class="menu-item">Nosotros</a>
+            <a href="camino.html" class="menu-item">armado</a>
+            <a class="menu-item" onclick="mostrarPopup('popup-registro')">Registro</a>
+            <a class="menu-item" onclick="mostrarPopup('popup-login')">Iniciar Sesión</a>
+        </div>
     </div>
-
-
-    <form id="formCrearVentanas">
-        <label for="cantidadVentanas">Cantidad de ventanas:</label>
-        <input type="number" id="cantidadVentanas" name="cantidadVentanas" min="1" value="1" placeholder="1">
-        <button type="submit">Crear Ventanas</button>
-    </form>
-    <div class="ventanas"></div>
+        <div class="base">
+            <div cont-ancla>
+                <div class="anclaje"></div>
+                <div class="anclaje"></div>
+                <div class="anclaje"></div>
+                <div class="anclaje"></div>
+            </div>
+            <form id="formCrearVentanas">
+                <label for="cantidadVentanas">Cantidad de ventanas:</label><br>
+                <input type="number" id="cantidadVentanas" name="cantidadVentanas" min="1" value="1" placeholder="1" ><br>
+                <button type="submit">Crear Ventanas</button>
+            </form>
+            <div class="opciones">
+                <div class="ventanas"></div>
+                <div class="ancla-elimina"></div>
+            </div>
+        </div>
 
 
 
