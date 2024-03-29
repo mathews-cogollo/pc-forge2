@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divs como Ventanas</title>
+<link rel="stylesheet" href="CSSs/prins.css">
+<link rel="stylesheet" href="CSSs/cavecera.css">
+<link rel="stylesheet" href="CSSs/ventanas.css">
+<script async src="scripts/ventanas.js"></script>
+</head>
+<body>
+<script>document.documentElement.style.setProperty("--compensasion-x", compensasionX + "px");
+    document.documentElement.style.setProperty("--compensasion-y", compensasionY + "px");</script>
+    <div cont-ancla>
+        <div class="anclaje"></div>
+        <div class="anclaje"></div>
+        <div class="anclaje"></div>
+        <div class="anclaje"></div>
+    </div>
+
+
+    <form id="formCrearVentanas">
+        <label for="cantidadVentanas">Cantidad de ventanas:</label>
+        <input type="number" id="cantidadVentanas" name="cantidadVentanas" min="1" value="1" placeholder="1">
+        <button type="submit">Crear Ventanas</button>
+    </form>
+    <div class="ventanas"></div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.ventanas {
+    width: 205px;
+    height: 155px;
+    background-color: rgba(0, 140, 255, 0.3);
+    border: 2px dashed blue;
+    position: absolute;
+    left: var(--compensasion-x);
+    top: var(--compensasion-y);
+}
+
+.ventana {
+    width: 200px;
+    height: 150px;
+    background-color: lightblue;
+    border: 2px solid darkblue;
+    position: absolute;
+    cursor: pointer;
+}
+
+.anclaje {
+    width: 300px;
+    height: 200px;
+    background-color: rgba(255, 0, 0, 0.3);
+    border: 2px dashed red;
+    z-index: -2;
+    margin: 15px;
+}
+
+.cont-ancla{
+}
