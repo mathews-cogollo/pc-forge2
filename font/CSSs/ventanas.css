@@ -11,8 +11,8 @@ body {
     background-color: rgba(0, 140, 255, 0.3);
     border: 2px dashed blue;
     position: absolute;
-    left: var(--compensasion-x);
-    top: var(--compensasion-y);
+    left: 335px;
+    top: 50px;
 }
 
 .ventana {

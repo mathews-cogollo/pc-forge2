@@ -1,11 +1,6 @@
-// Definir las variables en JavaScript
+
 var compensasionX = 335;
 var compensasionY = 50;
-
-// Asignar el valor de las variables al CSS
-document.documentElement.style.setProperty("--compensasion-x", compensasionX + "px");
-document.documentElement.style.setProperty("--compensasion-y", compensasionY + "px");
-
 
 const ventanas = document.querySelectorAll('.ventana');
 const anclajes = document.querySelectorAll('.anclaje');
@@ -33,8 +28,8 @@ function actualizarPosicionVentana(ventana, anclaje) {
         const rectVentana = ventana.getBoundingClientRect();
         const nuevoX = rectAnclaje.left + (rectAnclaje.width - rectVentana.width) / 2;
         const nuevoY = rectAnclaje.top + (rectAnclaje.height - rectVentana.height) / 2;
-        ventana.style.left = nuevoX - compensasionx + 'px';
-        ventana.style.top = nuevoY - compensasiony + 'px';
+        ventana.style.left = nuevoX - compensasionX + 'px';
+        ventana.style.top = nuevoY - compensasionY + 'px';
         ventana.style.zIndex = '0';
         anclaje.style.zIndex = '-2';
     }
@@ -57,8 +52,8 @@ function arrastrarVentana(e) {
     const offset = offsetsVentanas[ventana.id];
     const x = e.clientX - offset.offsetX;
     const y = e.clientY - offset.offsetY;
-    ventana.style.left = x - compensasionx + 'px';
-    ventana.style.top = y -compensasiony + 'px';
+    ventana.style.left = x - compensasionX + 'px';
+    ventana.style.top = y -compensasionY + 'px';
 }
 
 function detenerArrastreVentana(e) {
