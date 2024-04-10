@@ -10,19 +10,53 @@
 <script async src="scripts/ventanas.js"></script>
 </head>
 <body>
-    <div class="cabecera">
-        <a href="index.html">
-        <img src="recursos/logo_Pn.png" alt="logo_texto" style="width: 80px;">
-        <img src="recursos/logo_texto.png" alt="logo_texto" style="width: 200px;">
-        </a>
-        <div  class="menu-barra">
-            <a href="index.html" class="menu-item">Inicio</a>
-            <a href="#" class="menu-item">Nosotros</a>
-            <a href="camino.html" class="menu-item">armado</a>
-            <a class="menu-item" onclick="mostrarPopup('popup-registro')">Registro</a>
-            <a class="menu-item" onclick="mostrarPopup('popup-login')">Iniciar Sesión</a>
-        </div>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img src="recursos/logo_Pn.png" alt="logo_texto" style="width: 80px;">
+                <img src="recursos/logo_texto.png" alt="logo_texto" style="width: 200px;">
+            </a>
+            <div class="menu-barra">
+                <a href="index.html" class="menu-item">Inicio</a>
+                <a href="#" class="menu-item">Nosotros</a>
+                <a href="camino.html" class="menu-item">Armado</a>
+                <button class="menu-item" onClick="mostrarPopup('popup-registro')">Registro</button>
+                <button class="menu-item" onClick="mostrarPopup('popup-login')">Iniciar Sesión</button>
+                
+        </nav>
+    </header>
+    
+    <div id="popup-login" class="popup">
+        <h2>Iniciar Sesión</h2>
+        <div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-login')">&times;</div>
+        <form action="#" method="post" class="formulario-login">
+            <input type="text" name="usuario" placeholder="Usuario">
+            <input type="password" name="contraseña" placeholder="Contraseña">
+            <input type="submit" value="Iniciar Sesión">
+        </form>
     </div>
+    
+    <div id="popup-registro" class="popup">
+        <h2>Registro</h2>
+        <div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-registro' )">&times;</div>
+        <form action="#" method="post" class="formulario-registro">
+            <input type="text" name="nombre" placeholder="Nombre">
+            <input type="text" name="apellido" placeholder="Apellido">
+            <input type="text" name="correo" placeholder="Correo Electrónico">
+            <input type="password" name="contraseña" placeholder="Contraseña">
+            <input type="submit" value="Registrarse">
+        </form>
+    </div>
+    <script>
+            function mostrarPopup(idPopup) {
+            var popup = document.getElementById(idPopup);
+            popup.style.display = "block";
+        }
+        function ocultarPopup(idPopup) {
+            var popup = document.getElementById(idPopup);
+            popup.style.display = "none";
+        }
+    </script>
         <div class="base">
             <div cont-ancla>
                 <div class="anclaje"></div>

@@ -1,0 +1,237 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="CSSs/prins.css">
+        <link rel="stylesheet" href="CSSs/cavecera.css">
+        <link rel="stylesheet" href="CSSs/index.css">
+
+        <style>
+            /* Estilos para la cuadrícula */
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columnas automáticas */
+                grid-gap: 10px; /* Espacio entre elementos */
+            }
+    
+            /* Estilos para los botones */
+            .grid-container label {
+                display: block;
+            }
+            
+            /* Estilo para ocultar los sliders */
+            .slider-container {
+                display: none;
+            }
+            
+            /* Mostrar el slider cuando su casilla de verificación está marcada */
+            input[type="checkbox"]:checked ~ .slider-container {
+                display: block;
+            }
+            input[type="checkbox"]:checked ~ .slider-container {
+                display: block;
+            }
+            
+            /* Estilos para los valores de la barra de desplazamiento */
+            .slider-value {
+                font-size: 14px;
+                margin-top: 5px;
+            }
+            form{
+                padding-left: 25%;
+                padding-right: 25%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Formulario para conocer necesidades de PC</h1>
+        <form action="#" method="POST">
+            
+            <fieldset class="grid-container">
+                <legend>¿Para qué vas a utilizar el PC?</legend>
+                <div>
+                    <input type="checkbox" id="uso1" name="uso" value="Gaming">
+                    <label for="uso1">Gaming</label>
+                    <div class="slider-container">
+                        <input type="range" id="uso1_range" name="uso_range" min="0" max="100" step="10" value="0">
+                        <span class="slider-value">50</span>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" id="uso2" name="uso" value="Trabajo">
+                    <label for="uso2">Trabajo</label>
+                    <div class="slider-container">                        
+                        <input type="range" id="uso1_range" name="uso_range" min="0" max="100" step="10" value="0">
+                        <span class="slider-value">50</span>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" id="uso3" name="uso" value="Diseño gráfico">
+                    <label for="uso3">Diseño gráfico</label>
+                    <div class="slider-container">
+                        <input type="range" id="uso1_range" name="uso_range" min="0" max="100" step="10" value="0">
+                        <span class="slider-value">50</span>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" id="uso4" name="uso" value="Edición de vídeo">
+                    <label for="uso4">Edición de vídeo</label>
+                    <div class="slider-container">
+                        <input type="range" id="uso4_range" name="uso_range" min="0" max="100" step="10" value="0">
+                        <span class="slider-value">50</span>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" id="uso5" name="uso" value="Programación">
+                    <label for="uso5">Programación</label>
+                    <div class="slider-container">
+                        <input type="range" id="uso5_range" name="uso_range" min="0" max="100" step="10" value="0">
+                        <span class="slider-value">50</span>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" id="uso6" name="uso" value="Uso general">
+                    <label for="uso6">Uso general</label>
+                    <div class="slider-container">
+                        <input type="range" id="uso6_range" name="uso_range" min="0" max="100" step="10" value="0">
+                        <span class="slider-value">50</span>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" id="uso7" name="uso" value="Diseño 3D">
+                    <label for="uso7">Diseño 3D</label>
+                    <div class="slider-container">
+                        <input type="range" id="uso7_range" name="uso_range" min="0" max="100" step="10" value="0">
+                        <span class="slider-value">50</span>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" id="uso8" name="uso" value="Streaming">
+                    <label for="uso8">Streaming</label>
+                    <div class="slider-container">
+                        <input type="range" id="uso8_range" name="uso_range" min="0" max="100" step="10" value="0">
+                        <span class="slider-value">50</span>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" id="uso9" name="uso" value="Ofimática">
+                    <label for="uso9">Ofimática</label>
+                    <div class="slider-container">
+                        <input type="range" id="uso9_range" name="uso_range" min="0" max="100" step="10" value="0">
+                        <span class="slider-value">50</span>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" id="uso11" name="uso" value="Realidad Virtual">
+                    <label for="uso11">Realidad Virtual</label>
+                    <div class="slider-container">
+                        <input type="range" id="uso11_range" name="uso_range" min="0" max="100" step="10" value="0">
+                        <span class="slider-value">50</span>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" id="uso10" name="uso" value="Otro">
+                    <label for="uso10">Otro</label>
+                    <div class="slider-container">
+                        <input type="text" id="uso10_text" name="uso_text" placeholder="Especifica otro">
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" id="uso12" name="uso" value="Desar
+
+rollo de aplicaciones">
+                    <label for="uso12">Desarrollo de aplicaciones</label>
+                    <div class="slider-container">
+                        <input type="range" id="uso12_range" name="uso_range" min="0" max="100" step="10" value="0">
+                        <span class="slider-value">50</span>
+                    </div>
+                </div>
+            </fieldset>
+            
+            <label for="preferencias">¿Tienes alguna preferencia de marca o componentes?</label><br>
+            <select id="preferencias" name="preferencias">
+                <option value="Ninguna">Ninguna</option>
+                <option value="Intel">Intel</option>
+                <option value="AMD">AMD</option>
+                <option value="Nvidia">Nvidia</option>
+                <option value="AMD Radeon">AMD Radeon</option>
+                <option value="Corsair">Corsair</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Crucial">Crucial</option>
+                <!-- Agrega más opciones según sea necesario -->
+            </select><br><br>
+            
+            <!-- Nuevas preguntas agregadas -->
+            <label for="actividades">¿Qué tipo de actividades planeas realizar principalmente en tu computadora de escritorio?</label><br>
+            <textarea id="actividades" name="actividades"></textarea><br><br>
+            
+            <label for="almacenamiento">¿Cuánto espacio de almacenamiento crees que necesitarás para tus archivos y programas?</label><br>
+            <input type="number" id="almacenamiento" name="almacenamiento" min="0"><br><br>
+            
+            <label for="transporte">¿Te gustaría que tu computadora de escritorio sea fácil de transportar o prefieres que sea más robusta?</label><br>
+            <input type="radio" id="transporte_si" name="transporte" value="Fácil de transportar">
+            <label for="transporte_si">Fácil de transportar</label>
+            <input type="radio" id="transporte_no" name="transporte" value="Más robusta">
+            <label for="transporte_no">Más robusta</label><br><br>
+            
+            <label for="juegos">¿Planeas jugar videojuegos en tu computadora de escritorio? En caso afirmativo, ¿qué tipo de juegos y con qué nivel de calidad gráfica?</label><br>
+            <textarea id="juegos" name="juegos"></textarea><br><br>
+            
+            <label for="marca_componentes">¿Tienes alguna preferencia de marca para los componentes de tu computadora de escritorio? (ej. procesador, tarjeta gráfica)</label><br>
+            <input type="text" id="marca_componentes" name="marca_componentes"><br><br>
+            
+            <label for="programas">¿Necesitas que se incluyan programas preinstalados en tu computadora de escritorio?</label><br>
+            <input type="radio" id="programas_si" name="programas" value="Sí">
+            <label for="programas_si">Sí</label>
+            <input type="radio" id="programas_no" name="programas" value="No">
+            <label for="programas_no">No</label><br><br>
+            
+            <label for="wifi">¿Es importante para ti tener conectividad inalámbrica (Wi-Fi) en tu computadora de escritorio?</label><br>
+            <input type="radio" id="wifi_si" name="wifi" value="Sí">
+            <label for="wifi_si">Sí</label>
+            <input type="radio" id="wifi_no" name="wifi" value="No">
+            <label for="wifi_no">No</label><br><br>
+            
+            <label for="puertos">¿Cuántos puertos USB y de otros tipos necesitas en tu computadora de escritorio?</label><br>
+            <input type="range" id="uso1_range" name="uso_range" min="2" max="10" step="1" value="0">
+            <span class="slider-value">50</span><br><br>
+            
+            <label for="actualizaciones">¿Planeas hacer futuras actualizaciones o mejoras en tu computadora de escritorio?</label><br>
+            <input type="radio" id="actualizaciones_si" name="actualizaciones" value="Sí">
+            <label for="actualizaciones_si">Sí</label>
+            <input type="radio" id="actualizaciones_no" name="actualizaciones" value="No">
+            <label for="actualizaciones_no">No</label><br><br>
+            
+            <label for="multitarea">¿Qué tan importante es para ti la capacidad de multitarea de tu computadora de escritorio?</label><br>
+            <input type="range" id="multitarea" name="multitarea" min="0" max="10" step="1" value="5"><br><br>
+            
+            <input type="submit" value="Enviar">
+            <script>
+                // Obtener todos los sliders
+                const sliders = document.querySelectorAll('input[type="range"]');
+                
+                // Función para actualizar el valor del slider
+                function updateSliderValue() {
+                    sliders.forEach(slider => {
+                        const value = slider.value;
+                        const sliderValueElement = slider.nextElementSibling;
+                        sliderValueElement.textContent = value;
+                    });
+                }
+                
+                // Actualizar el valor del slider al cambiar su posición
+                sliders.forEach(slider => {
+                    slider.addEventListener('input', updateSliderValue);
+                });
+                
+                // Actualizar el valor del slider al cargar la página
+                updateSliderValue();
+            </script>
+        </form>
+</body>
+</html>
