@@ -1,12 +1,12 @@
 
-.cabecera{
+nav{
     background-color: black;
     color: rgb(255, 255, 255);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.cabecera img{
+nav img{
     background-color: black;
 }
 .menu-barra{
@@ -22,6 +22,7 @@
         color: white;
         text-decoration: none;
         padding: 20px;
+        border: none;
     }
 
     .menu-item:hover {

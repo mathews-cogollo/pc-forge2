@@ -180,6 +180,4 @@ function cargarDatosplano() {
 }
 
 // Llamar a la función para cargar los datos del plano al cargar la página
-window.onload = function() {
-  cargarDatosplano();
-};
+

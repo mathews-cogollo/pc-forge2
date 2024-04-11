@@ -9,33 +9,74 @@
         <link rel="stylesheet" href="CSSs/prins.css">
         <link rel="stylesheet" href="CSSs/cavecera.css">
         <link rel="stylesheet" href="CSSs/index.css">
-        <script async src="scripts/Cargarplanos.js"></script>
         <script async src="scripts/CargarNoticias.js"></script>
+        <script async src="scripts/Cargarplanos.js"></script>
+        <script>
+                    function cargarContenido() {
+                cargarNoticias();
+                cargarDatosplano();
+            }
+            window.onload = function() {
+                cargarContenido();
+            };
+        </script>
 
 </head>
 <body>
-        <div class="cabecera">
+    <header>
+        <nav>
             <a href="index.html">
-            <img src="recursos/logo_Pn.png" alt="logo_texto" style="width: 80px;">
-            <img src="recursos/logo_texto.png" alt="logo_texto" style="width: 200px;">
+                <img src="recursos/logo_Pn.png" alt="logo_texto" style="width: 80px;">
+                <img src="recursos/logo_texto.png" alt="logo_texto" style="width: 200px;">
             </a>
-            <div  class="menu-barra">
+            <div class="menu-barra">
                 <a href="index.html" class="menu-item">Inicio</a>
                 <a href="#" class="menu-item">Nosotros</a>
-                <a href="camino.html" class="menu-item">armado</a>
-                <a class="menu-item" onclick="mostrarPopup('popup-registro')">Registro</a>
-                <a class="menu-item" onclick="mostrarPopup('popup-login')">Iniciar Sesión</a>
-            </div>
-        </div>
-
-
+                <a href="camino.html" class="menu-item">Armado</a>
+                <button class="menu-item" onClick="mostrarPopup('popup-registro')">Registro</button>
+                <button class="menu-item" onClick="mostrarPopup('popup-login')">Iniciar Sesión</button>
+                
+        </nav>
+    </header>
+    
+    <div id="popup-login" class="popup">
+        <h2>Iniciar Sesión</h2>
+        <div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-login')">&times;</div>
+        <form action="#" method="post" class="formulario-login">
+            <input type="text" name="usuario" placeholder="Usuario">
+            <input type="password" name="contraseña" placeholder="Contraseña">
+            <input type="submit" value="Iniciar Sesión">
+        </form>
+    </div>
+    
+    <div id="popup-registro" class="popup">
+        <h2>Registro</h2>
+        <div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-registro' )">&times;</div>
+        <form action="#" method="post" class="formulario-registro">
+            <input type="text" name="nombre" placeholder="Nombre">
+            <input type="text" name="apellido" placeholder="Apellido">
+            <input type="text" name="correo" placeholder="Correo Electrónico">
+            <input type="password" name="contraseña" placeholder="Contraseña">
+            <input type="submit" value="Registrarse">
+        </form>
+    </div>
+    <script>
+            function mostrarPopup(idPopup) {
+            var popup = document.getElementById(idPopup);
+            popup.style.display = "block";
+        }
+        function ocultarPopup(idPopup) {
+            var popup = document.getElementById(idPopup);
+            popup.style.display = "none";
+        }
+    </script>
 
 
         <div class="contenido_1">
             <div class="imagen_con_boton">
                 <img src="recursos/fondo_inicio.jpg" alt="fondo_inicio">
                 <div class="lema">
-                    <h2 id="textoLema"></h2>
+                    <h2 id="textoLema">d</h2>
                     <script>
                         // Lista de lemas
                         var lemas = [
@@ -76,65 +117,7 @@
                     </div>
                 </div>
 
-
-            </div>
-                <div id="popup-login" class="popup">
-                    <h2>Iniciar Sesión</h2>
-                    <div class="close" onclick="ocultarPopup('popup-login')">&times;</div>
-                    <form action="#" method="post" class="formulario-login">
-                        <input type="text" name="usuario" placeholder="Usuario">
-                        <input type="password" name="contraseña" placeholder="Contraseña">
-                        <input type="submit" value="Iniciar Sesión">
-                    </form>
-                </div>
-
-                <div id="popup-registro" class="popup">
-                    <h2>Registro</h2>
-                    <div class="close" onclick="ocultarPopup('popup-registro')">&times;</div>
-                    <form action="#" method="post" class="formulario-registro">
-                        <input type="text" name="nombre" placeholder="Nombre">
-                        <input type="text" name="apellido" placeholder="Apellido">
-                        <input type="text" name="correo" placeholder="Correo Electrónico">
-                        <input type="password" name="contraseña" placeholder="Contraseña">
-                        <input type="submit" value="Registrarse">
-                    </form>
-                </div>
-
-                <script>
-                    function mostrarPopup(idPopup) {
-                        var popup = document.getElementById(idPopup);
-                        popup.style.display = "block";
-                    }
-                    function ocultarPopup(idPopup) {
-                        var popup = document.getElementById(idPopup);
-                        popup.style.display = "none";
-                    }
-                </script>
-
-
-
     </div>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
         <div class="pie">
           <p>ag  dw</p><hr> <p>dwa</p> <hr> <p>aw</p>
         </div>
