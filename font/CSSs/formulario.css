@@ -1,0 +1,50 @@
+
+    body{
+        color: white;
+    }
+    /* Estilos para la cuadrícula */
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columnas automáticas */
+        grid-gap: 10px; /* Espacio entre elementos */
+    }
+
+    /* Estilos para los botones */
+    .grid-container label {
+        display: block;
+    }
+
+    /* Estilo para ocultar los sliders */
+    .slider-container {
+        display: none;
+    }
+
+    /* Mostrar el slider cuando su casilla de verificación está marcada */
+    input[type="checkbox"]:checked ~ .slider-container {
+        display: flex;
+    }
+
+    /* Estilos para los valores de la barra de desplazamiento */
+    .slider-value {
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    form{
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+    
+    .cateConten{
+        background-color: black;
+        padding: 10px;        
+    }
+/* Estilo para ocultar los checkboxes */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Estilo para cuando el checkbox está seleccionado */
+input[type="checkbox"]:checked + .cateConten {
+    background-color: chocolate;
+}
+
