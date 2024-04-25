@@ -1,17 +1,23 @@
 
     body{
         color: white;
+        overflow-x: hidden;
     }
-    /* Estilos para la cuadrícula */
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columnas automáticas */
-        grid-gap: 10px; /* Espacio entre elementos */
+    h1{
+        text-align: center;
+        font-size: xxxlarge;
+        padding: 20px;
+        background-color: black;
+        margin-left: 20%;
+        margin-right: 20%;
+        border-radius: 5px;
     }
-
+    div{
+        border-radius: 5px;
+    }
     /* Estilos para los botones */
     .grid-container label {
-        display: block;
+        display: grid;
     }
 
     /* Estilo para ocultar los sliders */
@@ -21,7 +27,7 @@
 
     /* Mostrar el slider cuando su casilla de verificación está marcada */
     input[type="checkbox"]:checked ~ .slider-container {
-        display: flex;
+        display: block;
     }
 
     /* Estilos para los valores de la barra de desplazamiento */
@@ -31,20 +37,150 @@
     }
     form{
         padding-left: 20%;
-        padding-right: 20%;
+        padding-right: 20%;  
     }
     
     .cateConten{
         background-color: black;
-        padding: 10px;        
+        padding: 10px;    
+        margin: 10px;
     }
-/* Estilo para ocultar los checkboxes */
-input[type="checkbox"] {
-    display: none;
-}
+    
 
-/* Estilo para cuando el checkbox está seleccionado */
+    input[type="checkbox"] {
+        display: none;
+    }
+
+.formcot{
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    
+}
 input[type="checkbox"]:checked + .cateConten {
     background-color: chocolate;
 }
+.gameopcion {
+    display: none; /* Inicialmente oculto */
+}
 
+#juegos:checked ~ .gameopcion {
+    display: block; /* Mostrar cuando el checkbox está marcado */
+}
+
+#juego{
+    background-color: chocolate;
+    padding: 10px;
+}
+    body {
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    #circular-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: #000000;
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 60px;
+        cursor: pointer;
+        z-index: 999;
+        transition: transform 0.5s, font-size 0.3s; /* Agregado para animar la rotación */
+    }
+
+    #circular-button:hover {
+        background-color: #0056b3;
+    }
+
+    #popup {
+        display: none;
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        background-color: #000000;
+        border: 1px solid chocolate;
+        border-radius: 5px;
+        padding: 10px;
+        z-index: 999;
+        overflow: auto; /* Agregado para permitir el desplazamiento */
+    }
+    input {
+        background: #222222;
+        border: none;
+        color: chocolate;
+    }
+    input[type="range"] {
+        /* Estilos del riel */
+        background-color: chocolate; /* Cambia este valor al color que desees */
+        height: 5px; /* Alto del riel */
+        border-radius: 5px; /* Bordes redondeados */
+      }
+    select{
+        background: #222222;
+        border: none;
+        color: chocolate;
+    }
+    #popup textarea {
+        width: 200px;
+        height: 100px;
+        resize: none;
+        margin-bottom: 10px;
+    }
+
+    #popup button {
+        background-color: #000000;
+        border-style: solid;
+        border-color: chocolate;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    #popup button:hover {
+        background-color: chocolate;
+    }
+
+    /* Agregado para rotar el botón cuando se muestra el popup */
+    #circular-button.rotate {
+        transform: rotate(45deg);
+        font-size: 60px;
+    }
+
+    /* Agregado para el formato grid del fieldset */
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 10px;
+    }
+
+    .cateConten {
+        border: none;
+        padding: 10px;
+    }
+
+    .slider-container {
+        margin-top: 10px;
+    }  
+    input[type="range"]::-webkit-slider-thumb {
+        /* Estilos del control deslizante */
+        background-color: chocolate; /* Cambia este valor al color que desees */
+        width: 15px; /* Ancho del control deslizante */
+        height: 15px; /* Alto del control deslizante */
+        border-radius: 50%; /* Haz que el control deslizante sea redondo */
+        cursor: pointer; /* Cambia el cursor al pasar sobre el control */
+         /* Quita el estilo predeterminado de WebKit */
+      }
+      
+      /* Cambia el color del indicador (barra de progreso) */
+      input[type="range"]::-webkit-slider-runnable-track {
+        /* Estilos del indicador */
+        background-color:  #222222;; /* Cambia este valor al color que desees */
+        border-radius: 5px; /* Bordes redondeados */

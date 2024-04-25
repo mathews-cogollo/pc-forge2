@@ -1,10 +1,34 @@
 
+.fondo {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 110vw; /* Establece el ancho al 100% del ancho de la ventana */
+  height: 110vh; /* Establece la altura al 100% del alto de la ventana */
+  object-fit: cover; /* Ajusta el video para llenar el contenedor manteniendo su relación de aspecto */
+}
+
+
+@media screen and (max-width: 768px) {
+  .fondo {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 110vw; /* Establece el ancho al 100% del ancho de la ventana */
+    height: 110vh; /* Establece la altura al 100% del alto de la ventana */
+    object-fit: cover; 
+    transform: rotate(90deg);/* Rotamos 90 grados y movemos el elemento para que siga ocupando toda la pantalla */
+  }
+}
+
 
 
 body {
     overflow: auto;
     margin: 0;
-    background-color: rgb(59, 59, 59);
+    background-color: rgba(59, 59, 59, 0);
     font-family: sans-serif;
 }
 a{
