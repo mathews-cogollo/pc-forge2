@@ -5,76 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Divs como Ventanas</title>
 <link rel="stylesheet" href="CSSs/prins.css">
-<link rel="stylesheet" href="CSSs/cavecera.css">
 <link rel="stylesheet" href="CSSs/ventanas.css">
 <script async src="scripts/ventanas.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">
-                <img src="recursos/logo_Pn.png" alt="logo_texto" style="width: 80px;">
-                <img src="recursos/logo_texto.png" alt="logo_texto" style="width: 200px;">
-            </a>
-            <div class="menu-barra">
-                <a href="index.html" class="menu-item">Inicio</a>
-                <a href="#" class="menu-item">Nosotros</a>
-                <a href="camino.html" class="menu-item">Armado</a>
-                <button class="menu-item" onClick="mostrarPopup('popup-registro')">Registro</button>
-                <button class="menu-item" onClick="mostrarPopup('popup-login')">Iniciar Sesión</button>
-                
-        </nav>
-    </header>
-    
-    <div id="popup-login" class="popup">
-        <h2>Iniciar Sesión</h2>
-        <div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-login')">&times;</div>
-        <form action="#" method="post" class="formulario-login">
-            <input type="text" name="usuario" placeholder="Usuario">
-            <input type="password" name="contraseña" placeholder="Contraseña">
-            <input type="submit" value="Iniciar Sesión">
+    <div class="base">
+        
+        <div class="opciones">
+        <form id="formCrearVentanas">
+            <label for="cantidadVentanas">Cantidad de ventanas:</label><br>
+            <input type="number" id="cantidadVentanas" name="cantidadVentanas" min="1" value="1" placeholder="1" ><br>
+            <button type="submit">Crear Ventanas</button>
         </form>
-    </div>
-    
-    <div id="popup-registro" class="popup">
-        <h2>Registro</h2>
-        <div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-registro' )">&times;</div>
-        <form action="#" method="post" class="formulario-registro">
-            <input type="text" name="nombre" placeholder="Nombre">
-            <input type="text" name="apellido" placeholder="Apellido">
-            <input type="text" name="correo" placeholder="Correo Electrónico">
-            <input type="password" name="contraseña" placeholder="Contraseña">
-            <input type="submit" value="Registrarse">
-        </form>
-    </div>
-    <script>
-            function mostrarPopup(idPopup) {
-            var popup = document.getElementById(idPopup);
-            popup.style.display = "block";
-        }
-        function ocultarPopup(idPopup) {
-            var popup = document.getElementById(idPopup);
-            popup.style.display = "none";
-        }
-    </script>
-        <div class="base">
-            <div cont-ancla>
-                <div class="anclaje"></div>
-                <div class="anclaje"></div>
-                <div class="anclaje"></div>
-                <div class="anclaje"></div>
-            </div>
-            <form id="formCrearVentanas">
-                <label for="cantidadVentanas">Cantidad de ventanas:</label><br>
-                <input type="number" id="cantidadVentanas" name="cantidadVentanas" min="1" value="1" placeholder="1" ><br>
-                <button type="submit">Crear Ventanas</button>
-            </form>
-            <div class="opciones">
-                <div class="ventanas"></div>
-                <div class="ancla-elimina"></div>
-            </div>
+            <div class="ventanas"></div>
+            <div class="ancla-elimina"></div>
         </div>
 
+        <div class="cont-ancla">
+            <div class="anclaje"></div>
+            <div class="anclaje"></div>
+            <div class="anclaje"></div>
+            <div class="anclaje"></div>
+            <div class="anclaje"></div>
+            <div class="anclaje"></div>
+            <div class="anclaje"></div>
+            <div class="anclaje"></div>
+            <div class="anclaje"></div>
+            <div class="anclaje"></div>
+            <div class="anclaje"></div>
+            <div class="anclaje"></div>
+        </div>
+
+        <div class="info">
+            <h3>El Éxtasis de las Mariposas: Un Viaje a Través del Tiempo</h3>
+            <p> En el vasto jardín de la existencia, donde los pétalos bailan al ritmo del viento y los susurros de las hojas narran antiguas historias, se despliega el éxtasis de las mariposas. Este relato nos invita a emprender un viaje trascendental a través del tiempo, donde los colores del arcoíris se entrelazan con los destellos del firmamento, tejiendo una manta de sueños y realidades entrelazadas. En este universo de posibilidades infinitas, cada aleteo de mariposa desencadena una cadena de eventos cósmicos, llevándonos más allá de los límites de la comprensión humana hacia un éxtasis divino. Así, entre los susurros del pasado y los suspiros del futuro, nos sumergimos en la danza eterna de la creación, donde el tiempo se desvanece y solo queda la eternidad de este momento, el éxtasis de las mariposas.</p>
+            <img class="gif-hover" src="recursos/0.png" alt="martillo">
+        </div>
+    </div>
 
 
 </body>

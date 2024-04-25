@@ -23,6 +23,12 @@
 
 </head>
 <body>
+    <div id="videoDiv">
+        <video id="videoPlayer" class="fondo" width="100%" height="100%" autoplay loop>
+          <source src="recursos/Fondo Tecnológico HD (1080p_30fps_H264-128kbit_AAC).mp4" type="video/mp4">
+          Tu navegador no soporta video HTML5.
+        </video>
+      </div>
     <header>
         <nav>
             <a href="index.html">
@@ -32,7 +38,7 @@
             <div class="menu-barra">
                 <a href="index.html" class="menu-item">Inicio</a>
                 <a href="#" class="menu-item">Nosotros</a>
-                <a href="camino.html" class="menu-item">Armado</a>
+                <a href="ventanas.html" class="menu-item">Armado</a>
                 <button class="menu-item" onClick="mostrarPopup('popup-registro')">Registro</button>
                 <button class="menu-item" onClick="mostrarPopup('popup-login')">Iniciar Sesión</button>
                 
@@ -74,7 +80,7 @@
 
         <div class="contenido_1">
             <div class="imagen_con_boton">
-                <img src="recursos/fondo_inicio.jpg" alt="fondo_inicio">
+                <img src="recursos/fondo_inicio.jpg" style="filter:opacity(0);width: 80vw;" alt="fondo_inicio">
                 <div class="lema">
                     <h2 id="textoLema">d</h2>
                     <script>
@@ -116,6 +122,9 @@
                         <!-- Aquí se cargarán las noticias -->
                     </div>
                 </div>
+            </div>
+
+
 
     </div>
         <div class="pie">

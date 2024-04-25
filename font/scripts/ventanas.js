@@ -1,6 +1,6 @@
 
-var compensasionX = 335;
-var compensasionY = 170;
+var compensasionX = 0;
+var compensasionY = 0;
 
 const ventanas = document.querySelectorAll('.ventana');
 const anclajes = document.querySelectorAll('.anclaje');
@@ -30,8 +30,8 @@ function actualizarPosicionVentana(ventana, anclaje) {
         const nuevoY = rectAnclaje.top + (rectAnclaje.height - rectVentana.height) / 2;
         ventana.style.left = nuevoX - compensasionX + 'px';
         ventana.style.top = nuevoY - compensasionY + 'px';
-        ventana.style.zIndex = '0';
-        anclaje.style.zIndex = '-2';
+        ventana.style.zIndex = '2';
+        anclaje.style.zIndex = '0';
     }
 }
 

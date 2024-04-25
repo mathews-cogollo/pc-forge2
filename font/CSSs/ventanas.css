@@ -1,19 +1,43 @@
 body {
     margin: 0;
     padding: 0;
+    background: linear-gradient(to bottom, rgb(96, 48, 14), chocolate);
+    z-index: -999;
 
 }
-.opciones {
-    position: absolute;
-    left: 335px;
-    top: 170px;
+
+.base{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between
 }
-.ventanas{
+.cont-ancla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 5px;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.opciones {
+    background-color: rgba(137, 43, 226, 0.144);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 5px;
+    justify-content: space-around;
+    width: 20%;
+}
+
+.ventanas {
     width: 205px;
     height: 155px;
-    background-color: rgba(0, 140, 255, 0.3);
+    background-color: rgba(0, 140, 255, 0.24);
     border: 2px dashed blue;
-
+}
+.info{
+    max-width: 20%;
+    
 }
 .ventana {
     width: 200px;
@@ -29,23 +53,23 @@ body {
     height: 200px;
     background-color: rgba(255, 238, 0, 0.3);
     border: 2px dashed yellow;
-    z-index: -2;
+    z-index: 1;
     margin: 15px;
 }
 
-.base{
-    display: flex;
-    flex-direction: row;
-}
-
-#cantidadVentanas {
-    width: 50px;
-    font-size: x-large;/* Cambia el valor según tu preferencia */
-}
 .ancla-elimina {
     width: 300px;
     height: 200px;
     background-color: rgba(255, 0, 0, 0.3);
     border: 2px dashed red;
     cursor: pointer;
+}
+#cantidadVentanas {
+    width: 50px;
+    font-size: x-large;/* Cambia el valor según tu preferencia */
+}
+
+
+.gif-hover:hover{
+    content: url('https://media.tenor.com/aH7BIsPypoUAAAAi/forge-anvil.gif');
 }

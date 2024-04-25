@@ -42,12 +42,11 @@
 }
 .news{
   background-color: rgb(0, 0, 0);
-  width: 100%;
+  height: 100%;
+  max-height: fit-content;
   margin: 2em auto;
   overflow-x: auto;
   color: white;
-  display: flex;
-  flex-direction: row;
 }
 .news img{
   width: 20vw;
@@ -56,41 +55,47 @@
 
 .news-container {
   text-align: center;
-  display: flex; /* Utiliza flexbox para colocar los elementos en horizontal */
-  flex-wrap: nowrap; /* Evita que se envuelvan a una nueva línea si el espacio es insuficiente */
-  overflow-x: auto; /* Agrega un scroll horizontal si el contenido excede el ancho del contenedor */
+  display: grid; /* Cambiado a grid para colocar los elementos */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas flexibles que se ajustan al tamaño del contenedor */
+  grid-gap: 20px; /* Espacio entre las noticias */
   width: 100%;
   max-height: fit-content;
   margin: 0 auto; /* Centra el contenedor horizontalmente */
-}
-
-.news-container > div {
-  flex: 0 0 auto;
+  overflow-x: auto; /* Agrega un scroll horizontal si el contenido excede el ancho del contenedor */
+  padding-top: 15px;
+  padding-bottom: 15px;
+  overflow-x: hidden;
 }
 
 .newsInfo {
-  padding: 12px;
+  padding: 10px;
   background-color: rgb(48, 48, 48);
-  width: 20%; /* Establece el ancho de newsInfo */
-  margin-left: 10px; /* Agrega un margen a la izquierda para separar la imagen del texto */
+  width: 23vw; 
+  height: fit-content;
+  margin: 0 auto;
+  overflow-x: auto;
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
 }
 
 .newsText {
   text-align: justify;
   word-wrap: break-word; /* Indica al navegador que rompa las palabras largas */
 }
-.fecha{
+
+.fecha {
   font-size: x-small;
   text-align: right;
 }
+
 .planos{
   background-color: rgb(0, 0, 0);
-  width: 100%;
+  height: 100%;
+  max-height: fit-content;
   margin: 2em auto;
   overflow-x: auto;
   color: white;
-  display: flex;
-  flex-direction: row;
 }
 .planos img{
   width: 20vw;
@@ -98,13 +103,16 @@
 }
 
 .planos-container {
+
   text-align: center;
-  display: flex; /* Utiliza flexbox para colocar los elementos en horizontal */
-  flex-wrap: nowrap; /* Evita que se envuelvan a una nueva línea si el espacio es insuficiente */
-  overflow-x: auto; /* Agrega un scroll horizontal si el contenido excede el ancho del contenedor */
+  display: grid; /* Cambiado a grid para colocar los elementos */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Columnas flexibles que se ajustan al tamaño del contenedor */
+  grid-gap: 33px; /* Espacio entre las noticias */
   width: 100%;
   max-height: fit-content;
   margin: 0 auto; /* Centra el contenedor horizontalmente */
+  overflow-x: auto; /* Agrega un scroll horizontal si el contenido excede el ancho del contenedor */
+
 }
 
 .planos-container > div {
@@ -112,11 +120,15 @@
 }
 
 .planosInfo {
-  padding: 12px;
+  padding: 10px;
   background-color: rgb(48, 48, 48);
-  width: 20%; /* Establece el ancho de planosInfo */
-  margin-left: 10px; /* Agrega un margen a la izquierda para separar la imagen del texto */
-}
+  width: 33vw; 
+  height: fit-content;
+  margin: 0 auto;
+  overflow-x: auto;
+  color: white;
+  text-align: center;
+  font-size: 1.2em;}
 
 .planosText {
   text-align: justify;

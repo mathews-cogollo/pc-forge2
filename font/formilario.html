@@ -1,6 +1,3 @@
-Para activar los checkboxes al presionar su div, puedes agregar un evento de clic al div que cambie el estado del checkbox. Aquí te muestro cómo hacerlo:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +10,51 @@ Para activar los checkboxes al presionar su div, puedes agregar un evento de cli
 <link rel="stylesheet" href="CSSs/cavecera.css">
 <link rel="stylesheet" href="CSSs/index.css">
 <link rel="stylesheet" href="CSSs/formulario.css">
-l
+
 </head>
 
 
-<body>     
+<body>   
+    <div id="videoDiv">
+        <video id="videoPlayer" class="fondo" width="100%" height="100%" autoplay loop>
+          <source src="recursos/Fondo Tecnológico HD (1080p_30fps_H264-128kbit_AAC).mp4" type="video/mp4">
+          Tu navegador no soporta video HTML5.
+        </video>
+      </div>
+      
+      <script>
+        var video = document.getElementById("videoPlayer");
+        video.onended = function() {
+          video.currentTime = 0;
+          video.play();
+        };
+      </script>
+    <div id="circular-button" role="button" tabindex="0" onclick="togglePopup()">+</div>
+    <div id="popup">
+        <textarea placeholder="Escribe aquí..." id="message"></textarea>
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+
+    <script>
+        function togglePopup() {
+            var popup = document.getElementById("popup");
+            if (popup.style.display === "none") {
+                popup.style.display = "block";
+            } else {
+                popup.style.display = "none";
+            }
+        }
+
+        function sendMessage() {
+            var message = document.getElementById("message").value;
+            // Aquí puedes agregar la lógica para enviar el mensaje, como una llamada AJAX o similar
+            console.log("Mensaje enviado:", message);
+            // Limpia el textarea después de enviar el mensaje
+            document.getElementById("message").value = "";
+            // Cierra el popup
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
     <header>
         <nav>
             <a href="index.html">
@@ -56,48 +93,76 @@ l
         </form>
     </div>
     <script>
-            function mostrarPopup(idPopup) {
-            var popup = document.getElementById(idPopup);
-            popup.style.display = "block";
+        function togglePopup() {
+            var popup = document.getElementById("popup");
+            var button = document.getElementById("circular-button");
+            if (popup.style.display === "none") {
+                popup.style.display = "block";
+                // Bloquear el scroll del body cuando el popup esté abierto
+
+                // Agregar la clase de rotación al botón
+                button.classList.add("rotate");
+            } else {
+                popup.style.display = "none";
+                // Habilitar el scroll del body cuando el popup esté cerrado
+
+                // Eliminar la clase de rotación del botón
+                button.classList.remove("rotate");
+            }
         }
-        function ocultarPopup(idPopup) {
-            var popup = document.getElementById(idPopup);
-            popup.style.display = "none";
+
+        function sendMessage() {
+            var message = document.getElementById("message").value;
+            // Aquí puedes agregar la lógica para enviar el mensaje, como una llamada AJAX o similar
+            console.log("Mensaje enviado:", message);
+            // Limpia el textarea después de enviar el mensaje
+            document.getElementById("message").value = "";
+            // Cierra el popup
+            document.getElementById("popup").style.display = "none";
+     
+            // Eliminar la clase de rotación del botón
+            document.getElementById("circular-button").classList.remove("rotate");
         }
     </script>
 
     <h1>Formulario para conocer necesidades de PC</h1>
     <form action="#" method="POST">
         
+        <script>
+            document.getElementById("circular-button").classList.remove("rotate");
+          
+          </script>
+          
+          <h1>Formulario para conocer necesidades de PC</h1>
+          
+          <form action="#" method="POST">
             <fieldset class="grid-container">
-                <legend>¿Para qué vas a utilizar el PC?</legend>
-                <div class="cateConten">
-                    <input type="checkbox" id="uso1" name="uso" value="Gaming">
-                    <label for="uso1">Gaming</label>
-                    <div class="slider-container">
-                        <input type="range" id="uso1_range" name="uso_range" min="0" max="100" step="10" value="0">
-                        <span class="slider-value">50</span>
-                    </div>
-                </div>
-                </div>
-            <div class="cateConten" role="button" >
-                <input type="checkbox" id="uso2" name="uso" value="Trabajo">
-                <label for="uso2">Trabajo</label>
-                <div class="slider-container">                        
-                    <input type="range" id="uso1_range" name="uso_range" min="0" max="100" step="10" value="0">
-                    <span class="slider-value">50</span>
-                </div>
-            </div>
-        
-            <div class="cateConten" role="button" >
-                <input type="checkbox" id="uso3" name="uso" value="Diseño gráfico">
-                <label for="uso3">Diseño gráfico</label>
+            <legend>¿Para qué vas a utilizar el PC?</legend>
+            <div class="cateConten">
+                <input type="checkbox" id="uso1" name="uso" value="Gaming">
+                <label for="uso1">Gaming</label>
                 <div class="slider-container">
                     <input type="range" id="uso1_range" name="uso_range" min="0" max="100" step="10" value="0">
                     <span class="slider-value">50</span>
                 </div>
             </div>
-            <div class="cateConten" role="button" >
+            <div class="cateConten">
+                <input type="checkbox" id="uso2" name="uso" value="Trabajo">
+                <label for="uso2">Trabajo</label>
+                <div class="slider-container">                        
+                    <input type="range" id="uso2_range" name="uso_range" min="0" max="100" step="10" value="0">
+                    <span class="slider-value">50</span>
+                </div>
+            </div>
+            <div class="cateConten">
+                <input type="checkbox" id="uso3" name="uso" value="Diseño gráfico">
+                <label for="uso3">Diseño gráfico</label>
+                <div class="slider-container">
+                    <input type="range" id="uso3_range" name="uso_range" min="0" max="100" step="10" value="0">
+                    <span class="slider-value">50</span>
+                </div>
+            </div>
+            <div class="cateConten">
                 <input type="checkbox" id="uso4" name="uso" value="Edición de vídeo">
                 <label for="uso4">Edición de vídeo</label>
                 <div class="slider-container">
@@ -105,7 +170,7 @@ l
                     <span class="slider-value">50</span>
                 </div>
             </div>
-            <div class="cateConten" role="button" >
+            <div class="cateConten">
                 <input type="checkbox" id="uso5" name="uso" value="Programación">
                 <label for="uso5">Programación</label>
                 <div class="slider-container">
@@ -113,7 +178,7 @@ l
                     <span class="slider-value">50</span>
                 </div>
             </div>
-            <div class="cateConten" role="button" >
+            <div class="cateConten">
                 <input type="checkbox" id="uso6" name="uso" value="Uso general">
                 <label for="uso6">Uso general</label>
                 <div class="slider-container">
@@ -121,27 +186,23 @@ l
                     <span class="slider-value">50</span>
                 </div>
             </div>
-            <div class="cateConten" role="button" >
+            <div class="cateConten">
                 <input type="checkbox" id="uso7" name="uso" value="Diseño 3D">
                 <label for="uso7">Diseño 3D</label>
                 <div class="slider-container">
-                    <input type="range" id="uso7_range" name="uso_range" min="0
-
-" max="100" step="10" value="0">
+                    <input type="range" id="uso7_range" name="uso_range" min="0" max="100" step="10" value="0">
                     <span class="slider-value">50</span>
                 </div>
             </div>
-            <div class="cateConten" role="button" 8>
+            <div class="cateConten">
                 <input type="checkbox" id="uso8" name="uso" value="Streaming">
                 <label for="uso8">Streaming</label>
                 <div class="slider-container">
-                    <input type="range" id="uso8_range" name="uso_range" min
-
-="0" max="100" step="10" value="0">
+                    <input type="range" id="uso8_range" name="uso_range" min="0" max="100" step="10" value="0">
                     <span class="slider-value">50</span>
                 </div>
             </div>
-            <div class="cateConten" role="button" 9>
+            <div class="cateConten">
                 <input type="checkbox" id="uso9" name="uso" value="Ofimática">
                 <label for="uso9">Ofimática</label>
                 <div class="slider-container">
@@ -149,7 +210,7 @@ l
                     <span class="slider-value">50</span>
                 </div>
             </div>
-            <div class="cateConten" role="button" 11>
+            <div class="cateConten">
                 <input type="checkbox" id="uso11" name="uso" value="Realidad Virtual">
                 <label for="uso11">Realidad Virtual</label>
                 <div class="slider-container">
@@ -157,14 +218,14 @@ l
                     <span class="slider-value">50</span>
                 </div>
             </div>
-            <div class="cateConten" role="button" 10>
+            <div class="cateConten">
                 <input type="checkbox" id="uso10" name="uso" value="Otro">
                 <label for="uso10">Otro</label>
                 <div class="slider-container">
                     <input type="text" id="uso10_text" name="uso_text" placeholder="Especifica otro">
                 </div>
             </div>
-            <div class="cateConten" role="button" 12>
+            <div class="cateConten">
                 <input type="checkbox" id="uso12" name="uso" value="Desarrollo de aplicaciones">
                 <label for="uso12">Desarrollo de aplicaciones</label>
                 <div class="slider-container">
@@ -172,8 +233,8 @@ l
                     <span class="slider-value">50</span>
                 </div>
             </div>
-        </fieldset>
-        
+        </fieldset><br>
+        <div class="formcot">
         <label for="preferencias">¿Tienes alguna preferencia de marca o componentes?</label><br>
         <select id="preferencias" name="preferencias">
             <option value="Ninguna">Ninguna</option>
@@ -185,55 +246,104 @@ l
             <option value="Samsung">Samsung</option>
             <option value="Crucial">Crucial</option>
             <!-- Agrega más opciones según sea necesario -->
-        </select><br><br>
-        
-        <label for="actividades">¿Qué tipo de actividades planeas realizar principalmente en tu computadora de escritorio?</label><br>
-        <textarea id="actividades" name="actividades"></textarea><br><br>
-    
+        </select>
+        </div><br>
+        <div class="formcot">
         <label for="almacenamiento">¿Cuánto espacio de almacenamiento crees que necesitarás para tus archivos y programas?</label><br>
-        <input type="number" id="almacenamiento" name="almacenamiento" min="0"><br><br>
-    
+        <input type="number" id="almacenamiento" name="almacenamiento" min="0">
+        </div><br>
+        <div class="formcot">
+        
         <label for="transporte">¿Prefieres que tu computadora de escritorio sea fácil de transportar o más robusta?</label><br>
         <div class="switch-container">
             <input type="checkbox" id="switch_transporte" name="switch_transporte">
             <label for="switch_transporte">Fácil de transportar</label>
             <input type="checkbox" id="switch_robusta" name="switch_robusta">
             <label for="switch_robusta">Más robusta</label>
-        </div><br><br>
-    
-        <label for="juegos">¿Planeas jugar videojuegos en tu computadora de escritorio? En caso afirmativo, ¿qué tipo de juegos y con qué nivel de calidad gráfica?</label><br>
-        <textarea id="juegos" name="juegos"></textarea><br><br>
-    
-        <label for="marca_componentes">¿Tienes alguna preferencia de marca para los componentes de tu computadora de escritorio? (ej. procesador, tarjeta gráfica)</label><br>
-        <input type="text" id="marca_componentes" name="marca_componentes"><br><br>
+        </div></div><br>
+        
+        <div class="formcot" style="display: flex; flex-direction: row;">
+            <label for="juegos_computadora">¿Planeas jugar videojuegos en tu computadora de escritorio?</label><br>
+            <input type="checkbox" id="si" name="juegos_computadora" value="si" onclick="mostrarPreguntas()"> 
+            <label for="si" id="juego">Sí</label><br>
+        </div><br>
+        <div id="preguntas_ocultas" style="display: none;">
+        <div class="formcot"">            
+              <label for="tipo_juegos">¿Qué tipo de juegos?</label><br>
+              <input type="text" id="tipo_juegos" name="tipo_juegos"><br>
+            </div><br>
+            <div class="formcot"">
+              <label for="calidad_grafica">¿Con qué nivel de calidad gráfica?</label><br>
+              <select id="calidad_grafica" name="calidad_grafica">
+                <option value="baja">Baja</option>
+                <option value="media">Media</option>
+                <option value="alta">Alta</option>
+                <option value="ultra">Ultra</option>
+              </select><br>
+            </div><br>
+                <div class="formcot">
+                  <label for="genero_juegos">¿Cuál es tu género de juegos favorito?</label><br>
+                  <input type="text" id="genero_juegos" name="genero_juegos"><br>
+                </div><br>
+                <div class="formcot">
+                  <label for="juegos_online">¿Juegas juegos online?</label><br>
+                  <input type="checkbox" id="juegos_online" name="juegos_online" style="background-color: chocolate; display: block;" value="si">
+                  <label for="juegos_online">si juego juegos online</label>                  
+                  <br>
+                </div><br>
+
+            <div class="formcot">
+                <label for="perifericos_utilizados">¿Qué periféricos utilizas para jugar (ratón, teclado, mando, etc.)?</label><br>
+                <input type="text" id="perifericos_utilizados" name="perifericos_utilizados"><br>
+              </div><br>
+            </div>
+      
+          
+          <script>
+          function mostrarPreguntas() {
+            var checkbox = document.getElementById("si");
+            var preguntas = document.getElementById("preguntas_ocultas");
+            if (checkbox.checked) {
+              preguntas.style.display = "block";
+            } else {
+              preguntas.style.display = "none";
+            }
+          }
+          </script>
+          </div><br>
+        <div class="formcot">
     
         <label for="programas">¿Necesitas que se incluyan programas preinstalados en tu computadora de escritorio?</label><br>
         <input type="radio" id="programas_si" name="programas" value="Sí">
         <label for="programas_si">Sí</label>
         <input type="radio" id="programas_no" name="programas" value="No">
-        <label for="programas_no">No</label><br><br>
+        <label for="programas_no">No</label></div><br>
+        <div class="formcot">
     
         <label for="wifi">¿Es importante para ti tener conectividad inalámbrica (Wi-Fi) en tu computadora de escritorio?</label><br>
         <input type="radio" id="wifi_si" name="wifi" value="Sí">
         <label for="wifi_si">Sí</label>
         <input type="radio" id="wifi_no" name="wifi" value="No">
-        <label for="wifi_no">No</label><br><br>
+        <label for="wifi_no">No</label></div><br>
+        <div class="formcot">
     
         <label for="puertos">¿Cuántos puertos USB y de otros tipos necesitas en tu computadora de escritorio?</label><br>
         <input type="range" id="uso1_range" name="uso_range" min="2" max="10" step="1" value="0">
-        <span class="slider-value">50</span><br><br>
+        <span class="slider-value">50</span></div><br>
+        <div class="formcot">
     
         <label for="actualizaciones">¿Planeas hacer futuras actualizaciones o mejoras en tu computadora de escritorio?</label><br>
         <input type="radio" id="actualizaciones_si" name="actualizaciones" value="Sí">
         <label for="actualizaciones_si">Sí</label>
         <input type="radio" id="actualizaciones_no" name="actualizaciones" value="No">
-        <label for="actualizaciones_no">No</label><br><br>
+        <label for="actualizaciones_no">No</label></div><br>
+        <div class="formcot">
     
         <label for="multitarea">¿Qué tan importante es para ti la capacidad de multitarea de tu computadora de escritorio?</label><br>
-        <input type="range" id="multitarea" name="multitarea" min="0" max="10" step="1" value="5"><br><br>
+        <input type="range" id="multitarea" name="multitarea" min="0" max="10" step="1" value="5"></div><br>
+        <div class="formcot" style="justify-content: center; background-color: #01010100;">
     
-        <input type="submit" value="Enviar">
+        <input type="submit" class="botom" value="Enviar"></div><br><br><br>
     </form>
 </body>
 </html>
-```
