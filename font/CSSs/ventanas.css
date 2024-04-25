@@ -3,7 +3,7 @@ body {
     padding: 0;
     background: linear-gradient(to bottom, rgb(96, 48, 14), chocolate);
     z-index: -999;
-
+    overflow: hidden;
 }
 
 .base{
@@ -14,7 +14,7 @@ body {
 }
 .cont-ancla {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 5px;
     justify-content: space-around;
     width: 60%;
@@ -49,17 +49,17 @@ body {
 }
 
 .anclaje {
-    width: 300px;
-    height: 200px;
+    width: 205px;
+    height: 155px;
     background-color: rgba(255, 238, 0, 0.3);
     border: 2px dashed yellow;
     z-index: 1;
-    margin: 15px;
+    margin: 5px;
 }
 
 .ancla-elimina {
-    width: 300px;
-    height: 200px;
+    width: 205px;
+    height: 155px;
     background-color: rgba(255, 0, 0, 0.3);
     border: 2px dashed red;
     cursor: pointer;
@@ -72,4 +72,21 @@ body {
 
 .gif-hover:hover{
     content: url('https://media.tenor.com/aH7BIsPypoUAAAAi/forge-anvil.gif');
+}
+.back-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Estilos adicionales para resaltar el efecto de hover */
+.back-icon:hover {
+    background-color: #0056b3;
 }
