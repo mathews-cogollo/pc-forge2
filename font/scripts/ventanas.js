@@ -222,31 +222,32 @@ var datoscomponentes = {
     }
     
     function actualizarPosicionVentana(ventana, anclaje) {
-        if (estaCercaDelAnclaje(ventana, anclaje)) {
-            const rectAnclaje = anclaje.getBoundingClientRect();
-            const rectVentana = ventana.getBoundingClientRect();
-            const nuevoX = rectAnclaje.left + (rectAnclaje.width - rectVentana.width) / 2;
-            const nuevoY = rectAnclaje.top + (rectAnclaje.height - rectVentana.height) / 2;
-            ventana.style.left = nuevoX + 'px';
-            ventana.style.top = nuevoY + 'px';
-            ventana.style.zIndex = '10';
-            anclaje.style.zIndex = '0';
-            // Cambiar el color del anclaje dependiendo de si coincide con la ventana anclada
-            const categoriaVentana = ventana.textContent.split(': ')[0];
-            const categoriaAnclaje = anclaje.dataset.categoria;
-            if (categoriaVentana === categoriaAnclaje) {
-                anclaje.style.backgroundColor = 'rgba(0, 255, 0, 0.3)'; // Verde si coincide
-                anclaje.style.borderColor = 'green'; // Cambio de color del borde
-            } else {
-                anclaje.style.backgroundColor = 'rgba(255, 0, 0, 0.3)'; // Rojo si no coincide
-                anclaje.style.borderColor = 'red'; // Cambio de color del borde
-            }
-        } else {
-            // Si no hay ventana anclada, volver al color original del anclaje y su borde
-            anclaje.style.backgroundColor = 'rgb(34, 40, 49)';
-            anclaje.style.borderColor = '(49, 54, 63)';
-        }
-    }
+      if (estaCercaDelAnclaje(ventana, anclaje)) {
+          const rectAnclaje = anclaje.getBoundingClientRect();
+          const rectVentana = ventana.getBoundingClientRect();
+          const nuevoX = rectAnclaje.left + (rectAnclaje.width - rectVentana.width) / 2;
+          const nuevoY = rectAnclaje.top + (rectAnclaje.height - rectVentana.height) / 2;
+          ventana.style.left = nuevoX + 'px';
+          ventana.style.top = nuevoY + 'px';
+          ventana.style.zIndex = '10';
+          anclaje.style.zIndex = '0';
+          // Cambiar el color del anclaje dependiendo de si coincide con la ventana anclada
+          const categoriaVentana = ventana.textContent.split(': ')[0];
+          const categoriaAnclaje = anclaje.dataset.categoria;
+          if (categoriaVentana === categoriaAnclaje) {
+              anclaje.style.backgroundColor = 'rgba(0, 255, 0, 0.3)'; // Verde si coincide
+              anclaje.style.borderColor = 'green'; // Cambio de color del borde
+          } else {
+              anclaje.style.backgroundColor = 'rgba(255, 0, 0, 0.3)'; // Rojo si no coincide
+              anclaje.style.borderColor = 'red'; // Cambio de color del borde
+          }
+      } else {
+          // Si no hay ventana anclada, volver al color original del anclaje y su borde
+          anclaje.style.backgroundColor = 'rgb(34, 40, 49)';
+          anclaje.style.borderColor = 'rgb(49, 54, 63)';
+      }
+  }
+  
     
     
     
@@ -269,6 +270,7 @@ var datoscomponentes = {
         const y = e.clientY - offset.offsetY;
         ventana.style.left = x + 'px';
         ventana.style.top = y + 'px';
+        ventana.style.opacity = '0.8';
     }
     
     function detenerArrastreVentana(e) {
@@ -286,7 +288,6 @@ var datoscomponentes = {
           ventana.remove();
           
           // Eliminar la ventana del array de ventanasPorCategoria
-          const ventanaIndex = ventanasPorCategoria[categoria].findIndex(comp => comp.componente === ventana.textContent.split(': ')[1]);
           if (ventanaIndex !== -1) {
               ventanasPorCategoria[categoria].splice(ventanaIndex, 1);
           }
@@ -302,8 +303,10 @@ var datoscomponentes = {
           anclajes.forEach(anclaje => {
               actualizarPosicionVentana(ventana, anclaje);
           });
+          ventana.style.opacity = '1'; // STAN: Añadido para establecer la opacidad a 1 al detenerse
       }
-  }
+    }
+    
   
     
     function resetearColoresAnclajes() {
@@ -350,6 +353,9 @@ function crearVentana(componente, categoria) {
   const componentes = datoscomponentes.componentes[0][categoria];
   const datosComponente = componentes.find(comp => comp.nombre === componente);
 
+  // Convertir el precio a número
+  const precioNumero = parseInt(datosComponente.precio); // o parseFloat(datosComponente.precio) si los precios pueden tener decimales
+
   // Crear la ventana en la interfaz (si es necesario)
   const nuevaVentana = document.createElement('div');
   nuevaVentana.classList.add('ventana');
@@ -362,14 +368,19 @@ function crearVentana(componente, categoria) {
 
   nuevaVentana.addEventListener('mousedown', iniciarArrastreVentana);
 
-  // Agregar el nuevo componente al array correspondiente
+  // Eliminar los datos anteriores de la categoría
+  ventanasPorCategoria[categoria] = [];
+
+  // Agregar el nuevo componente al array correspondiente con el precio convertido
   ventanasPorCategoria[categoria].push({
       componente: componente,
-      precio: datosComponente.precio
+      precio: precioNumero
   });
 
   mostrarInfo();
 }
+
+
 
 function mostrarInfo() {
   const contenedorTotal = document.querySelector('.total');
