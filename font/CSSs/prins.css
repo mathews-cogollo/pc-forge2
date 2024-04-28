@@ -1,3 +1,13 @@
+:root {
+  --color-1: rgb(34, 40, 49);
+  --color-2: rgb(238, 238, 238);
+  --color-3: rgb(118, 171, 174);
+  --color-4: rgb(49, 54, 63);
+}
+body{
+  background: linear-gradient(to bottom, rgb(12, 45, 87)), rgb(239, 236, 236);
+  z-index: -999;
+}
 
 .fondo {
   position: fixed;
@@ -28,7 +38,6 @@
 body {
     overflow: auto;
     margin: 0;
-    background-color: rgba(59, 59, 59, 0);
     font-family: sans-serif;
 }
 a{
@@ -44,14 +53,17 @@ a{
     z-index: 1000;
 }
 *::-webkit-scrollbar-thumb {
-    background-color: chocolate; /* Color of the scrollbar thumb */
+    background-color: rgb(252, 103, 54); /* Color of the scrollbar thumb */
     border-radius: 5px; /* Border radius of the scrollbar thumb */
 }
 *::-webkit-scrollbar-track {
     background-color: 50; /* Color of the scrollbar track */
  /* Border radius of the scrollbar track */
 }
-
+#pagactu{
+  background-color: rgba(128, 128, 128, 0.489);
+  cursor:default;
+}
 .botom {
     margin: 10px;
     border: none;
@@ -64,14 +76,15 @@ a{
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    background-color: black;
-    color: white;
+    background-color: var(--color-1);
+    color: var(--color-2);
+    border-radius: 5px;
   }
 
   .botom:hover{
     background-color: #ff8412;
     pointer-events: painted;
-    color:black;
+    color:var(--color-1);
     padding: 60;
     margin-top: 15;
     font-size: xx-large;

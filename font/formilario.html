@@ -136,6 +136,7 @@
           <h1>Formulario para conocer necesidades de PC</h1>
           
           <form action="#" method="POST">
+
             <fieldset class="grid-container">
             <legend>¿Para qué vas a utilizar el PC?</legend>
             <div class="cateConten">
@@ -143,7 +144,7 @@
                 <label for="uso1">Gaming</label>
                 <div class="slider-container">
                     <input type="range" id="uso1_range" name="uso_range" min="0" max="100" step="10" value="0">
-                    <span class="slider-value">50</span>
+                    <span class="slider-value">0</span>
                 </div>
             </div>
             <div class="cateConten">
@@ -151,7 +152,7 @@
                 <label for="uso2">Trabajo</label>
                 <div class="slider-container">                        
                     <input type="range" id="uso2_range" name="uso_range" min="0" max="100" step="10" value="0">
-                    <span class="slider-value">50</span>
+                    <span class="slider-value">0</span>
                 </div>
             </div>
             <div class="cateConten">
@@ -159,7 +160,7 @@
                 <label for="uso3">Diseño gráfico</label>
                 <div class="slider-container">
                     <input type="range" id="uso3_range" name="uso_range" min="0" max="100" step="10" value="0">
-                    <span class="slider-value">50</span>
+                    <span class="slider-value">0</span>
                 </div>
             </div>
             <div class="cateConten">
@@ -167,7 +168,7 @@
                 <label for="uso4">Edición de vídeo</label>
                 <div class="slider-container">
                     <input type="range" id="uso4_range" name="uso_range" min="0" max="100" step="10" value="0">
-                    <span class="slider-value">50</span>
+                    <span class="slider-value">0</span>
                 </div>
             </div>
             <div class="cateConten">
@@ -175,7 +176,7 @@
                 <label for="uso5">Programación</label>
                 <div class="slider-container">
                     <input type="range" id="uso5_range" name="uso_range" min="0" max="100" step="10" value="0">
-                    <span class="slider-value">50</span>
+                    <span class="slider-value">0</span>
                 </div>
             </div>
             <div class="cateConten">
@@ -183,7 +184,7 @@
                 <label for="uso6">Uso general</label>
                 <div class="slider-container">
                     <input type="range" id="uso6_range" name="uso_range" min="0" max="100" step="10" value="0">
-                    <span class="slider-value">50</span>
+                    <span class="slider-value">0</span>
                 </div>
             </div>
             <div class="cateConten">
@@ -191,7 +192,7 @@
                 <label for="uso7">Diseño 3D</label>
                 <div class="slider-container">
                     <input type="range" id="uso7_range" name="uso_range" min="0" max="100" step="10" value="0">
-                    <span class="slider-value">50</span>
+                    <span class="slider-value">0</span>
                 </div>
             </div>
             <div class="cateConten">
@@ -199,7 +200,7 @@
                 <label for="uso8">Streaming</label>
                 <div class="slider-container">
                     <input type="range" id="uso8_range" name="uso_range" min="0" max="100" step="10" value="0">
-                    <span class="slider-value">50</span>
+                    <span class="slider-value">0</span>
                 </div>
             </div>
             <div class="cateConten">
@@ -207,7 +208,7 @@
                 <label for="uso9">Ofimática</label>
                 <div class="slider-container">
                     <input type="range" id="uso9_range" name="uso_range" min="0" max="100" step="10" value="0">
-                    <span class="slider-value">50</span>
+                    <span class="slider-value">0</span>
                 </div>
             </div>
             <div class="cateConten">
@@ -215,14 +216,14 @@
                 <label for="uso11">Realidad Virtual</label>
                 <div class="slider-container">
                     <input type="range" id="uso11_range" name="uso_range" min="0" max="100" step="10" value="0">
-                    <span class="slider-value">50</span>
+                    <span class="slider-value">0</span>
                 </div>
             </div>
             <div class="cateConten">
                 <input type="checkbox" id="uso10" name="uso" value="Otro">
                 <label for="uso10">Otro</label>
                 <div class="slider-container">
-                    <input type="text" id="uso10_text" name="uso_text" placeholder="Especifica otro">
+                    <input type="range" id="uso10_range" name="uso_range" min="0" max="100" step="10" value="0">
                 </div>
             </div>
             <div class="cateConten">
@@ -230,10 +231,83 @@
                 <label for="uso12">Desarrollo de aplicaciones</label>
                 <div class="slider-container">
                     <input type="range" id="uso12_range" name="uso_range" min="0" max="100" step="10" value="0">
-                    <span class="slider-value">50</span>
+                    <span class="slider-value">0</span>
                 </div>
             </div>
         </fieldset><br>
+        <script>
+            var sliders = document.querySelectorAll('.slider-container input[type="range"]');
+            sliders.forEach(function(slider) {
+                slider.addEventListener('input', function() {
+                    var value = this.value;
+                    var sliderValue = this.parentNode.querySelector('.slider-value');
+                    if (sliderValue) {
+                        sliderValue.textContent = value;
+                    }
+                });
+            });
+        </script>
+            
+            <script>
+                // Función para cambiar el color de cateConten cuando se cambia el estado del checkbox
+                document.querySelectorAll('.cateConten input[type="checkbox"]').forEach(function(checkbox) {
+                    checkbox.addEventListener('change', function() {
+                        var cateConten = this.closest('.cateConten');
+                        if (this.checked) {
+                            cateConten.style.backgroundColor = 'lightgreen';
+                        } else {
+                            cateConten.style.backgroundColor = '';
+                        }
+                    });
+                });
+            </script>
+        <script>
+            var data_descripcion_json = {
+                "Gaming": "Utilizado para jugar videojuegos y ejecutar aplicaciones de entretenimiento de alto rendimiento.",
+                "Trabajo": "Destinado a actividades laborales, como trabajar con documentos, correos electrónicos y aplicaciones de oficina.",
+                "Diseño gráfico": "Utilizado para crear y editar gráficos, imágenes y diseños artísticos.",
+                "Edición de vídeo": "Utilizado para editar y manipular videos, agregar efectos visuales y crear contenido multimedia.",
+                "Programación": "Utilizado para desarrollar software, escribir código y realizar pruebas de aplicaciones.",
+                "Uso general": "Utilizado para tareas cotidianas como navegar por internet, revisar correos electrónicos y utilizar redes sociales.",
+                "Diseño 3D": "Utilizado para crear modelos tridimensionales y animaciones en entornos virtuales.",
+                "Streaming": "Utilizado para transmitir contenido en vivo a través de plataformas de video o redes sociales.",
+                "Ofimática": "Utilizado para tareas de oficina, como crear documentos, hojas de cálculo y presentaciones.",
+                "Realidad Virtual": "Utilizado para experimentar entornos y aplicaciones de realidad virtual inmersiva.",
+                "Desarrollo de aplicaciones": "Utilizado para desarrollar y probar aplicaciones de software para diversas plataformas y dispositivos.",
+                "Otro": "Utilizado para un propósito no especificado en las categorías anteriores."
+            };
+            document.addEventListener("DOMContentLoaded", function() {
+                var cateContenItems = document.querySelectorAll(".cateConten");
+                cateContenItems.forEach(function(item) {
+                    item.addEventListener("mouseover", function() {
+                        var descripcion = item.getAttribute("data-descripcion");
+                        mostrarDescripcion(descripcion, item);
+                    });
+                    item.addEventListener("mouseout", function() {
+                        ocultarDescripcion();
+                    });
+                });
+            
+                function mostrarDescripcion(descripcion, elemento) {
+                    var dialogo = document.createElement("div");
+                    dialogo.className = "dialogo";
+                    dialogo.textContent = descripcion;
+                    elemento.appendChild(dialogo);
+                }
+            
+                function ocultarDescripcion() {
+                    var dialogo = document.querySelector(".dialogo");
+                    if (dialogo) {
+                        dialogo.parentNode.removeChild(dialogo);
+                    }
+                }
+            });
+            </script>
+
+
+
+
+
         <div class="formcot">
         <label for="preferencias">¿Tienes alguna preferencia de marca o componentes?</label><br>
         <select id="preferencias" name="preferencias">
@@ -247,6 +321,7 @@
             <option value="Crucial">Crucial</option>
             <!-- Agrega más opciones según sea necesario -->
         </select>
+
         </div><br>
         <div class="formcot">
         <label for="almacenamiento">¿Cuánto espacio de almacenamiento crees que necesitarás para tus archivos y programas?</label><br>
@@ -329,7 +404,7 @@
     
         <label for="puertos">¿Cuántos puertos USB y de otros tipos necesitas en tu computadora de escritorio?</label><br>
         <input type="range" id="uso1_range" name="uso_range" min="2" max="10" step="1" value="0">
-        <span class="slider-value">50</span></div><br>
+        <span class="slider-value">0</span></div><br>
         <div class="formcot">
     
         <label for="actualizaciones">¿Planeas hacer futuras actualizaciones o mejoras en tu computadora de escritorio?</label><br>

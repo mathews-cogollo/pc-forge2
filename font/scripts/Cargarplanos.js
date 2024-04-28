@@ -5,7 +5,7 @@ var datosplano = {
       "ID": "1",
       "emailAutor": "ejemplo@correo.com",
       "fecha": "2024-03-22",
-      "imagen": "recursos/imagen_plano.png",
+      "imagen": "recursos/fondo_inicio.jpg",
       "Unidad de Almacenamiento": {
         "tipo": "SSD",
         "capacidad": "1TB"
@@ -52,7 +52,7 @@ var datosplano = {
       "ID": "2",
       "emailAutor": "ejemplo@correo.com",
       "fecha": "2024-03-22",
-      "imagen": "recursos/imagen_plano.png",
+      "imagen": "recursos/fondo_inicio.jpg",
       "Unidad de Almacenamiento": {
         "tipo": "SSD",
         "capacidad": "1TB"
@@ -99,7 +99,7 @@ var datosplano = {
       "ID": "3",
       "emailAutor": "ejemplo@correo.com",
       "fecha": "2024-03-22",
-      "imagen": "recursos/imagen_plano.png",
+      "imagen": "recursos/fondo_inicio.jpg",
       "Unidad de Almacenamiento": {
         "tipo": "SSD",
         "capacidad": "1TB"
@@ -145,7 +145,7 @@ var datosplano = {
       "ID": "4",
       "emailAutor": "ejemplo@correo.com",
       "fecha": "2024-03-22",
-      "imagen": "recursos/imagen_plano.png",
+      "imagen": "recursos/fondo_inicio.jpg",
       "Unidad de Almacenamiento": {
         "tipo": "SSD",
         "capacidad": "1TB"
@@ -191,7 +191,7 @@ var datosplano = {
       "ID": "5",
       "emailAutor": "ejemplo@correo.com",
       "fecha": "2024-03-22",
-      "imagen": "recursos/imagen_plano.png",
+      "imagen": "recursos/fondo_inicio.jpg",
       "Unidad de Almacenamiento": {
         "tipo": "SSD",
         "capacidad": "1TB"
@@ -237,7 +237,7 @@ var datosplano = {
       "ID": "6",
       "emailAutor": "usuario1@correo.com",
       "fecha": "2024-03-23",
-      "imagen": "recursos/imagen_plano2.png",
+      "imagen": "recursos/imagen_plano2.jpg",
       "Unidad de Almacenamiento": {
       "tipo": "HDD",
       "capacidad": "2TB"
@@ -285,7 +285,7 @@ var datosplano = {
       "ID": "7",
       "emailAutor": "usuario2@correo.com",
       "fecha": "2024-03-24",
-      "imagen": "recursos/imagen_plano3.png",
+      "imagen": "recursos/imagen_plano3.jpg",
       "Unidad de Almacenamiento": {
       "tipo": "SSD",
       "capacidad": "500GB"
@@ -333,7 +333,7 @@ var datosplano = {
       "ID": "8",
       "emailAutor": "usuario3@correo.com",
       "fecha": "2024-03-25",
-      "imagen": "recursos/imagen_plano4.png",
+      "imagen": "recursos/imagen_plano4.jpg",
       "Unidad de Almacenamiento": {
       "tipo": "NVMe SSD",
       "capacidad": "2TB"
@@ -381,7 +381,7 @@ var datosplano = {
       "ID": "9",
       "emailAutor": "usuario4@correo.com",
       "fecha": "2024-03-26",
-      "imagen": "recursos/imagen_plano5.png",
+      "imagen": "recursos/imagen_plano5.jpg",
       "Unidad de Almacenamiento": {
       "tipo": "HDD",
       "capacidad": "4TB"
@@ -429,7 +429,7 @@ var datosplano = {
       "ID": "10",
       "emailAutor": "usuario5@correo.com",
       "fecha": "2024-03-27",
-      "imagen": "recursos/imagen_plano6.png",
+      "imagen": "recursos/imagen_plano6.jpg",
       "Unidad de Almacenamiento": {
       "tipo": "SSD",
       "capacidad": "1TB"
@@ -477,7 +477,7 @@ var datosplano = {
       "ID": "11",
       "emailAutor": "usuario6@correo.com",
       "fecha": "2024-03-28",
-      "imagen": "recursos/imagen_plano7.png",
+      "imagen": "recursos/imagen_plano7.jpg",
       "Unidad de Almacenamiento": {
       "tipo": "NVMe SSD",
       "capacidad": "2TB"
