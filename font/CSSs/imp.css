@@ -1,0 +1,177 @@
+@font-face {
+font-family: 'gameplaya';
+src: url('recursos/Gameplaya.ttf') format('truetype');
+
+}
+
+body 
+{  
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:rgb(233, 233, 233);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    height: auto;
+}
+.encabezado {
+    font-family: gameplaya, sans-serif;
+    z-index: 1000;
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 0;
+    text-align: le;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: top 0.3s;
+    font-size: x-large;
+}       
+
+.contenido {
+margin-top: 80px;
+padding: 20px;
+}
+
+.salto-de-pagina {
+    page-break-before: always;
+}
+
+div.he{
+display:flexbox;
+width: 70ex;
+}
+
+a {
+color: inherit;
+text-decoration: none; 
+}
+.nu::first-letter{
+color: rgb(32, 103, 255); 
+font-size: xx-large;
+}
+
+.gr{
+display: flex;
+float: right;
+}
+
+.fr{
+float: left;
+cursor: pointer;
+height: fit-content;
+}
+
+.h_menu{
+display: inline;
+text-decoration: none;
+text-align: right;
+padding-left: 1ex;
+}
+
+.azul {
+color: rgb(32, 103, 255); 
+font-size: xx-large;
+}
+.h_menu::first-letter{
+color:rgb(32, 103, 255) ;
+font-size: xx-large;
+}
+.info-box {
+    background-color:rgb(233, 233, 233);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.info-box table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-box table, .info-box td, .info-box th {
+    border: 1px;
+    text-align: center;
+}
+
+.info-box .title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: transparent;
+}
+
+.info-box .instructions {
+    margin-top: 10px;
+}
+
+.info-box .instructions ol,
+.info-box .instructions ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.info-box .instructions ol li,
+.info-box .instructions ul li {
+    margin-bottom: 10px;
+}
+.info-box table tr td {
+    width: 33.33%;
+}
+
+
+/* Estilos del grupo de botones */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button-group .btn {
+    background-color: #00f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.button-group .btn:hover {
+    background-color: #007acc;
+}
+.pie{
+
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    
+}
+footer{
+    color: rgb(0, 0, 0);
+}
+.Fcontenedor{
+    display: flex;
+    flex-direction: row;
+
+}
+.hide{
+    display: flex;
+    flex-direction: row;
+}
+@media print {
+    .instructions {
+        font-size: 15px; 
+    }
+    .button-group {
+        display: none;
+    }
+    .encabezado {
+        display: none;
+    }
+    .hide {
+        display: none;}
+}

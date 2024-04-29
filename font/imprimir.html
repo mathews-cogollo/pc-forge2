@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Configuración de PC</title>
+    <link rel="stylesheet" href="CSSs/cavecera.css">
+    <link rel="stylesheet" href="CSSs/imp.css">
+    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+
+</head>
+<body>
+ 
+    <div id="head">
+        <header class="encabezado">
+            <header>
+                <nav>
+                    <a href="index.html">
+                        <img src="recursos/logo_Pn.png" alt="logo_texto" style="width: 80px;cursor: pointer;">
+                        <img src="recursos/logo_texto.png" alt="logo_texto" style="width: 200px;">
+                    </a>
+                    <div class="menu-barra">
+                        <a href="index.html" class="menu-item" id="pagactu">Inicio</a>
+                        <a href="ventanas.html" class="menu-item">Armado</a>
+                        <button class="menu-item" onClick="mostrarPopup('popup-registro')">Registro</button>
+                        <button class="menu-item" onClick="mostrarPopup('popup-login')">Iniciar Sesión</button>
+                        
+                </nav>
+            </header>
+            
+            <div id="popup-login" class="popup">
+                <h2>Iniciar Sesión</h2>
+                <div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-login')">&times;</div>
+                <form action="#" method="post" class="formulario-login">
+                    <input type="text" name="usuario" placeholder="Usuario">
+                    <input type="password" name="contraseña" placeholder="Contraseña">
+                    <input type="submit" value="Iniciar Sesión">
+                </form>
+            </div>
+            
+            <div id="popup-registro" class="popup">
+                <h2>Registro</h2>
+                <div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-registro' )">&times;</div>
+                <form action="#" method="post" class="formulario-registro">
+                    <input type="text" name="nombre" placeholder="Nombre">
+                    <input type="text" name="apellido" placeholder="Apellido">
+                    <input type="text" name="correo" placeholder="Correo Electrónico">
+                    <input type="password" name="contraseña" placeholder="Contraseña">
+                    <input type="submit" value="Registrarse">
+                </form>
+            </div>
+            <script>
+                    function mostrarPopup(idPopup) {
+                    var popup = document.getElementById(idPopup);
+                    popup.style.display = "block";
+                }
+                function ocultarPopup(idPopup) {
+                    var popup = document.getElementById(idPopup);
+                    popup.style.display = "none";
+                }
+            </script>
+        </header><br><br><br><br><br><br>
+        </div>
+  
+    <div class="container">
+        <div class="info-box">
+            <table >
+                <tr>
+                    <td><p class="title" id="discoDuro">Disco duro:</p>
+                        <span class="component" id="discoDuroComponente">[Aquí va el componente]</span>
+                    </td>
+                    <td><p class="title" id="armazon">Armazón:</p>
+                        <span class="component" id="armazonComponente">[Aquí va el componente]</span>
+                    </td>
+                    <td><p class="title" id="tarjetaGrafica">Tarjeta gráfica:</p>
+                        <span class="component" id="tarjetaGraficaComponente">[Aquí va el componente]</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p class="title" id="tarjetaRed">Tarjeta de red:</p>
+                        <span class="component" id="tarjetaRedComponente">[Aquí va el componente]</span>
+                    </td>
+                    <td><p class="title" id="placaBase">Placa base:</p>
+                        <span class="component" id="placaBaseComponente">[Aquí va el componente]</span>
+                    </td>
+                    <td><p class="title" id="unidadEnfriamiento">Unidad de enfriamiento:</p>
+                        <span class="component" id="unidadEnfriamientoComponente">[Aquí va el componente]</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p class="title" id="ram">RAM:</p>
+                        <span class="component" id="ramComponente">[Aquí va el componente]</span>
+                    </td>
+                    <td><p class="title" id="fuentePoder">Fuente de poder:</p>
+                        <span class="component" id="fuentePoderComponente">[Aquí va el componente]</span>
+                    </td>
+                    <td><p class="title" id="tarjetaSonido">Tarjeta de sonido:</p>
+                        <span class="component" id="tarjetaSonidoComponente">[Aquí va el componente]</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td><p class="title" id="procesador">Procesador:</p>
+                        <span class="component" id="procesadorComponente">[Aquí va el componente]</span>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="salto-de-pagina"></div>
+            <div class="instructions">
+                <ol>
+                    <li><strong>Preparación:</strong></li>
+                    <ul>
+                        <li>Trabaja en un área limpia y sin estática.</li>
+                    </ul>
+                    <li><strong>Instalación de la Placa Base:</strong></li>
+                    <ul>
+                        <li>Coloca la placa base en la carcasa, alineando los agujeros con los soportes preinstalados.</li>
+                        <li>Asegura la placa base atornillándola a la carcasa.</li>
+                    </ul>
+                    <li><strong>Instalación de la CPU:</strong></li>
+                    <ul>
+                        <li>Abre la palanca del zócalo de la CPU en la placa base.</li>
+                        <li>Alinea la marca en la CPU con la marca en la placa base y colócala con cuidado.</li>
+                        <li>Baja la palanca del zócalo para asegurar la CPU.</li>
+                    </ul>
+                    <li><strong>Instalación del Disipador de Calor:</strong></li>
+                    <ul>
+                        <li>Aplica una pequeña cantidad de pasta térmica en el centro de la CPU.</li>
+                        <li>Coloca el disipador de calor sobre la CPU y asegúralo siguiendo las instrucciones del fabricante.</li>
+                    </ul>
+                    <li><strong>Instalación de la RAM:</strong></li>
+                    <ul>
+                        <li>Abre las pestañas en los slots de RAM.</li>
+                        <li>Alinea las muescas de la RAM con las de la placa base y presiona hasta que hagas clic.</li>
+                    </ul>
+                    <li><strong>Disco Duro (SSD vs HDD):</strong></li>
+                    <ul>
+                        <li><strong>SSD (Solid State Drive):</strong> Conéctalo a la placa base utilizando un cable SATA o M.2, según el tipo de SSD que tengas.</li>
+                        <li><strong>HDD (Hard Disk Drive):</strong> Utiliza cables SATA para conectar el HDD a la placa base y la fuente de poder.</li>
+                    </ul>
+                    <li><strong>Conexión de Cables:</strong></li>
+                    <ul>
+                        <li>Conecta el cable de alimentación de la fuente de poder a la placa base.</li>
+                        <li>Conecta los cables SATA de los discos duros y SSD a la placa base.</li>
+                        <li>Conecta los cables de alimentación y datos de la unidad óptica si la tienes.</li>
+                    </ul>
+                    <li><strong>Tarjeta Gráfica (Integrada o Externa):</strong></li>
+                    <ul>
+                        <li><strong>Integrada:</strong> Conéctala a la placa base y aliméntala desde la fuente de poder.</li>
+                        <li><strong>Externa:</strong> Inserta la tarjeta en el slot PCIe correspondiente y conecta los cables de alimentación. Conecta el monitor a los puertos de la tarjeta.</li>
+                    </ul>
+                    <li><strong>Conexiones de Panel Frontal:</strong></li>
+                    <ul>
+                        <li>Conecta los cables del panel frontal (botones de encendido, reinicio, LED, etc.) a la placa base siguiendo el manual.</li>
+                    </ul>
+                    <li><strong>Unidad de Enfriamiento:</strong></li>
+                    <ul>
+                        <li><strong>Enfriamiento por Aire:</strong> Instala el disipador de calor según las instrucciones del fabricante.</li>
+                        <li><strong>Enfriamiento por Agua:</strong> Conecta el bloque de agua a la CPU y el radiador a un lugar con flujo de aire.</li>
+                    </ul>
+                    <li><strong>Encendido Inicial:</strong></li>
+                    <ul>
+                        <li>Conecta el monitor, el teclado y el ratón.</li>
+                        <li>Enciende el PC y verifica que todos los componentes y ventiladores funcionen.</li>
+                    </ul>
+                    <li><strong>Instalación del Sistema Operativo:</strong></li>
+                    <ul>
+                        <li>Inserta el medio de instalación del sistema operativo y sigue las instrucciones en pantalla.</li>
+                        <li>Inserta la unidad USB con los controladores y sigue las instrucciones para instalarlos.</li>
+                    </ul>
+                </ol>
+            </div>
+        </div>
+
+
+        <div class="button-group">
+            <button class="btn"><a href="builder.html">Regresar</a></button>
+            <button class="btn" onclick="descargarPDF()">Descargar PDF</button>
+            <script>
+            function descargarPDF() {
+            window.print();
+            }
+            </script>
+            <button class="btn">Guardar</button>
+        </div>
+    </div>
+    <br><br><br>
+    <footer>
+        <div class="hide">
+            <div class="pie">
+                <p>Correo electrónico: <a href="mailto:info@example.com">info@example.com</a></p>
+                <p>Teléfono: 123-456-789</p>
+            </div><hr>
+            <div class="pie">
+                <p>&copy; 2023 Mi Sitio Web. Todos los derechos reservados.</p>
+            </div>
+            <hr>
+            <div class="pie">adadasdw</div>
+        </div>
+
+    </footer>
+</body>
+</html>

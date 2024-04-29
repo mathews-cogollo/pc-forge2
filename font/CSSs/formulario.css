@@ -1,13 +1,23 @@
+:root {
+    --color-1: rgb(34, 40, 49);
+    --color-2: rgb(238, 238, 238);
+    --color-3: rgb(118, 171, 174);
+    --color-4: rgb(49, 54, 63);
+  }
 
+  .cateConten{
+    background-color: var(--color-1);
+    color: var(--color-2);
+  }
     body{
-        color: white;
+        color: var(--color-2);
         overflow-x: hidden;
     }
     h1{
         text-align: center;
         font-size: xxxlarge;
         padding: 20px;
-        background-color: black;
+        background-color: var(--color-1);
         margin-left: 20%;
         margin-right: 20%;
         border-radius: 5px;
@@ -15,52 +25,23 @@
     div{
         border-radius: 5px;
     }
-    /* Estilos para los botones */
-    .grid-container label {
-        display: grid;
-    }
 
-    /* Estilo para ocultar los sliders */
-    .slider-container {
-        display: none;
-    }
-
-    /* Mostrar el slider cuando su casilla de verificación está marcada */
-    input[type="checkbox"]:checked ~ .slider-container {
-        display: block;
-    }
-
-    /* Estilos para los valores de la barra de desplazamiento */
-    .slider-value {
-        font-size: 14px;
-        margin-top: 5px;
-    }
     form{
         padding-left: 20%;
         padding-right: 20%;  
     }
     
-    .cateConten{
-        background-color: black;
-        padding: 10px;    
-        margin: 10px;
-    }
+
     
 
-    input[type="checkbox"] {
-        display: none;
-    }
-
 .formcot{
-    background-color: black;
+    background-color: var(--color-1);
     padding: 10px;
     display: flex;
     justify-content: space-between;
     
 }
-input[type="checkbox"]:checked + .cateConten {
-    background-color: chocolate;
-}
+
 .gameopcion {
     display: none; /* Inicialmente oculto */
 }
@@ -169,18 +150,15 @@ input[type="checkbox"]:checked + .cateConten {
     .slider-container {
         margin-top: 10px;
     }  
-    input[type="range"]::-webkit-slider-thumb {
-        /* Estilos del control deslizante */
-        background-color: chocolate; /* Cambia este valor al color que desees */
-        width: 15px; /* Ancho del control deslizante */
-        height: 15px; /* Alto del control deslizante */
-        border-radius: 50%; /* Haz que el control deslizante sea redondo */
-        cursor: pointer; /* Cambia el cursor al pasar sobre el control */
-         /* Quita el estilo predeterminado de WebKit */
-      }
-      
-      /* Cambia el color del indicador (barra de progreso) */
-      input[type="range"]::-webkit-slider-runnable-track {
-        /* Estilos del indicador */
-        background-color:  #222222;; /* Cambia este valor al color que desees */
-        border-radius: 5px; /* Bordes redondeados */
+    
+    .cateConten {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Estilo cuando el checkbox está activo */
+    .cateConten input:checked ~ .slider-container {
+        background-color: lightgreen;
+    }

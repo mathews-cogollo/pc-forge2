@@ -1,0 +1,199 @@
+{
+    "componentes": [
+        {
+            "Unidad de Almacenamiento": [
+                {
+                    "nombre": "SSD Samsung 970 EVO Plus",
+                    "tipo": "Unidad de Almacenamiento",
+                    "capacidad": "1 TB",
+                    "interfaz": "NVMe PCIe 3.0 x4",
+                    "factor_de_forma": "M.2 2280",
+                    "precio": "1000"
+                },
+                {
+                    "nombre": "HDD Seagate Barracuda",
+                    "tipo": "Unidad de Almacenamiento",
+                    "capacidad": "2 TB",
+                    "velocidad_de_rotacion": "7200 RPM",
+                    "interfaz": "SATA 6 Gb/s",
+                    "factor_de_forma": "3.5 pulgadas",
+                    "precio": "500"
+                }
+            ],
+            "Placa Base": [
+                {
+                    "nombre": "ASUS ROG Strix X570-E Gaming",
+                    "tipo": "Placa Base",
+                    "socket": "AM4",
+                    "formato": "ATX",
+                    "chipset": "AMD X570",
+                    "memoria_maxima": "128 GB DDR4",
+                    "puertos_usb": "USB 3.2 Gen 2",
+                    "precio": "400"
+                },
+                {
+                    "nombre": "GIGABYTE Z490 AORUS XTREME WATERFORCE",
+                    "tipo": "Placa Base",
+                    "socket": "LGA1200",
+                    "formato": "E-ATX",
+                    "chipset": "Intel Z490",
+                    "memoria_maxima": "128 GB DDR4",
+                    "puertos_usb": "USB 3.2 Gen 2x2",
+                    "precio": "450"
+                }
+            ],
+            "Fuente de Poder": [
+                {
+                    "nombre": "EVGA SuperNOVA 850 G5",
+                    "tipo": "Fuente de Poder",
+                    "potencia": "850 W",
+                    "certificacion": "80 Plus Gold",
+                    "modularidad": "Totalmente modular",
+                    "precio": "200"
+                },
+                {
+                    "nombre": "Corsair RM850x",
+                    "tipo": "Fuente de Poder",
+                    "potencia": "850 W",
+                    "certificacion": "80 Plus Gold",
+                    "modularidad": "Totalmente modular",
+                    "precio": "180"
+                }
+            ],
+            "Procesador": [
+                {
+                    "nombre": "AMD Ryzen 9 5900X",
+                    "tipo": "Procesador",
+                    "socket": "AM4",
+                    "nucleos": "12",
+                    "hilos": "24",
+                    "frecuencia_base": "3.7 GHz",
+                    "frecuencia_maxima": "4.8 GHz",
+                    "precio": "550"
+                },
+                {
+                    "nombre": "Intel Core i9-11900K",
+                    "tipo": "Procesador",
+                    "socket": "LGA1200",
+                    "nucleos": "8",
+                    "hilos": "16",
+                    "frecuencia_base": "3.5 GHz",
+                    "frecuencia_maxima": "5.3 GHz",
+                    "precio": "600"
+                }
+            ],
+            "Tarjeta RAM": [
+                {
+                    "nombre": "Corsair Vengeance RGB Pro",
+                    "tipo": "Tarjeta RAM",
+                    "capacidad": "32 GB (2 x 16 GB)",
+                    "frecuencia": "3600 MHz",
+                    "tipo_memoria": "DDR4",
+                    "latencia": "CL18",
+                    "precio": "250"
+                },
+                {
+                    "nombre": "G.Skill Trident Z Neo",
+                    "tipo": "Tarjeta RAM",
+                    "capacidad": "64 GB (2 x 32 GB)",
+                    "frecuencia": "3600 MHz",
+                    "tipo_memoria": "DDR4",
+                    "latencia": "CL16",
+                    "precio": "500"
+                }
+            ],
+            "Tarjeta de Red": [
+                {
+                    "nombre": "ASUS PCE-AX58BT",
+                    "tipo": "Tarjeta de Red",
+                    "velocidad": "2400 Mbps",
+                    "banda": "Dual-band",
+                    "conectividad": "WiFi 6 y Bluetooth 5.0",
+                    "precio": "80"
+                },
+                {
+                    "nombre": "TP-Link Archer T9E",
+                    "tipo": "Tarjeta de Red",
+                    "velocidad": "1300 Mbps",
+                    "banda": "Dual-band",
+                    "conectividad": "WiFi 5",
+                    "precio": "50"
+                }
+            ],
+            "Tarjeta de Sonido": [
+                {
+                    "nombre": "Creative Sound Blaster AE-9",
+                    "tipo": "Tarjeta de Sonido",
+                    "canales": "5.1",
+                    "resolucion": "32-bit / 384 kHz",
+                    "conectividad": "PCIe",
+                    "precio": "300"
+                },
+                {
+                    "nombre": "Asus Xonar AE 7.1",
+                    "tipo": "Tarjeta de Sonido",
+                    "canales": "7.1",
+                    "resolucion": "24-bit / 192 kHz",
+                    "conectividad": "PCIe",
+                    "precio": "200"
+                }
+            ],
+            "Tarjeta Gráfica": [
+                {
+                    "nombre": "NVIDIA GeForce RTX 3080",
+                    "tipo": "Tarjeta Gráfica",
+                    "memoria": "10 GB GDDR6X",
+                    "frecuencia_base": "1440 MHz",
+                    "frecuencia_boost": "1710 MHz",
+                    "interfaz": "PCI Express 4.0",
+                    "precio": "900"
+                },
+                {
+                    "nombre": "AMD Radeon RX 6900 XT",
+                    "tipo": "Tarjeta Gráfica",
+                    "memoria": "16 GB GDDR6",
+                    "frecuencia_base": "1825 MHz",
+                    "frecuencia_boost": "2250 MHz",
+                    "interfaz": "PCI Express 4.0",
+                    "precio": "1000"
+                }
+            ],
+            "Unidad de Enfriamiento": [
+                {
+                    "nombre": "NZXT Kraken X73",
+                    "tipo": "Unidad de Enfriamiento",
+                    "tipo_enfriamiento": "Líquida",
+                    "tamaño_radiador": "360 mm",
+                    "ventiladores": "3 x 120 mm",
+                    "precio": "200"
+                },
+                {
+                    "nombre": "Noctua NH-D15",
+                    "tipo": "Unidad de Enfriamiento",
+                    "tipo_enfriamiento": "Aire",
+                    "ventiladores": "2 x 140 mm",
+                    "altura": "165 mm",
+                    "precio": "100"
+                }
+            ],
+            "Gabinete": [
+                {
+                    "nombre": "NZXT H510",
+                    "tipo": "Gabinete",
+                    "formato": "ATX Mid Tower",
+                    "ventiladores_incluidos": "2 x 120 mm",
+                    "bahias_unidades": "2 x 3.5\", 2 x 2.5\"",
+                    "precio": "100"
+                },
+                {
+                    "nombre": "Fractal Design Meshify C",
+                    "tipo": "Gabinete",
+                    "formato": "ATX Mid Tower",
+                    "ventiladores_incluidos": "2 x 120 mm",
+                    "bahias_unidades": "2 x 3.5\", 3 x 2.5\"",
+                    "precio": "120"
+                }
+            ]
+        }
+    ]
+}
