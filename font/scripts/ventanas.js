@@ -1,25 +1,26 @@
 var datoscomponentes = {
     "componentes": [
         {
-            "Unidad de Almacenamiento": [
+            "Gabinete": [
               {
-                "nombre": "SSD Samsung 970 EVO Plus",
-                "tipo": "Unidad de Almacenamiento",
-                "capacidad": "1 TB",
-                "interfaz": "NVMe PCIe 3.0 x4",
-                "factor_de_forma": "M.2 2280",
-                "precio": "1000"
+
+
+                "nombre": "NZXT H510",
+                "tipo": "Gabinete",
+                "formato": "ATX Mid Tower",
+                "ventiladores_incluidos": "2 x 120 mm",
+                "bahias_unidades": "2 x 3.5\", 2 x 2.5\"",
+                "precio": "100"
               },
               {
-                "nombre": "HDD Seagate Barracuda",
-                "tipo": "Unidad de Almacenamiento",
-                "capacidad": "2 TB",
-                "velocidad_de_rotacion": "7200 RPM",
-                "interfaz": "SATA 6 Gb/s",
-                "factor_de_forma": "3.5 pulgadas",
-                "precio": "500"
+                "nombre": "Fractal Design Meshify C",
+                "tipo": "Gabinete",
+                "formato": "ATX Mid Tower",
+                "ventiladores_incluidos": "2 x 120 mm",
+                "bahias_unidades": "2 x 3.5\", 3 x 2.5\"",
+                "precio": "120"
               }
-            ],
+            ],   
             "Placa Base": [
               {
                 "nombre": "ASUS ROG Strix X570-E Gaming",
@@ -41,23 +42,44 @@ var datoscomponentes = {
                 "puertos_usb": "USB 3.2 Gen 2x2",
                 "precio": "450"
               }
-            ],
-            "Fuente de Poder": [
+            ],         
+            "Tarjeta RAM": [
               {
-                "nombre": "EVGA SuperNOVA 850 G5",
-                "tipo": "Fuente de Poder",
-                "potencia": "850 W",
-                "certificacion": "80 Plus Gold",
-                "modularidad": "Totalmente modular",
-                "precio": "200"
+                "nombre": "Corsair Vengeance RGB Pro",
+                "tipo": "Tarjeta RAM",
+                "capacidad": "32 GB (2 x 16 GB)",
+                "frecuencia": "3600 MHz",
+                "tipo_memoria": "DDR4",
+                "latencia": "CL18",
+                "precio": "250"
               },
               {
-                "nombre": "Corsair RM850x",
-                "tipo": "Fuente de Poder",
-                "potencia": "850 W",
-                "certificacion": "80 Plus Gold",
-                "modularidad": "Totalmente modular",
-                "precio": "180"
+                "nombre": "G.Skill Trident Z Neo",
+                "tipo": "Tarjeta RAM",
+                "capacidad": "64 GB (2 x 32 GB)",
+                "frecuencia": "3600 MHz",
+                "tipo_memoria": "DDR4",
+                "latencia": "CL16",
+                "precio": "500"
+              }
+            ],
+            "Unidad de Almacenamiento": [
+              {
+                "nombre": "SSD Samsung 970 EVO Plus",
+                "tipo": "Unidad de Almacenamiento",
+                "capacidad": "1 TB",
+                "interfaz": "NVMe PCIe 3.0 x4",
+                "factor_de_forma": "M.2 2280",
+                "precio": "1000"
+              },
+              {
+                "nombre": "HDD Seagate Barracuda",
+                "tipo": "Unidad de Almacenamiento",
+                "capacidad": "2 TB",
+                "velocidad_de_rotacion": "7200 RPM",
+                "interfaz": "SATA 6 Gb/s",
+                "factor_de_forma": "3.5 pulgadas",
+                "precio": "500"
               }
             ],
             "Procesador": [
@@ -80,62 +102,6 @@ var datoscomponentes = {
                 "frecuencia_base": "3.5 GHz",
                 "frecuencia_maxima": "5.3 GHz",
                 "precio": "600"
-              }
-            ],
-            "Tarjeta RAM": [
-              {
-                "nombre": "Corsair Vengeance RGB Pro",
-                "tipo": "Tarjeta RAM",
-                "capacidad": "32 GB (2 x 16 GB)",
-                "frecuencia": "3600 MHz",
-                "tipo_memoria": "DDR4",
-                "latencia": "CL18",
-                "precio": "250"
-              },
-              {
-                "nombre": "G.Skill Trident Z Neo",
-                "tipo": "Tarjeta RAM",
-                "capacidad": "64 GB (2 x 32 GB)",
-                "frecuencia": "3600 MHz",
-                "tipo_memoria": "DDR4",
-                "latencia": "CL16",
-                "precio": "500"
-              }
-            ],
-            "Tarjeta de Red": [
-              {
-                "nombre": "ASUS PCE-AX58BT",
-                "tipo": "Tarjeta de Red",
-                "velocidad": "2400 Mbps",
-                "banda": "Dual-band",
-                "conectividad": "WiFi 6 y Bluetooth 5.0",
-                "precio": "80"
-              },
-              {
-                "nombre": "TP-Link Archer T9E",
-                "tipo": "Tarjeta de Red",
-                "velocidad": "1300 Mbps",
-                "banda": "Dual-band",
-                "conectividad": "WiFi 5",
-                "precio": "50"
-              }
-            ],
-            "Tarjeta de Sonido": [
-              {
-                "nombre": "Creative Sound Blaster AE-9",
-                "tipo": "Tarjeta de Sonido",
-                "canales": "5.1",
-                "resolucion": "32-bit / 384 kHz",
-                "conectividad": "PCIe",
-                "precio": "300"
-              },
-              {
-                "nombre": "Asus Xonar AE 7.1",
-                "tipo": "Tarjeta de Sonido",
-                "canales": "7.1",
-                "resolucion": "24-bit / 192 kHz",
-                "conectividad": "PCIe",
-                "precio": "200"
               }
             ],
             "Tarjeta Gráfica": [
@@ -176,24 +142,58 @@ var datoscomponentes = {
                 "precio": "100"
               }
             ],
-            "Gabinete": [
+            "Fuente de Poder": [
               {
-
-
-                "nombre": "NZXT H510",
-                "tipo": "Gabinete",
-                "formato": "ATX Mid Tower",
-                "ventiladores_incluidos": "2 x 120 mm",
-                "bahias_unidades": "2 x 3.5\", 2 x 2.5\"",
-                "precio": "100"
+                "nombre": "EVGA SuperNOVA 850 G5",
+                "tipo": "Fuente de Poder",
+                "potencia": "850 W",
+                "certificacion": "80 Plus Gold",
+                "modularidad": "Totalmente modular",
+                "precio": "200"
               },
               {
-                "nombre": "Fractal Design Meshify C",
-                "tipo": "Gabinete",
-                "formato": "ATX Mid Tower",
-                "ventiladores_incluidos": "2 x 120 mm",
-                "bahias_unidades": "2 x 3.5\", 3 x 2.5\"",
-                "precio": "120"
+                "nombre": "Corsair RM850x",
+                "tipo": "Fuente de Poder",
+                "potencia": "850 W",
+                "certificacion": "80 Plus Gold",
+                "modularidad": "Totalmente modular",
+                "precio": "180"
+              }
+            ],
+            "Tarjeta de Red": [
+              {
+                "nombre": "ASUS PCE-AX58BT",
+                "tipo": "Tarjeta de Red",
+                "velocidad": "2400 Mbps",
+                "banda": "Dual-band",
+                "conectividad": "WiFi 6 y Bluetooth 5.0",
+                "precio": "80"
+              },
+              {
+                "nombre": "TP-Link Archer T9E",
+                "tipo": "Tarjeta de Red",
+                "velocidad": "1300 Mbps",
+                "banda": "Dual-band",
+                "conectividad": "WiFi 5",
+                "precio": "50"
+              }
+            ],
+            "Tarjeta de Sonido": [
+              {
+                "nombre": "Creative Sound Blaster AE-9",
+                "tipo": "Tarjeta de Sonido",
+                "canales": "5.1",
+                "resolucion": "32-bit / 384 kHz",
+                "conectividad": "PCIe",
+                "precio": "300"
+              },
+              {
+                "nombre": "Asus Xonar AE 7.1",
+                "tipo": "Tarjeta de Sonido",
+                "canales": "7.1",
+                "resolucion": "24-bit / 192 kHz",
+                "conectividad": "PCIe",
+                "precio": "200"
               }
             ]
           }
@@ -273,45 +273,47 @@ var datoscomponentes = {
         ventana.style.opacity = '0.8';
     }
     
-    function detenerArrastreVentana(e) {
-      const ventana = e.currentTarget;
-      ventana.style.zIndex = '10';
-      ventana.removeEventListener('mousemove', arrastrarVentana);
-      ventana.removeEventListener('mouseup', detenerArrastreVentana);
-      const anclaElimina = document.querySelector('.ancla-elimina');
-      if (estaCercaDelAnclaje(ventana, anclaElimina)) {
-          const categoria = ventana.textContent.split(': ')[0];
-          const index = categoriasAbiertas.indexOf(categoria);
-          if (index !== -1) {
-              categoriasAbiertas.splice(index, 1);
-          }
-          ventana.remove();
-          
-          // Eliminar la ventana del array de ventanasPorCategoria
-          if (ventanaIndex !== -1) {
-              ventanasPorCategoria[categoria].splice(ventanaIndex, 1);
-          }
-          
-          // Verificar si la categoría ya no tiene más ventanas asociadas
-          if (ventanasPorCategoria[categoria].length === 0) {
-              delete ventanasPorCategoria[categoria];
-          }
-          
-          // Mostrar la información actualizada
-          mostrarInfo();
-      } else {
-          anclajes.forEach(anclaje => {
-              actualizarPosicionVentana(ventana, anclaje);
-          });
-          ventana.style.opacity = '1'; // STAN: Añadido para establecer la opacidad a 1 al detenerse
+function detenerArrastreVentana(e) {
+  const ventana = e.currentTarget;
+  ventana.style.zIndex = '10';
+  ventana.removeEventListener('mousemove', arrastrarVentana);
+  ventana.removeEventListener('mouseup', detenerArrastreVentana);
+  const anclaElimina = document.querySelector('.ancla-elimina');
+  if (estaCercaDelAnclaje(ventana, anclaElimina)) {
+      const categoria = ventana.textContent.split(': ')[0];
+      const index = categoriasAbiertas.indexOf(categoria);
+      if (index !== -1) {
+          categoriasAbiertas.splice(index, 1);
       }
-    }
-    
+      ventana.remove();
+      
+      // Eliminar la ventana del array de ventanasPorCategoria
+      if (ventanaIndex !== -1) {
+          ventanasPorCategoria[categoria].splice(ventanaIndex, 1);
+      }
+      
+      // Verificar si la categoría ya no tiene más ventanas asociadas
+      if (ventanasPorCategoria[categoria].length === 0) {
+          delete ventanasPorCategoria[categoria];
+      }
+      
+      // Mostrar la información actualizada
+      mostrarInfo();
+  } else {
+      anclajes.forEach(anclaje => {
+          actualizarPosicionVentana(ventana, anclaje);
+      });
+      ventana.style.opacity = '1';
+      mostrarInfo(); // STAN: Añadido para establecer la opacidad a 1 al detenerse
+  }
+}
+
   
     
     function resetearColoresAnclajes() {
         anclajes.forEach(anclaje => {
-            anclaje.style.backgroundColor = 'rgb(34, 40, 49)'; // Color original
+            anclaje.style.backgroundColor = 'rgb(34, 40, 49)';
+            anclaje.style.borderColor = 'rgb(49, 54, 63)'; // Color original
         });
     }
     
@@ -359,7 +361,7 @@ function crearVentana(componente, categoria) {
   // Crear la ventana en la interfaz (si es necesario)
   const nuevaVentana = document.createElement('div');
   nuevaVentana.classList.add('ventana');
-  const nuevaVentanaId = 'ventana' + (document.querySelectorAll('.ventana').length + 1);
+  const nuevaVentanaId = obtenerIniciales(categoria); // Aquí se llama a la función obtenerIniciales solo con la categoría
   nuevaVentana.setAttribute('id', nuevaVentanaId);
   nuevaVentana.textContent = `${categoria}: ${componente}`;
 
@@ -379,7 +381,6 @@ function crearVentana(componente, categoria) {
 
   mostrarInfo();
 }
-
 
 
 function mostrarInfo() {
@@ -449,6 +450,8 @@ ventanas.forEach(ventana => {
     ventana.addEventListener('mousedown', iniciarArrastreVentana);
 });
 
+// La regla S2814 de SonarQube sugiere cambiar la concatenación de cadenas con el operador "+" en favor de utilizar plantillas de cadenas (template literals) para mejorar la legibilidad y prevenir errores de sintaxis.
+
 function mostrarInfo() {
   const infoDiv = document.querySelector('.info');
   infoDiv.innerHTML = ''; // Limpiar el contenido anterior
@@ -456,32 +459,33 @@ function mostrarInfo() {
   let total = 0;
 
   for (const categoria in ventanasPorCategoria) {
-      const categoriaDiv = document.createElement('div');
-      categoriaDiv.classList.add('cajaComp');
-      categoriaDiv.setAttribute('id', `${obtenerIniciales(categoria)}`);
-      categoriaDiv.innerHTML = `<h2>${categoria}</h2>`;
-      
-      const ventanas = ventanasPorCategoria[categoria];
-      ventanas.forEach(ventana => {
-          const ventanaInfoDiv = document.createElement('div');
-          ventanaInfoDiv.innerHTML = `
-              <div>
-              <p>${ventana.componente}</p>
-              <p>$${ventana.precio}</p>
-              </div>
-          `;
-          categoriaDiv.appendChild(ventanaInfoDiv);
-          total += ventana.precio; // Suma el precio de cada componente al total
-      });
-      
-      infoDiv.appendChild(categoriaDiv);
+    const categoriaDiv = document.createElement('div');
+    categoriaDiv.classList.add('cajaComp');
+    categoriaDiv.setAttribute('id', `${obtenerIniciales(categoria)}`);
+    categoriaDiv.innerHTML = `<h2>${categoria}</h2>`;
+
+    const ventanas = ventanasPorCategoria[categoria];
+    ventanas.forEach(ventana => {
+      const ventanaInfoDiv = document.createElement('div');
+      ventanaInfoDiv.innerHTML = `
+        <div>
+          <p>${ventana.componente}</p>
+          <p>$${ventana.precio}</p>
+        </div>
+      `;
+      categoriaDiv.appendChild(ventanaInfoDiv);
+      total += ventana.precio; // Suma el precio de cada componente al total
+    });
+
+    infoDiv.appendChild(categoriaDiv);
   }
-  
+
   const totalDiv = document.createElement('div');
   totalDiv.classList.add('total');
   totalDiv.textContent = `Total: $${total}`;
   infoDiv.appendChild(totalDiv);
 }
+
 
 
 // Llamar a la función mostrarInfo para inicializar

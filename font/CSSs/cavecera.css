@@ -1,5 +1,6 @@
 :root {
   --color-1: rgb(34, 40, 49);
+  --color-5: rgb(20, 24, 29);
   --color-2: rgb(238, 238, 238);
   --color-3: rgb(118, 171, 174);
   --color-4: rgb(49, 54, 63);
@@ -42,7 +43,7 @@ nav img{
     }
 
     .menu-item:hover {
-        background-color: #eb7201;
+        background-color: var(--color-3);
         pointer-events: painted;
       }
 
@@ -67,7 +68,7 @@ nav img{
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 9999;
-        background-color: #000000;
+        background-color: var(--color-1);
         padding: 20px;
         width: 300px;
       }
@@ -84,13 +85,13 @@ nav img{
         border: none;
       }
       .popup input[type="submit"] {
-          background-color: chocolate;
+          background-color: var(--color-4);
         color: #fff;
         border: none;
         cursor: pointer;
     }
     .popup input[type="submit"]:hover {
-        background-color: #b33300;
+        background-color: var(--color-3);
     }
       a:hover{
         pointer-events: painted;
@@ -104,11 +105,14 @@ nav img{
     }
     .popup input[type="text"],
     .popup input[type="password"]{
-      background: #222222;
-      color: chocolate;
+      background: var(--color-5);
+      color: var(--color-2);
     }
     .imagen {
       width: 300px; /* Ancho fijo del contenedor */
       height: 200px; /* Altura fija del contenedor */
       object-fit: cover; /* La imagen se ajustará manteniendo su relación de aspecto y cubriendo todo el contenedor */
+    }
+    ##pagactupagactu{
+      background-color: var(--color-4);
     }

@@ -35,7 +35,7 @@ body{
 
 
 
-body {
+body{
     overflow: auto;
     margin: 0;
     font-family: sans-serif;
@@ -53,15 +53,15 @@ a{
     z-index: 1000;
 }
 *::-webkit-scrollbar-thumb {
-    background-color: rgb(252, 103, 54); /* Color of the scrollbar thumb */
+    background-color: var(--color-3); /* Color of the scrollbar thumb */
     border-radius: 5px; /* Border radius of the scrollbar thumb */
 }
 *::-webkit-scrollbar-track {
-    background-color: 50; /* Color of the scrollbar track */
- /* Border radius of the scrollbar track */
+    background-color: rgba(var(--color-15),0.9);
+    opacity: 0.1;
 }
 #pagactu{
-  background-color: rgba(128, 128, 128, 0.489);
+  background-color: var(--color-4);
   cursor:default;
 }
 .botom {
@@ -82,7 +82,7 @@ a{
   }
 
   .botom:hover{
-    background-color: #ff8412;
+    background-color: var(--color-3);
     pointer-events: painted;
     color:var(--color-1);
     padding: 60;
@@ -90,15 +90,7 @@ a{
     font-size: xx-large;
   }
 
-  .pie{
-    background-color:rgb(0, 0, 0);
-    color: #ffffff;
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-    text-align: center;
-    height: 20vh;
-  }
+
 
 hr{
     height: 80px;

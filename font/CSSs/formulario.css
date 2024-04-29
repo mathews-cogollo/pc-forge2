@@ -51,7 +51,7 @@
 }
 
 #juego{
-    background-color: chocolate;
+    background-color: var(--color-3);
     padding: 10px;
 }
     body {
@@ -86,7 +86,7 @@
         bottom: 100px;
         right: 20px;
         background-color: #000000;
-        border: 1px solid chocolate;
+        border: 1px solid var(--color-3);
         border-radius: 5px;
         padding: 10px;
         z-index: 999;
@@ -95,18 +95,18 @@
     input {
         background: #222222;
         border: none;
-        color: chocolate;
+        color: var(--color-3);
     }
     input[type="range"] {
         /* Estilos del riel */
-        background-color: chocolate; /* Cambia este valor al color que desees */
+        background-color: var(--color-3); /* Cambia este valor al color que desees */
         height: 5px; /* Alto del riel */
         border-radius: 5px; /* Bordes redondeados */
       }
     select{
         background: #222222;
         border: none;
-        color: chocolate;
+        color: var(--color-3);
     }
     #popup textarea {
         width: 200px;
@@ -118,7 +118,7 @@
     #popup button {
         background-color: #000000;
         border-style: solid;
-        border-color: chocolate;
+        border-color: var(--color-3);
         color: #fff;
         padding: 5px 10px;
         border-radius: 3px;
@@ -126,7 +126,7 @@
     }
 
     #popup button:hover {
-        background-color: chocolate;
+        background-color: var(--color-3);
     }
 
     /* Agregado para rotar el botón cuando se muestra el popup */
