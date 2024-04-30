@@ -107,9 +107,30 @@
                         lemaElemento.innerText = lemas[indiceAleatorio];
                     </script>
                 </div>
-                <a href="camino.html" class="botom">
-                empezar
-                </a>
+
+                <div class="botom" id="miCamino" onclick="mostrarCamino()">inicar forjado</div>
+
+                <div id="miCaminoContent" class="camino">
+                  <div class="camino-contenido">
+                    <div>
+                   <a href="formilario.html">no tengo experiencia <br>armando computadores</a>
+                </div>
+                <div>
+                   <a  href="ventanas.html">tengo experiencia <br> armando computaores </a>
+                </div>
+                    <span class="cerrar-camino" onclick="cerrarCamino()">X</span>
+                  </div>
+                </div>
+<script>
+function mostrarCamino() {
+    document.getElementById("miCaminoContent").style.display = "block";
+  }
+  
+  function cerrarCamino() {
+    document.getElementById("miCaminoContent").style.display = "none";
+  }
+  </script>
+
                 <div class="news">
                     <div id="news-container" class="news-container">
                         <!-- Aquí se cargarán las noticias -->
