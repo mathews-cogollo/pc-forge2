@@ -159,42 +159,6 @@ var datoscomponentes = {
                 "modularidad": "Totalmente modular",
                 "precio": "180"
               }
-            ],
-            "Tarjeta de Red": [
-              {
-                "nombre": "ASUS PCE-AX58BT",
-                "tipo": "Tarjeta de Red",
-                "velocidad": "2400 Mbps",
-                "banda": "Dual-band",
-                "conectividad": "WiFi 6 y Bluetooth 5.0",
-                "precio": "80"
-              },
-              {
-                "nombre": "TP-Link Archer T9E",
-                "tipo": "Tarjeta de Red",
-                "velocidad": "1300 Mbps",
-                "banda": "Dual-band",
-                "conectividad": "WiFi 5",
-                "precio": "50"
-              }
-            ],
-            "Tarjeta de Sonido": [
-              {
-                "nombre": "Creative Sound Blaster AE-9",
-                "tipo": "Tarjeta de Sonido",
-                "canales": "5.1",
-                "resolucion": "32-bit / 384 kHz",
-                "conectividad": "PCIe",
-                "precio": "300"
-              },
-              {
-                "nombre": "Asus Xonar AE 7.1",
-                "tipo": "Tarjeta de Sonido",
-                "canales": "7.1",
-                "resolucion": "24-bit / 192 kHz",
-                "conectividad": "PCIe",
-                "precio": "200"
-              }
             ]
           }
     ]}
