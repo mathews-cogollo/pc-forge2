@@ -1,5 +1,6 @@
 :root {
   --color-1: rgb(34, 40, 49);
+  --color-15: 34, 40, 49;
   --color-2: rgb(238, 238, 238);
   --color-3: rgb(118, 171, 174);
   --color-4: rgb(49, 54, 63);
@@ -25,11 +26,10 @@
     top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #000000; /* Cambia el color de fondo del botón según tu diseño */
+    background-color: var(--color-1); /* Cambia el color de fondo del botón según tu diseño */
     padding: 4vh 5vw; /* Ajusta el padding según sea necesario */
-    color: #000000; /* Cambia el color del texto del botón según tu diseño */
+    color: var(--color-2); /* Cambia el color del texto del botón según tu diseño */
     text-decoration: none; /* Elimina el subrayado del texto */
-    color: chocolate;
 }
 a{
   border-radius: 5px;
@@ -54,33 +54,33 @@ a{
   height: 100%;
   max-height: fit-content;
   margin: 2em auto;
-  overflow-x: auto;
+
   color: var(--color-2);
 }
 .news img{
-  width: 20vw;
+  width: 10vw;
   filter: blur(0px)
 }
 
 .news-container {
-  text-align: center;
-  display: grid; /* Cambiado a grid para colocar los elementos */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas flexibles que se ajustan al tamaño del contenedor */
-  grid-gap: 20px; /* Espacio entre las noticias */
-  width: 100%;
-  max-height: fit-content;
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-  overflow-x: auto; /* Agrega un scroll horizontal si el contenido excede el ancho del contenedor */
+  display: flex; 
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin: 0 auto;
   padding-top: 15px;
   padding-bottom: 15px;
-  overflow-x: hidden;
+
+}
+.news-container > div {
+  flex: 0 0 auto;
+  padding: 10px;
 }
 
 .newsInfo {
   padding: 10px;
-  background-color: rgba(48, 48, 48, 0.8);
+  background-color: rgba(var(--color-15),0.5);
   width: 23vw; 
-  height: fit-content;
+  height: ;
   margin: 0 auto;
   overflow-x: auto;
   color: var(--color-2);
@@ -99,7 +99,6 @@ a{
 }
 
 .planos{
-  background-color: rgb(0, 0, 0, 0.8);
   height: 100%;
   max-height: fit-content;
   margin: 2em auto;
@@ -107,21 +106,18 @@ a{
   color: var(--color-2);
 }
 .planos img{
-  width: 20vw;
+  width: 5vw;
+  height: 5vh;
   filter: blur(0px)
 }
 
 .planos-container {
-
-  text-align: center;
-  display: grid; /* Cambiado a grid para colocar los elementos */
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Columnas flexibles que se ajustan al tamaño del contenedor */
-  grid-gap: 33px; /* Espacio entre las noticias */
-  width: 100%;
-  max-height: fit-content;
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-  overflow-x: auto; /* Agrega un scroll horizontal si el contenido excede el ancho del contenedor */
-
+  display: flex; 
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin: 0 auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .planos-container > div {
@@ -130,14 +126,16 @@ a{
 
 .planosInfo {
   padding: 10px;
-  background-color: rgb(48, 48, 48, 0.6);
+  background-color: rgba(var(--color-15),0.5);  
   width: 33vw; 
   height: fit-content;
   margin: 0 auto;
   overflow-x: auto;
   color: var(--color-2);
   text-align: center;
-  font-size: 1.2em;}
+  font-size: 1.2em;
+  padding: 2vh;
+}
 
 .planosText {
   text-align: justify;
@@ -146,6 +144,81 @@ a{
 .fecha{
   font-size: x-small;
   text-align: right;
+}
+.pie{
+  background-color:var(--color-1);
+  color:var(--color-2);
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  text-align: center;
+  height: 20vh;  
+  justify-content: space-between;
+  overflow: hidden;
+}
+.g{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 0 5px -3px rgba(255, 255, 255, 0.5), -5px 0 5px -3px rgba(255, 255, 255, 0.5);
+  width: 33%;
+  padding: 30px;
+}
+
+.gg{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  padding: 30px;
+}
+.pie p{
+  font-size: small;
+  text-align: justify;
+}
+.popup-planos {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1{
+  font-size: small;
+}
+p{
+  font-size: x-small;
 }
 
 .camino {
