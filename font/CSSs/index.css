@@ -147,3 +147,28 @@ a{
   font-size: x-small;
   text-align: right;
 }
+
+.camino {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+  z-index: 1000;
+  background-color: #000000;
+  color:rgba(226, 110, 0, 0.951);
+}
+
+.camino-contenido {
+background-color: #000000;
+}
+
+.cerrar-camino {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
