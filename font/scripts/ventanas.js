@@ -208,7 +208,7 @@ var datoscomponentes = {
       } else {
           // Si no hay ventana anclada, volver al color original del anclaje y su borde
           anclaje.style.backgroundColor = 'rgb(34, 40, 49)';
-          anclaje.style.borderColor = 'rgb(49, 54, 63)';
+          //anclaje.style.borderColor = 'rgb(49, 54, 63)';
       }
   }
   
@@ -277,7 +277,7 @@ function detenerArrastreVentana(e) {
     function resetearColoresAnclajes() {
         anclajes.forEach(anclaje => {
             anclaje.style.backgroundColor = 'rgb(34, 40, 49)';
-            anclaje.style.borderColor = 'rgb(49, 54, 63)'; // Color original
+            //anclaje.style.borderColor = 'rgb(49, 54, 63)'; // Color original
         });
     }
     
@@ -307,8 +307,6 @@ const ventanasPorCategoria = {
   "Fuente de Poder": [],
   "Procesador": [],
   "Tarjeta RAM": [],
-  "Tarjeta de Red": [],
-  "Tarjeta de Sonido": [],
   "Tarjeta Gráfica": [],
   "Unidad de Enfriamiento": [],
   "Gabinete": []
