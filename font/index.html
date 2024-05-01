@@ -71,52 +71,61 @@
         }
     </script>
 
-            <div class="imagen_con_boton">
-                <img src="recursos/fondo_inicio.jpg" style="filter:opacity(0);width: 80vw;" alt="fondo_inicio">
-                <div class="lema">
-                    <h2 id="textoLema">d</h2>
-                    
-                    <script>
-                        // Lista de lemas
-                        var lemas = [
-                            "Potencia y rendimiento, juntos en cada PC.",
-                            "Innovación personalizada para tu experiencia digital.",
-                            "Forjando la excelencia, una PC a la vez.",
-                            "Tu visión tecnológica, nuestra pasión por la perfección.",
-                            "Construyendo conexiones, impulsando el futuro.",
-                            "Calidad que se ve, rendimiento que se siente: PC Forge.",
-                            "Cada clic, cada comando, una PC diseñada para ti.",
-                            "Explora, crea, domina: con PC Forge, el poder es tuyo.",
-                            "La evolución de la informática, ensamblada para ti.",
-                            "Diseño sin fronteras, rendimiento sin límites."
-                        ];
 
-                        // Obtener un índice aleatorio
-                        var indiceAleatorio = Math.floor(Math.random() * lemas.length);
+<div class="inicio">
+    <div id="der">
+    </div>
+    <div id="centro" >
+        <div class="lema">
+            <h2 id="textoLema">d</h2>
+            
+            <script>
+                // Lista de lemas
+                var lemas = [
+                    "Potencia y rendimiento, juntos en cada PC.",
+                    "Innovación personalizada para tu experiencia digital.",
+                    "Forjando la excelencia, una PC a la vez.",
+                    "Tu visión tecnológica, nuestra pasión por la perfección.",
+                    "Construyendo conexiones, impulsando el futuro.",
+                    "Calidad que se ve, rendimiento que se siente: PC Forge.",
+                    "Cada clic, cada comando, una PC diseñada para ti.",
+                    "Explora, crea, domina: con PC Forge, el poder es tuyo.",
+                    "La evolución de la informática, ensamblada para ti.",
+                    "Diseño sin fronteras, rendimiento sin límites."
+                ];
 
-                        // Obtener el elemento donde se mostrará el lema
-                        var lemaElemento = document.getElementById('textoLema');
+                // Obtener un índice aleatorio
+                var indiceAleatorio = Math.floor(Math.random() * lemas.length);
 
-                        // Mostrar el lema aleatorio en el elemento
-                        lemaElemento.innerText = lemas[indiceAleatorio];
-                    </script>
-                </div>
+                // Obtener el elemento donde se mostrará el lema
+                var lemaElemento = document.getElementById('textoLema');
 
-                <div class="botom" id="miCamino" onclick="mostrarCamino()">inicar forjado</div>
+                // Mostrar el lema aleatorio en el elemento
+                lemaElemento.innerText = lemas[indiceAleatorio];
+            </script>
+        </div>
+        <center>
+            <div class="botom" role="button" id="miCamino" onclick="mostrarCamino()">inicar forjado</div>
+        </center>
 
-                <div id="miCaminoContent" class="camino">
-                <p>para poder iniciar el ensanblaje de su equipo necesitamos conocer cuanta experiencia posee </p>
-                  <div class="camino-contenido">
-                    <div class="botom1">
-                   <a href="formilario.html">no tengo experiencia <br>armando computadores</a>
-                </div>
-                <div class="botom2">
-                   <a  href="ventanas.html">tengo experiencia <br> armando computaores </a>
-                </div>
-                    <span class="cerrar-camino" onclick="cerrarCamino()">+</span>
-                  </div>
-                </div>
+        <div id="miCaminoContent" class="camino">
+        <p>para poder iniciar el ensanblaje de su equipo necesitamos conocer cuanta experiencia posee </p>
+          <div class="camino-contenido">
+            <div class="botom1">
+           <a href="formilario.html">no tengo experiencia <br>armando computadores</a>
+        </div>
+        <div class="botom2">
+           <a  href="ventanas.html">tengo experiencia <br> armando computaores </a>
+        </div>
+            <span class="cerrar-camino" onclick="cerrarCamino()">+</span>
+          </div>
+        </div>
+
+    </div>
+    <div id="izq">
+    </div>
 </div>
+              
 <script> 
 
 function mostrarCamino() {
@@ -128,7 +137,7 @@ function mostrarCamino() {
   }
   </script>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>      
+<br>
  <div class="InfoRECU">
 <div class="imgtex">
     <br><br><br><br>

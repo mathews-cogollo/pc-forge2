@@ -219,17 +219,35 @@ display:flex;
 
 
 .miCaminoContent{
-  display: flex;
+  display: flex;  
 }
+
 .imagenesdesc{
   max-width: 1000px; 
     max-height: 2000px;
 }
-#rotar{
+.inicio{
+  display: grid;
+  width: 100vw;
+  height: 90vh;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#der{
+  background-color: aqua;
+  grid-column: 1;
+}
+#izq{
+  background-color: greenyellow;
+  grid-column: 4;
+}
+#centro{
+  background-color: red;
+  grid-column: 2/4;
   display: flex;
-  width: 100px; 
-   height: 100px;
-   border:15px;
-   border-color: lawngreen;
-   justify-items: left;
+  flex-direction: column-reverse;
+  align-items: center;
 }
