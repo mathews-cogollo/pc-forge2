@@ -23,14 +23,16 @@
 
 </head>
 <body>
-        <header>
+    
+    <header>
         <nav>
             <a href="index.html">
                 <img src="recursos/logo_Pn.png" alt="logo_texto" style="width: 80px;">
                 <img src="recursos/logo_texto.png" alt="logo_texto" style="width: 200px;">
             </a>
             <div class="menu-barra">
-                <a href="index.html" id="pagactu" class="menu-item">Inicio</a>
+                <a href="index.html" class="menu-item">Inicio</a>
+                <a href="#" class="menu-item">Nosotros</a>
                 <a href="ventanas.html" class="menu-item">Armado</a>
                 <button class="menu-item" onClick="mostrarPopup('popup-registro')">Registro</button>
                 <button class="menu-item" onClick="mostrarPopup('popup-login')">Iniciar Sesión</button>
@@ -72,18 +74,41 @@
 
 
         <div class="contenido_1">
-            <div class="imagen_con_boton">  
-
+            <div class="imagen_con_boton">
+                <img src="recursos/fondo_inicio.jpg" style="filter:opacity(0);width: 80vw;" alt="fondo_inicio">
                 <div class="lema">
-                    <h2 id="textoLema"></h2>
+                    <h2 id="textoLema">d</h2>
+                    <script>
+                        // Lista de lemas
+                        var lemas = [
+                            "Potencia y rendimiento, juntos en cada PC.",
+                            "Innovación personalizada para tu experiencia digital.",
+                            "Forjando la excelencia, una PC a la vez.",
+                            "Tu visión tecnológica, nuestra pasión por la perfección.",
+                            "Construyendo conexiones, impulsando el futuro.",
+                            "Calidad que se ve, rendimiento que se siente: PC Forge.",
+                            "Cada clic, cada comando, una PC diseñada para ti.",
+                            "Explora, crea, domina: con PC Forge, el poder es tuyo.",
+                            "La evolución de la informática, ensamblada para ti.",
+                            "Diseño sin fronteras, rendimiento sin límites."
+                        ];
+
+                        // Obtener un índice aleatorio
+                        var indiceAleatorio = Math.floor(Math.random() * lemas.length);
+
+                        // Obtener el elemento donde se mostrará el lema
+                        var lemaElemento = document.getElementById('textoLema');
+
+                        // Mostrar el lema aleatorio en el elemento
+                        lemaElemento.innerText = lemas[indiceAleatorio];
+                    </script>
                 </div>
 
                 <div class="botom" id="miCamino" onclick="mostrarCamino()">inicar forjado</div>
 
                 <div id="miCaminoContent" class="camino">
-                    <center>
                 <p>para poder iniciar el ensanblaje de su equipo necesitamos conocer cuanta experiencia posee </p>
-                <div class="camino-contenido">
+                  <div class="camino-contenido">
                     <div class="botom1">
                    <a href="formilario.html">no tengo experiencia <br>armando computadores</a>
                 </div>
@@ -91,11 +116,11 @@
                    <a  href="ventanas.html">tengo experiencia <br> armando computaores </a>
                 </div>
                     <span class="cerrar-camino" onclick="cerrarCamino()">+</span>
-                  </div></center>
+                  </div>
                 </div>
 <script>
 function mostrarCamino() {
-    document.getElementById("miCaminoContent").style.display = "flex";
+    document.getElementById("miCaminoContent").style.display = "block";
   }
   
   function cerrarCamino() {
@@ -105,18 +130,42 @@ function mostrarCamino() {
 
                 <div class="news">
                     <div id="news-container" class="news-container">
-                        <!-- Aquí se cargarán las noticias -->
+                        
                     </div>
                 </div>
                 <br>
-                <div class="planos">
-                    <div id="planos-container" class="planos-container">
-                        <!-- Aquí se cargarán las noticias -->
-                    </div>
-                </div>
+              
             </div>
 
+            
 
+ <div class="InfoRECU">
+<div class="imgtex">
+    <h1 class="textoexp">La Forja</h1>
+    <P class="textoexp">Este es el principal espacio de trabajo que tenemos en pcforge, <br> aqui podras diseñar la pc de tus sueños <br>escogiendo entre una gran variedad de componentes 
+    </P>
+</div>
+<div class="imgtex">
+    <img src="recursos/Imagen de WhatsApp 2024-03-16 a las 23.20.12_3a5bc53b.png" alt="">
+</div>
+ </div>
+
+ 
+ <div class="InfoRECU">
+ <div></div>
+ <div></div>
+ </div>
+    
+
+     
+ <div class="InfoRECU">
+ <div></div>
+ <div></div>
+ </div>
+        
+        
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     </div>
     <div class="pie">
@@ -133,6 +182,5 @@ function mostrarCamino() {
             <p>Al utilizar este sitio web, aceptas cumplir con nuestros términos y condiciones. Por favor, lee detenidamente los términos y condiciones antes de continuar navegando por el sitio.</p>
         </div>
       </div>
-      <script src="./scripts/index.js"></script>
 </body>
 </html>
