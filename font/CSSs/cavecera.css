@@ -113,6 +113,6 @@ nav img{
       height: 200px; /* Altura fija del contenedor */
       object-fit: cover; /* La imagen se ajustará manteniendo su relación de aspecto y cubriendo todo el contenedor */
     }
-    ##pagactupagactu{
+    #pagactu{
       background-color: var(--color-4);
     }
