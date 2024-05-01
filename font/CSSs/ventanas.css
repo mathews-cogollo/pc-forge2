@@ -215,3 +215,15 @@ box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     z-index: -1;
     height: 100%;
 }
+  
+.ventana img {
+    pointer-events: none;
+    position: relative;
+    height: 100%;
+    object-fit: cover;
+    right: 40%;
+
+
+    mix-blend-mode:color-dodge ;
+}
+  
