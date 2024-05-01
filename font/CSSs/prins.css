@@ -9,7 +9,7 @@ body{
   z-index: -999;
 }
 body {
-  background: linear-gradient(to bottom,  var(--color-4), var(--color-3));
+  background: linear-gradient(to bottom,  var(--color-4),var(--color-4), var(--color-1));
 }
 .fondo {
   position: fixed;

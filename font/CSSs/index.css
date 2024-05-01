@@ -200,13 +200,36 @@ background-color: #000000;
   margin-left: auto; 
 margin-right: auto; 
 text-align: center; 
+display:flex;
 }
 .imgtex{
   display: inline-block;
     vertical-align: top;
-    
+  filter: blur(0);
+   
 }
  .textoexp{
   font-size: 35px;
-  text-align: right;
+  text-align: left;
+  color:var(--color-2); ;
+  max-width: 1000px; 
+    max-height: 1500px;
+    overflow: hidden;
+}
+
+
+.miCaminoContent{
+  display: flex;
+}
+.imagenesdesc{
+  max-width: 1000px; 
+    max-height: 2000px;
+}
+#rotar{
+  display: flex;
+  width: 100px; 
+   height: 100px;
+   border:15px;
+   border-color: lawngreen;
+   justify-items: left;
 }
