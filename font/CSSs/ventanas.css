@@ -77,7 +77,11 @@ user-select: none; /* Standard */
 padding: 3px;
 opacity: 1;
 box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+background-size:contain ; /* Ajusta la imagen para cubrir todo el div */
+background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+background-position: center;
 }
+
 
 
 .anclaje {
@@ -203,4 +207,11 @@ margin: 5px;
 .otog{
 width: 100%;
 box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.fondarm{
+    position: relative;
+    top: -90%;
+    z-index: -1;
+    height: 100%;
 }
