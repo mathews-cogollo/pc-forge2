@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="CSSs/prins.css">
+        <link rel="stylesheet" href="CSSs/cavecera.css">
+        <link rel="stylesheet" href="CSSs/index.css">
+        <script async src="scripts/CargarNoticias.js"></script>
+        <script async src="scripts/Cargarplanos.js"></script>
+        <script>
+                    function cargarContenido() {
+                cargarNoticias();
+                cargarDatosplano();
+            }
+            window.onload = function() {
+                cargarContenido();
+            };
+        </script>
+
+</head>
+<body>
+    <div id="videoDiv">
+        
+      </div>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img src="recursos/logo_Pn.png" alt="logo_texto" style="width: 80px;">
+                <img src="recursos/logo_texto.png" alt="logo_texto" style="width: 200px;">
+            </a>
+            <div class="menu-barra">
+                <a href="index.html" class="menu-item">Inicio</a>
+                <a href="#" class="menu-item">Nosotros</a>
+                <a href="ventanas.html" class="menu-item">Armado</a>
+                <button class="menu-item" onClick="mostrarPopup('popup-registro')">Registro</button>
+                <button class="menu-item" onClick="mostrarPopup('popup-login')">Iniciar Sesión</button>
+                
+        </nav>
+    </header>
+    
+    <div id="popup-login" class="popup">
+        <h2>Iniciar Sesión</h2>
+        <div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-login')">&times;</div>
+        <form action="#" method="post" class="formulario-login">
+            <input type="text" name="usuario" placeholder="Usuario">
+            <input type="password" name="contraseña" placeholder="Contraseña">
+            <input type="submit" value="Iniciar Sesión">
+        </form>
+    </div>
+    
+    <div id="popup-registro" class="popup">
+        <h2>Registro</h2>
+        <div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-registro' )">&times;</div>
+        <form action="#" method="post" class="formulario-registro">
+            <input type="text" name="nombre" placeholder="Nombre">
+            <input type="text" name="apellido" placeholder="Apellido">
+            <input type="text" name="correo" placeholder="Correo Electrónico">
+            <input type="password" name="contraseña" placeholder="Contraseña">
+            <input type="submit" value="Registrarse">
+        </form>
+    </div>
+    <script>
+            function mostrarPopup(idPopup) {
+            var popup = document.getElementById(idPopup);
+            popup.style.display = "block";
+        }
+        function ocultarPopup(idPopup) {
+            var popup = document.getElementById(idPopup);
+            popup.style.display = "none";
+        }
+    </script>
