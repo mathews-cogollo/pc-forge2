@@ -245,3 +245,22 @@ background-color: #000000;
   right: 10px;
   cursor: pointer;
 }
+.cerrar-camino{
+  transform: rotate(45deg);
+}
+
+.InfoRECU{
+  width: 100%;
+  margin-left: auto; 
+margin-right: auto; 
+text-align: center; 
+}
+.imgtex{
+  display: inline-block;
+    vertical-align: top;
+    
+}
+ .textoexp{
+  font-size: 35px;
+  text-align: right;
+ }

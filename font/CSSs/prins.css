@@ -8,7 +8,9 @@ body{
   background: linear-gradient(to bottom, rgb(12, 45, 87)), rgb(239, 236, 236);
   z-index: -999;
 }
-
+body {
+  background: linear-gradient(to bottom,  var(--color-4), var(--color-3));
+}
 .fondo {
   position: fixed;
   z-index: -1;
