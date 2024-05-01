@@ -1,10 +1,11 @@
 :root {
---color-1: rgb(34, 40, 49);
---color-2: rgb(238, 238, 238);
---color-3: rgb(118, 171, 174);
+--color-1: rgb(254, 250, 246);
+--color-2: rgb(16, 44, 87);
+--color-3: rgb(218, 192, 163);
 --color-13: rgba(118, 171, 174,0.5);
---color-4: rgb(49, 54, 63);
+--color-4: rgb(218, 192, 163);
 }
+
 body {
 margin: 0;
 padding: 0;
@@ -76,7 +77,11 @@ user-select: none; /* Standard */
 padding: 3px;
 opacity: 1;
 box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+background-size:contain ; /* Ajusta la imagen para cubrir todo el div */
+background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+background-position: center;
 }
+
 
 
 .anclaje {
@@ -202,4 +207,11 @@ margin: 5px;
 .otog{
 width: 100%;
 box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.fondarm{
+    position: relative;
+    top: -90%;
+    z-index: -1;
+    height: 100%;
 }

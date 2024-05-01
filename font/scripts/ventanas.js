@@ -311,7 +311,28 @@ const ventanasPorCategoria = {
   "Unidad de Enfriamiento": [],
   "Gabinete": []
 };
+const imagenesPorCategoria = {
+  "Gabinete": "url('recursos/gabinete.png')",
+  "Placa Base": "url('recursos/placa_base.png')",
+  "Tarjeta RAM": "url('recursos/tarjeta_ram.png')",
+  "Unidad de Almacenamiento": "url('recursos/unidad_almacenamiento.png')",
+  "Procesador": "url('recursos/procesador.png')",
+  "Tarjeta Gráfica": "url('recursos/tarjeta_grafica.png')",
+  "Unidad de Enfriamiento": "url('recursos/unidad_enfriamiento.png')",
+  "Fuente de Poder": "url('recursos/fuente_poder.png')"
+};
 
+const filtroColorPorMarca = {
+  "NZXT": "hue-rotate(90deg)",
+  "Fractal Design": "hue-rotate(180deg)",
+  "Corsair": "hue-rotate(270deg)",
+  "EVGA": "hue-rotate(45deg)",
+  "GIGABYTE": "hue-rotate(135deg)",
+  "ASUS": "hue-rotate(225deg)",
+  "Intel": "hue-rotate(315deg)",
+  "AMD": "hue-rotate(90deg)",
+  // Puedes agregar más marcas y filtros de color según sea necesario
+};
 function crearVentana(componente, categoria) {
   // Obtener los datos del componente seleccionado
   const componentes = datoscomponentes.componentes[0][categoria];
@@ -326,6 +347,16 @@ function crearVentana(componente, categoria) {
   const nuevaVentanaId = obtenerIniciales(categoria); // Aquí se llama a la función obtenerIniciales solo con la categoría
   nuevaVentana.setAttribute('id', nuevaVentanaId);
   nuevaVentana.textContent = `${categoria}: ${componente}`;
+  
+  // Agregar imagen de acuerdo a la categoría
+  if (imagenesPorCategoria[categoria]) {
+    nuevaVentana.style.backgroundImage = imagenesPorCategoria[categoria];
+  }
+
+  // Agregar filtro de color de acuerdo a la marca del componente
+  if (filtroColorPorMarca[datosComponente.marca]) {
+    nuevaVentana.style.filter = filtroColorPorMarca[datosComponente.marca];
+  }
 
   const contenedorVentanas = document.querySelector('.ventanas');
   contenedorVentanas.insertBefore(nuevaVentana, contenedorVentanas.firstChild); // Inserta la nueva ventana antes de la primera ventana existente
@@ -338,7 +369,8 @@ function crearVentana(componente, categoria) {
   // Agregar el nuevo componente al array correspondiente con el precio convertido
   ventanasPorCategoria[categoria].push({
       componente: componente,
-      precio: precioNumero
+      precio: precioNumero,
+      marca: datosComponente.marca // Guardar la marca del componente para el filtro de color
   });
 
   mostrarInfo();
