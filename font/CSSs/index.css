@@ -41,6 +41,7 @@ a{
   text-align: justify;
   word-wrap: break-word;
   text-align: center;
+  z-index: 500;
 }
 .news{
   background-color: rgba(0, 0, 0, 0.6);
@@ -206,6 +207,8 @@ display:flex;
   display: inline-block;
     vertical-align: top;
   filter: blur(0);
+padding-left:20px;
+padding: 20px;
    
 }
  .textoexp{
@@ -245,9 +248,32 @@ display:flex;
   grid-column: 4;
 }
 #centro{
-  background-color: red;
+ 
   grid-column: 2/4;
   display: flex;
   flex-direction: column-reverse;
+  align-items: center;
+}
+.imagenes-carrusel {
+   /* Ajustar al ancho del contenedor */
+  height: 100%; /* Ajustar a la altura deseada */
+  overflow: hidden; /* Ocultar partes de las imágenes que se desborden */
+  position: relative; /* Permitir el posicionamiento absoluto de las imágenes */
+}
+
+.carrusel {
+ /* Ajustar al ancho del contenedor */
+  height: 100%; /* Ajustar la altura automáticamente */
+  position: absolute; /* Posicionar las imágenes encima unas de otras */
+  top: 0;
+  left: 0;
+  opacity: 0; /* Inicialmente ocultar todas las imágenes */
+  transition: opacity 1s ease-in-out; /* Animar la opacidad */
+}
+
+.carrusel.mostrar {
+  opacity: 1; /* Mostrar la imagen actual */
+}
+#der,#izq{
   align-items: center;
 }
