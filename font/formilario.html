@@ -7,123 +7,13 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="CSSs/prins.css">
-<link rel="stylesheet" href="CSSs/cavecera.css">
-<link rel="stylesheet" href="CSSs/index.css">
 <link rel="stylesheet" href="CSSs/formulario.css">
 
 </head>
 
 
-<body>   
-    <div id="videoDiv">
-        <video id="videoPlayer" class="fondo" width="100%" height="100%" autoplay loop>
-          <source src="recursos/Fondo Tecnológico HD (1080p_30fps_H264-128kbit_AAC).mp4" type="video/mp4">
-          Tu navegador no soporta video HTML5.
-        </video>
-      </div>
-      
-      <script>
-        var video = document.getElementById("videoPlayer");
-        video.onended = function() {
-          video.currentTime = 0;
-          video.play();
-        };
-      </script>
-    <div id="circular-button" role="button" tabindex="0" onclick="togglePopup()">+</div>
-    <div id="popup">
-        <textarea placeholder="Escribe aquí..." id="message"></textarea>
-        <button onclick="sendMessage()">Enviar</button>
-    </div>
+<body>
 
-    <script>
-        function togglePopup() {
-            var popup = document.getElementById("popup");
-            if (popup.style.display === "none") {
-                popup.style.display = "block";
-            } else {
-                popup.style.display = "none";
-            }
-        }
-
-        function sendMessage() {
-            var message = document.getElementById("message").value;
-            // Aquí puedes agregar la lógica para enviar el mensaje, como una llamada AJAX o similar
-            console.log("Mensaje enviado:", message);
-            // Limpia el textarea después de enviar el mensaje
-            document.getElementById("message").value = "";
-            // Cierra el popup
-            document.getElementById("popup").style.display = "none";
-        }
-    </script>
-    <header>
-        <nav>
-            <a href="index.html">
-                <img src="recursos/logo_Pn.png" alt="logo_texto" style="width: 80px;">
-                <img src="recursos/logo_texto.png" alt="logo_texto" style="width: 200px;">
-            </a>
-            <div class="menu-barra">
-                <a href="index.html" class="menu-item">Inicio</a>
-                <a href="#" class="menu-item">Nosotros</a>
-                <a href="camino.html" class="menu-item">Armado</a>
-                <button class="menu-item" onClick="mostrarPopup('popup-registro')">Registro</button>
-                <button class="menu-item" onClick="mostrarPopup('popup-login')">Iniciar Sesión</button>
-                
-        </nav>
-    </header>
-    
-    <div id="popup-login" class="popup">
-        <h2>Iniciar Sesión</h2>
-        <div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-login')">&times;</div>
-        <form action="#" method="post" class="formulario-login">
-            <input type="text" name="usuario" placeholder="Usuario">
-            <input type="password" name="contraseña" placeholder="Contraseña">
-            <input type="submit" value="Iniciar Sesión">
-        </form>
-    </div>
-    
-    <div id="popup-registro" class="popup">
-        <h2>Registro</h2>
-        <div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-registro' )">&times;</div>
-        <form action="#" method="post" class="formulario-registro">
-            <input type="text" name="nombre" placeholder="Nombre">
-            <input type="text" name="apellido" placeholder="Apellido">
-            <input type="text" name="correo" placeholder="Correo Electrónico">
-            <input type="password" name="contraseña" placeholder="Contraseña">
-            <input type="submit" value="Registrarse">
-        </form>
-    </div>
-    <script>
-        function togglePopup() {
-            var popup = document.getElementById("popup");
-            var button = document.getElementById("circular-button");
-            if (popup.style.display === "none") {
-                popup.style.display = "block";
-                // Bloquear el scroll del body cuando el popup esté abierto
-
-                // Agregar la clase de rotación al botón
-                button.classList.add("rotate");
-            } else {
-                popup.style.display = "none";
-                // Habilitar el scroll del body cuando el popup esté cerrado
-
-                // Eliminar la clase de rotación del botón
-                button.classList.remove("rotate");
-            }
-        }
-
-        function sendMessage() {
-            var message = document.getElementById("message").value;
-            // Aquí puedes agregar la lógica para enviar el mensaje, como una llamada AJAX o similar
-            console.log("Mensaje enviado:", message);
-            // Limpia el textarea después de enviar el mensaje
-            document.getElementById("message").value = "";
-            // Cierra el popup
-            document.getElementById("popup").style.display = "none";
-     
-            // Eliminar la clase de rotación del botón
-            document.getElementById("circular-button").classList.remove("rotate");
-        }
-    </script>
 
     <h1>Formulario para conocer necesidades de PC</h1>
     <form action="#" method="POST">

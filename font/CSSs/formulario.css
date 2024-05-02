@@ -60,38 +60,8 @@
         position: relative;
     }
 
-    #circular-button {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 60px;
-        height: 60px;
-        background-color: #000000;
-        color: #fff;
-        border-radius: 50%;
-        text-align: center;
-        line-height: 60px;
-        cursor: pointer;
-        z-index: 999;
-        transition: transform 0.5s, font-size 0.3s; /* Agregado para animar la rotación */
-    }
 
-    #circular-button:hover {
-        background-color: #0056b3;
-    }
 
-    #popup {
-        display: none;
-        position: fixed;
-        bottom: 100px;
-        right: 20px;
-        background-color: #000000;
-        border: 1px solid var(--color-3);
-        border-radius: 5px;
-        padding: 10px;
-        z-index: 999;
-        overflow: auto; /* Agregado para permitir el desplazamiento */
-    }
     input {
         background: #222222;
         border: none;
@@ -107,32 +77,6 @@
         background: #222222;
         border: none;
         color: var(--color-3);
-    }
-    #popup textarea {
-        width: 200px;
-        height: 100px;
-        resize: none;
-        margin-bottom: 10px;
-    }
-
-    #popup button {
-        background-color: #000000;
-        border-style: solid;
-        border-color: var(--color-3);
-        color: #fff;
-        padding: 5px 10px;
-        border-radius: 3px;
-        cursor: pointer;
-    }
-
-    #popup button:hover {
-        background-color: var(--color-3);
-    }
-
-    /* Agregado para rotar el botón cuando se muestra el popup */
-    #circular-button.rotate {
-        transform: rotate(45deg);
-        font-size: 60px;
     }
 
     /* Agregado para el formato grid del fieldset */

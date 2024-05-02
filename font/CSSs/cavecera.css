@@ -1,118 +1,121 @@
+/* Variables de color */
 :root {
   --color-1: rgb(34, 40, 49);
-  --color-5: rgb(20, 24, 29);
   --color-2: rgb(238, 238, 238);
   --color-3: rgb(118, 171, 174);
   --color-4: rgb(49, 54, 63);
+  --color-5: rgb(20, 24, 29);
 }
 
-nav{
-    background-color: var(--color-1);
-    color: var(--color-2);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    z-index: 99;
-    height: 7vh;
-    overflow: hidden;
-    align-items: center;
+/* Estilos de navegación */
+nav {
+  background-color: var(--color-1);
+  color: var(--color-2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 7vh;
+  overflow: hidden;
+  z-index: 99;
 }
-a{
+nav img {
+  background-color: var(--color-1);
+  width: 10px;
+}
+button {
   border-radius: 5px;
 }
-nav img{
-    background-color: var(--color-1);
-    width: 10px;
-    
-}
-.menu-barra{
-    border-radius: 5px;
-    background-color: var(--color-1);
-    width: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 3vh;
+button:hover {
+  pointer-events: painted;
 }
 
-    .menu-item {
-        background-color: var(--color-1);
-        color: var(--color-2);
-        text-decoration: none;
-        padding: 10px;
-        border: none;
-    }
+/* Estilos del menú */
+.menu-barra {
+  border-radius: 5px;
+  background-color: var(--color-1);
+  width: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 3vh;
+}
+.menu-item {
+  background-color: var(--color-1);
+  color: var(--color-2);
+  text-decoration: none;
+  padding: 10px;
+  border: none;
+}
+.menu-item:hover {
+  background-color: var(--color-3);
+}
 
-    .menu-item:hover {
-        background-color: var(--color-3);
-        pointer-events: painted;
-      }
+/* Estilos del botón de pop-up */
+.boton-popup {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.boton-popup:hover {
+  background-color: #0056b3;
+}
 
-      .boton-popup {
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      .boton-popup:hover {
-        background-color: #0056b3;
-      }
+/* Estilos del pop-up */
+.popup {
+  color: var(--color-2);
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: var(--color-1);
+  padding: 20px;
+  width: 300px;
+}
+.popup h2 {
+  margin-top: 0;
+}
+.popup input[type="text"],
+.popup input[type="password"],
+.popup input[type="submit"] {
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+}
+.popup input[type="submit"] {
+  background-color: var(--color-4);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.popup input[type="submit"]:hover {
+  background-color: var(--color-3);
+}
+.popup input[type="text"],
+.popup input[type="password"] {
+  background: var(--color-5);
+  color: var(--color-2);
+}
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
 
-      /* Estilos para el pop-up */
-      .popup {
-        color: var(--color-2);
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 9999;
-        background-color: var(--color-1);
-        padding: 20px;
-        width: 300px;
-      }
-      .popup h2 {
-        margin-top: 0;
-      }
-      .popup input[type="text"],
-      .popup input[type="password"],
-      .popup input[type="submit"] {
-        width: 100%;
-        margin: 5px 0;
-        padding: 10px;
-        box-sizing: border-box;
-        border: none;
-      }
-      .popup input[type="submit"] {
-          background-color: var(--color-4);
-        color: #fff;
-        border: none;
-        cursor: pointer;
-    }
-    .popup input[type="submit"]:hover {
-        background-color: var(--color-3);
-    }
-      a:hover{
-        pointer-events: painted;
-      }
-      .popup .close {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        font-size: 24px;
-        cursor: pointer;
-    }
-    .popup input[type="text"],
-    .popup input[type="password"]{
-      background: var(--color-5);
-      color: var(--color-2);
-    }
-    .imagen {
-      width: 300px; /* Ancho fijo del contenedor */
-      height: 200px; /* Altura fija del contenedor */
-      object-fit: cover; /* La imagen se ajustará manteniendo su relación de aspecto y cubriendo todo el contenedor */
-    }
-    #pagactu{
-      background-color: var(--color-4);
-    }
+/* Otros estilos */
+.imagen {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+#pagactu {
+  background-color: var(--color-4);
+}

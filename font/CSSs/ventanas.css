@@ -1,10 +1,11 @@
 :root {
---color-1: rgb(254, 250, 246);
---color-2: rgb(16, 44, 87);
---color-3: rgb(218, 192, 163);
---color-13: rgba(118, 171, 174,0.5);
---color-4: rgb(218, 192, 163);
-}
+    --color-1: rgb(34, 40, 49);
+    --color-2: rgb(238, 238, 238);
+    --color-3: rgb(118, 171, 174);
+    --color-4: rgb(49, 54, 63);
+    --color-5: rgb(20, 24, 29);
+  }
+  
 
 body {
 margin: 0;
@@ -126,7 +127,7 @@ font-size: x-large; /* Cambia el valor según tu preferencia */
 
 
 .gif-hover {
-width: 10vw;
+height: 12vh;
 filter: grayscale(100%);
 padding-top: 1vh;
 }
@@ -222,4 +223,11 @@ box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 h4{
     font-size: large;    
     -webkit-text-stroke: 1.5px var(--color-4);
+}
+.total{
+    font-size: xx-large;
+    padding: 5%;
+    box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.75);
+    grid-column: 1/3;
+    text-align: center;
 }

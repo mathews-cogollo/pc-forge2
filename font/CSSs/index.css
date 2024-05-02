@@ -1,3 +1,4 @@
+/* Variables globales */
 :root {
   --color-1: rgb(34, 40, 49);
   --color-15: 34, 40, 49;
@@ -6,35 +7,25 @@
   --color-4: rgb(49, 54, 63);
 }
 
-
-
-.imagen_con_botom {
-    position: relative;
-    display: flex;
-
+/* Estilos del cuerpo */
+body {
+  overflow-x: hidden;
+  background: linear-gradient(to bottom, var(--color-4), var(--color-4), var(--color-1));
+  font-family: sans-serif;
+  background-repeat: no-repeat;
 }
 
-.imagen_con_boton .botom {
-    position: absolute;
-    top: 95%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--color-1); /* Cambia el color de fondo del botón según tu diseño */
-    padding: 4vh 5vw; /* Ajusta el padding según sea necesario */
-    color: var(--color-2); /* Cambia el color del texto del botón según tu diseño */
-    text-decoration: none; /* Elimina el subrayado del texto */
-}
-a{
+a {
   border-radius: 5px;
 }
 
-
-.lema{
+/* Lema */
+.lema {
   position: absolute;
   color: var(--color-2);
   font-size: xxx-large;
   -webkit-text-stroke: 4px rgba(0, 0, 0, 0.295);
-  top: 20%;
+  top: 0%;
   right: 20vw;
   left: 20vw;
   width: 59vw;
@@ -43,67 +34,75 @@ a{
   text-align: center;
   z-index: 500;
 }
-.news{
+
+/* Contenedor de noticias */
+.news {
   background-color: rgba(0, 0, 0, 0.6);
   height: 100%;
   max-height: fit-content;
   margin: 2em auto;
-
   color: var(--color-2);
 }
-.news img{
+
+/* Imagen de noticias */
+.news img {
   width: 10vw;
-  filter: blur(0px)
+  filter: blur(0px);
 }
 
+/* Contenedor de noticias */
 .news-container {
-  display: flex; 
+  display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
   margin: 0 auto;
   padding-top: 15px;
   padding-bottom: 15px;
-
 }
+
+/* Información de noticias */
 .news-container > div {
   flex: 0 0 auto;
   padding: 10px;
 }
 
+/* Contenedor de información de noticias */
 .newsInfo {
   padding: 10px;
-  background-color: rgba(var(--color-15),0.5);
-  width: 23vw; 
-  
-  margin: 0 auto;
-  overflow-x: auto;
+  background-color: rgba(var(--color-15), 0.5);
+  width: 23vw;
   color: var(--color-2);
   text-align: center;
   font-size: 1.2em;
 }
 
+/* Texto de noticias */
 .newsText {
   text-align: justify;
-  word-wrap: break-word; /* Indica al navegador que rompa las palabras largas */
+  word-wrap: break-word;
 }
 
+/* Fecha de noticias */
 .fecha {
   font-size: x-small;
   text-align: right;
 }
 
-.pie{
-  background-color:var(--color-1);
-  color:var(--color-2);
+/* Pie de página */
+.pie {
+  background-color: var(--color-1);
+  color: var(--color-2);
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   align-items: center;
   text-align: center;
-  height: 20vh;  
+  height: 20vh;
   justify-content: space-between;
   overflow: hidden;
 }
-.g{
+
+/* Grupo de elementos */
+.g {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -114,7 +113,8 @@ a{
   padding: 30px;
 }
 
-.gg{
+/* Grupo de elementos alternativo */
+.gg {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -123,10 +123,14 @@ a{
   width: 33%;
   padding: 30px;
 }
-.pie p{
+
+/* Estilos del pie de página */
+.pie p {
   font-size: small;
   text-align: justify;
 }
+
+/* Popup de planos */
 .popup-planos {
   display: none;
   position: fixed;
@@ -136,7 +140,7 @@ a{
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .popup-content {
@@ -161,119 +165,140 @@ a{
   cursor: pointer;
 }
 
-h1{
+/* Títulos y texto general */
+h1 {
   font-size: small;
 }
-p{
+
+p {
   font-size: x-small;
 }
 
+/* Contenedor de camino */
 .camino {
   display: none;
   position: fixed;
-  top: 50%;
+  flex-direction: column;
+  top: 45%;
   left: 50%;
+  width: 60vw;
   transform: translate(-50%, -50%);
-  background-color: white;
-  border: 1px solid black;
+  background-color: var(--color-4);
   padding: 20px;
   z-index: 1000;
-  background-color: #000000;
-  color:rgba(226, 110, 0, 0.951);
+  color: var(--color-3);
 }
-
+ .camino p{
+  font-size: xx-large;
+ }
 .camino-contenido {
-background-color: #000000;
+  background-color: var(--color-4);
+  flex-direction: row;
 }
 
 .cerrar-camino {
+  pointer-events: none;
+  color: var(--color-2);
   position: absolute;
   top: 5px;
   right: 10px;
   cursor: pointer;
-}
-.cerrar-camino{
+  font-size: xxx-large;
   transform: rotate(45deg);
 }
 
-.InfoRECU{
-  width: 100%;
-  margin-left: auto; 
-margin-right: auto; 
-text-align: center; 
-display:flex;
+.cerrar-camino:hover {
+  color: var(--color-3);
 }
-.imgtex{
-  display: inline-block;
-    vertical-align: top;
-  filter: blur(0);
-padding-left:20px;
-padding: 20px;
-   
+
+/* Contenedor de información sobre recuadro */  
+  .InfoRECU {
+  display: flex;
+  width: 100vw;
+  text-align: center;
+  flex-direction: column;
+  padding: 3vw;
 }
- .textoexp{
+
+.imgtex {
+  display: flex;
+  flex-direction: row
+}
+.parrafo{
+  max-width: 40vw;
+  display: flex;
+  flex-direction: column;
+}
+#rev{
+  flex-direction: row-reverse;
+}
+
+.textoexp {
   font-size: 35px;
-  text-align: left;
-  color:var(--color-2); ;
-  max-width: 1000px; 
-    max-height: 1500px;
-    overflow: hidden;
+  color: var(--color-2);
+}
+
+.imagenesdesc {
+  max-width: 50vw;
+}
+/* Contenedor de imágenes y descripciones */
+.miCaminoContent {
+  display: flex;
 }
 
 
-.miCaminoContent{
-  display: flex;  
-}
-
-.imagenesdesc{
-  max-width: 1000px; 
-    max-height: 2000px;
-}
-.inicio{
+/* Diseño de la página de inicio */
+.inicio {
   display: grid;
   width: 100vw;
   height: 90vh;
-
+  height: 120vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
-  margin-top: 10px;
   margin-bottom: 10px;
 }
-#der{
-  background-color: aqua;
+
+#der {
   grid-column: 1;
 }
-#izq{
-  background-color: greenyellow;
+
+#izq {
   grid-column: 4;
+  transform: scaleX(-1);
 }
-#centro{
- 
+
+#centro {
+  padding-bottom: 30vh;
   grid-column: 2/4;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
 }
+
+/* Contenedor de carrusel de imágenes */
 .imagenes-carrusel {
-   /* Ajustar al ancho del contenedor */
-  height: 100%; /* Ajustar a la altura deseada */
-  overflow: hidden; /* Ocultar partes de las imágenes que se desborden */
-  position: relative; /* Permitir el posicionamiento absoluto de las imágenes */
+  height: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
+/* Carrusel de imágenes */
 .carrusel {
- /* Ajustar al ancho del contenedor */
-  height: 100%; /* Ajustar la altura automáticamente */
-  position: absolute; /* Posicionar las imágenes encima unas de otras */
+  height: 100%;
+  position: absolute;
   top: 0;
-  left: 0;
-  opacity: 0; /* Inicialmente ocultar todas las imágenes */
-  transition: opacity 1s ease-in-out; /* Animar la opacidad */
+  left: -50%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  overflow: hidden;
 }
 
 .carrusel.mostrar {
-  opacity: 1; /* Mostrar la imagen actual */
+  opacity: 1;
 }
-#der,#izq{
+
+#der,
+#izq {
   align-items: center;
 }
+
