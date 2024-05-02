@@ -1,10 +1,11 @@
 :root {
---color-1: rgb(254, 250, 246);
---color-2: rgb(16, 44, 87);
---color-3: rgb(218, 192, 163);
---color-13: rgba(118, 171, 174,0.5);
---color-4: rgb(218, 192, 163);
-}
+    --color-1: rgb(34, 40, 49);
+    --color-2: rgb(238, 238, 238);
+    --color-3: rgb(118, 171, 174);
+    --color-4: rgb(49, 54, 63);
+    --color-5: rgb(20, 24, 29);
+  }
+  
 
 body {
 margin: 0;

@@ -1,127 +1,79 @@
+/* Variables globales */
 :root {
   --color-1: rgb(34, 40, 49);
   --color-2: rgb(238, 238, 238);
   --color-3: rgb(118, 171, 174);
   --color-4: rgb(49, 54, 63);
 }
-body{
-  background: linear-gradient(to bottom, rgb(12, 45, 87)), rgb(239, 236, 236);
-  z-index: -999;
-}
+
+/* Estilos del cuerpo */
 body {
-  background: linear-gradient(to bottom,  var(--color-4),var(--color-4), var(--color-1));
+  background: linear-gradient(to bottom, var(--color-4), var(--color-4), var(--color-1));
+  z-index: -999;
+  overflow: auto;
+  margin: 0;
+  font-family: sans-serif;
 }
+
+/* Fondo */
 .fondo {
   position: fixed;
   z-index: -1;
   top: 0;
   left: 0;
-  width: 110vw; /* Establece el ancho al 100% del ancho de la ventana */
-  height: 110vh; /* Establece la altura al 100% del alto de la ventana */
-  object-fit: cover; /* Ajusta el video para llenar el contenedor manteniendo su relación de aspecto */
+  width: 110vw;
+  height: 110vh;
+  object-fit: cover;
 }
 
-
+/* Fondo - para pantallas pequeñas */
 @media screen and (max-width: 768px) {
   .fondo {
     position: fixed;
     z-index: -1;
     top: 0;
     left: 0;
-    width: 110vw; /* Establece el ancho al 100% del ancho de la ventana */
-    height: 110vh; /* Establece la altura al 100% del alto de la ventana */
-    object-fit: cover; 
-    transform: rotate(90deg);/* Rotamos 90 grados y movemos el elemento para que siga ocupando toda la pantalla */
+    width: 110vw;
+    height: 110vh;
+    object-fit: cover;
+    transform: rotate(90deg);
   }
 }
 
-
-
-body {
-    overflow: auto;
-    margin: 0;
-    font-family: sans-serif;
-}
-a{
+/* Estilos para enlaces */
+a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
-}
-*::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-}
-*::-webkit-scrollbar-thumb {
-    background-color: rgb(252, 103, 54); /* Color of the scrollbar thumb */
-    border-radius: 5px; /* Border radius of the scrollbar thumb */
-}
-*::-webkit-scrollbar-track {
-    background-color: 50; /* Color of the scrollbar track */
- /* Border radius of the scrollbar track */
-}
-#pagactu{
-  background-color: rgba(128, 128, 128, 0.489);
-  cursor:default;
-}
-.botom {
-    margin: 10px;
-    border: none;
-    padding: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    text-decoration: none;
-    font-size: 20px;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    background-color: var(--color-1);
-    color: var(--color-2);
-    border-radius: 5px;
-  }
-
-  .botom:hover{
-    background-color: #ff8412;
-    pointer-events: painted;
-    color:var(--color-1);
-    padding: 60;
-    margin-top: 15;
-    font-size: xx-large;
-  }
-
-  .pie{
-    background-color:rgb(0, 0, 0);
-    color: #ffffff;
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-    text-align: center;
-    height: 20vh;
-  }
-
-hr{
-    height: 80px;
-}
-.botom1 {
-  margin: 10px;
-  border: none;
-  padding: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  text-decoration: none;
-  font-size: 20px;
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  background-color: var(--color-1);
   color: var(--color-2);
-  border-radius: 5px;
-  text-align: left;
 }
+
+/* Barras de desplazamiento personalizadas */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-3);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: 50;
+}
+
+/* Elemento de la página activa */
+#pagactu {
+  background-color: rgba(128, 128, 128, 0.489);
+  cursor: default;
+}
+
+/* Botones generales */
+.botom,
+.botom1,
 .botom2 {
   margin: 10px;
   border: none;
@@ -132,26 +84,109 @@ hr{
   font-size: 20px;
   display: inline-block;
   text-align: center;
-  text-decoration: none;
   cursor: pointer;
   background-color: var(--color-1);
   color: var(--color-2);
   border-radius: 5px;
-  text-align: right;
 }
-.botom1:hover{
-  background-color: #ff8412;
+
+/* Efectos de hover en botones */
+.botom:hover,
+.botom1:hover,
+.botom2:hover {
+  background-color: var(--color-3);
   pointer-events: painted;
-  color:var(--color-1);
-  padding: 60;
-  margin-top: 15;
+  color: var(--color-1);
+  padding: 60px;
+  margin-top: 15px;
   font-size: xx-large;
 }
-.botom2:hover{
-  background-color: #ff8412;
-  pointer-events: painted;
-  color:var(--color-1);
-  padding: 60;
-  margin-top: 15;
-  font-size: xx-large;
+
+/* Pie de página */
+.pie {
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  height: 20vh;
 }
+
+
+/* Botón circular */
+#circular-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-4);
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+  z-index: 999;
+  transition: transform 0.5s, font-size 0.3s;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+#circular-button:hover {
+  background-color: var(--color-4);
+}
+
+#circular-button.rotate {
+  transform: rotate(45deg);
+  font-size: 60px;
+}
+
+/* Popup */
+#popup {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background-color: var(--color-1);
+  border: 1px solid var(--color-3);
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 999;
+  overflow: auto;
+}
+
+#popup textarea {
+  width: 200px;
+  height: 100px;
+  resize: none;
+  margin-bottom: 10px;
+  background-color: var(--color-4);
+  color: var(--color-2);
+}
+
+#popup button {
+  font-size: large;
+  background-color: var(--color-1);
+  border-style: solid;
+  border-color: var(--color-3);
+  color: var(--color-2);
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Placeholder del textarea */
+textarea::placeholder {
+  color: var(--color-2);
+}
+
+/* Efecto de hover en botones del popup */
+#popup button:hover {
+  background-color: var(--color-3);
+}
+object{
+  width: 100%;
+  height: 100vh;
+}
+
+
