@@ -6,7 +6,9 @@
   --color-4: rgb(49, 54, 63);
 }
 
-
+body{
+  overflow-x: hidden;
+}
 
 .imagen_con_botom {
     position: relative;

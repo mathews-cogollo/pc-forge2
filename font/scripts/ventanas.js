@@ -252,40 +252,39 @@ var datoscomponentes = {
         ventana.style.opacity = '0.8';
     }
     
-function detenerArrastreVentana(e) {
-  const ventana = e.currentTarget;
-  ventana.style.zIndex = '10';
-  ventana.removeEventListener('mousemove', arrastrarVentana);
-  ventana.removeEventListener('mouseup', detenerArrastreVentana);
-  const anclaElimina = document.querySelector('.ancla-elimina');
-  if (estaCercaDelAnclaje(ventana, anclaElimina)) {
-      const categoria = ventana.textContent.split(': ')[0];
-      const index = categoriasAbiertas.indexOf(categoria);
-      if (index !== -1) {
-          categoriasAbiertas.splice(index, 1);
-      }
-      ventana.remove();
-      
-      // Eliminar la ventana del array de ventanasPorCategoria
-      if (ventanaIndex !== -1) {
-          ventanasPorCategoria[categoria].splice(ventanaIndex, 1);
-      }
-      
-      // Verificar si la categoría ya no tiene más ventanas asociadas
-      if (ventanasPorCategoria[categoria].length === 0) {
-          delete ventanasPorCategoria[categoria];
-      }
-      
-      // Mostrar la información actualizada
-      mostrarInfo();
-  } else {
-      anclajes.forEach(anclaje => {
-          actualizarPosicionVentana(ventana, anclaje);
-      });
-      ventana.style.opacity = '1';
-      mostrarInfo(); 
-  }
-}
+    function detenerArrastreVentana(e) {
+        const ventana = e.currentTarget;
+        ventana.style.zIndex = '10';
+        ventana.removeEventListener('mousemove', arrastrarVentana);
+        ventana.removeEventListener('mouseup', detenerArrastreVentana);
+        const anclaElimina = document.querySelector('.ancla-elimina');
+        if (estaCercaDelAnclaje(ventana, anclaElimina)) {
+            const categoria = ventana.textContent.split(': ')[0];
+            const index = categoriasAbiertas.indexOf(categoria);
+            if (index !== -1) {
+                categoriasAbiertas.splice(index, 1);
+            }
+            ventana.remove();
+    
+            // Eliminar la ventana del array de ventanasPorCategoria
+            if (ventanasPorCategoria[categoria]) {
+                ventanasPorCategoria[categoria] = []; // Establecer en "..." los datos de la categoría
+            }
+    
+            // Mostrar la información actualizada
+            mostrarInfo();
+        } else {
+            anclajes.forEach(anclaje => {
+                actualizarPosicionVentana(ventana, anclaje);
+            });
+            ventana.style.opacity = '1';
+            mostrarInfo(); 
+        }
+    }
+    
+    
+    
+
 
   
     
@@ -414,18 +413,7 @@ crearVentana("EVGA SuperNOVA 850 G5", "Fuente de Poder");
 
 
 
-function mostrarInfo() {
-  const contenedorTotal = document.querySelector('.total');
-  let total = 0;
 
-  for (const categoria in ventanasPorCategoria) {
-    for (const componente of ventanasPorCategoria[categoria]) {
-      total += componente.precio;
-    }
-  }
-
-  contenedorTotal.textContent = `Total: ${total}`;
-}
 
 const formCrearVentana = document.getElementById('formCrearVentana');
 
@@ -482,7 +470,6 @@ ventanas.forEach(ventana => {
 });
 
 // La regla S2814 de SonarQube sugiere cambiar la concatenación de cadenas con el operador "+" en favor de utilizar plantillas de cadenas (template literals) para mejorar la legibilidad y prevenir errores de sintaxis.
-
 function mostrarInfo() {
   const infoDiv = document.querySelector('.info');
   infoDiv.innerHTML = ''; // Limpiar el contenido anterior
