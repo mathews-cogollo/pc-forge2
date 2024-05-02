@@ -23,7 +23,7 @@ border-radius: 0px;
 height: 100%;
 padding-left: 5vw;
 padding-right: 5vw;
-padding-top: 3vh;
+padding-top: 8vh;
 box-shadow: 5px 0 5px -3px rgba(0, 0, 0, 0.5), -5px 0 5px -3px rgba(0, 0, 0, 0.5);
 }
 .cont-ancla > h1{
@@ -44,8 +44,8 @@ height: 100%;
 }
 
 .ventanas {
-width: 195px;
-height: 145px;
+width: 165px;
+height: 115px;
 background-color: rgba(0, 140, 255, 0.24);
 border: 3px dashed blue;
 box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -62,8 +62,8 @@ position: relative;
 
 
 .ventana {
-width: 185px;
-height: 135px;
+width: 155px;
+height: 105px;
 background-color: var(--color-4);
 border: 3px solid --color-2;
 position: absolute;
@@ -80,8 +80,6 @@ box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 background-size:contain ; /* Ajusta la imagen para cubrir todo el div */
 background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
 background-position: center;
-color: var(--color-2);
-text-shadow: 1;
 }
 
 
@@ -91,10 +89,11 @@ display: flex;
 justify-content: center;
 align-items: center;
 text-align: center;
-width: 195px;
-height: 145px;
+width: 165px;
+height: 115px;
 background-color: var(--color-2);
 border: 3px dashed var(--color-4);
+
 z-index: 1;
 margin: 5px;
 box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -102,8 +101,8 @@ box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
 
 .ancla-elimina {
-    width: 195px;
-    height: 145px;
+width: 165px;
+height: 115px;
 background-color: rgba(255, 0, 0, 0.3);
 border: 3px dashed red;
 box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -212,14 +211,16 @@ box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
 .fondarm{
     position: relative;
-    top: -105.5%;
+    top: -90%;
     z-index: -1;
-    height: 115%;
-    width: 110%;
-    left: -5%;
+    height: 100%;
 }
-
-h4{
-    font-size: large;    
-    -webkit-text-stroke: 1.5px var(--color-4);
+  
+.ventana img {
+    pointer-events: none;
+    position: relative;
+    height: 100%;
+    object-fit: cover;
+    right: 40%;
 }
+  
