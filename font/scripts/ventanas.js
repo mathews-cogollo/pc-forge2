@@ -328,70 +328,72 @@ const ventanasPorCategoria = {
 };
 
 const imagenesPorCategoria = {
-  "Gabinete": "recursos/gabinete.png",
-  "Placa Base": "recursos/placa_base.png",
-  "Tarjeta RAM": "recursos/tarjeta_ram.png",
-  "Unidad de Almacenamiento": "recursos/unidad_almacenamiento.png",
-  "Procesador": "recursos/procesador.png",
-  "Tarjeta Gráfica": "recursos/tarjeta_grafica.png",
-  "Unidad de Enfriamiento": "recursos/unidad_enfriamiento.png",
-  "Fuente de Poder": "recursos/fuente_poder.png"
-};
-
-const filtroColorPorMarca = {
-  "NZXT": "nzxt-color",
-  "Fractal Design": "fractal-design-color",
-  "Corsair": "corsair-color",
-  "EVGA": "evga-color",
-  "GIGABYTE": "gigabyte-color",
-  "ASUS": "asus-color",
-  "Intel": "intel-color",
-  "AMD": "amd-color",
-  // Puedes agregar más marcas y clases de color según sea necesario
-};
-
-const crearVentana = (componente, categoria) => {
-  // Obtener los datos del componente seleccionado
-  const componentes = datoscomponentes.componentes[0][categoria];
-  const datosComponente = componentes.find(comp => comp.nombre === componente);
-
-  // Convertir el precio a número
-  const precioNumero = parseInt(datosComponente.precio); // o parseFloat(datosComponente.precio) si los precios pueden tener decimales
-
-  // Crear la ventana en la interfaz (si es necesario)
-  const nuevaVentana = document.createElement('div');
-  nuevaVentana.classList.add('ventana');
-  const nuevaVentanaId = obtenerIniciales(categoria); // Aquí se llama a la función obtenerIniciales solo con la categoría
-  nuevaVentana.setAttribute('id', nuevaVentanaId);
-
-  // Crear la imagen y asignar la clase de color según la marca del componente
-  const nuevaImagen = document.createElement('img');
-  nuevaImagen.setAttribute('src', imagenesPorCategoria[categoria]);
-  nuevaImagen.classList.add(filtroColorPorMarca[datosComponente.marca]);
-  nuevaVentana.appendChild(nuevaImagen);
-
-  // Crear el título (h4) con el texto de la categoría y el componente
-  const titulo = document.createElement('h4');
-  titulo.textContent = `${categoria}: ${componente}`;
-  nuevaVentana.appendChild(titulo);
-
-  const contenedorVentanas = document.querySelector('.ventanas');
-  contenedorVentanas.insertBefore(nuevaVentana, contenedorVentanas.firstChild); // Inserta la nueva ventana antes de la primera ventana existente
-
-  nuevaVentana.addEventListener('mousedown', iniciarArrastreVentana);
-
-  // Eliminar los datos anteriores de la categoría
-  ventanasPorCategoria[categoria] = [];
-
-  // Agregar el nuevo componente al array correspondiente con el precio convertido
-  ventanasPorCategoria[categoria].push({
-      componente: componente,
-      precio: precioNumero,
-      marca: datosComponente.marca // Guardar la marca del componente para el filtro de color
-  });
-
-  mostrarInfo();
-}
+    "Gabinete": "url('recursos/gabinete.png')",
+    "Placa Base": "url('recursos/placa_base.png')",
+    "Tarjeta RAM": "url('recursos/tarjeta_ram.png')",
+    "Unidad de Almacenamiento": "url('recursos/unidad_almacenamiento.png')",
+    "Procesador": "url('recursos/procesador.png')",
+    "Tarjeta Gráfica": "url('recursos/tarjeta_grafica.png')",
+    "Unidad de Enfriamiento": "url('recursos/unidad_enfriamiento.png')",
+    "Fuente de Poder": "url('recursos/fuente_poder.png')"
+  };
+  
+  const filtroColorPorMarca = {
+    "NZXT": "hue-rotate(90deg)",
+    "Fractal Design": "hue-rotate(180deg)",
+    "Corsair": "hue-rotate(270deg)",
+    "EVGA": "hue-rotate(45deg)",
+    "GIGABYTE": "hue-rotate(135deg)",
+    "ASUS": "hue-rotate(225deg)",
+    "Intel": "hue-rotate(315deg)",
+    "AMD": "hue-rotate(90deg)",
+    // Puedes agregar más marcas y filtros de color según sea necesario
+  };
+  function crearVentana(componente, categoria) {
+    // Obtener los datos del componente seleccionado
+    const componentes = datoscomponentes.componentes[0][categoria];
+    const datosComponente = componentes.find(comp => comp.nombre === componente);
+  
+    // Convertir el precio a número
+    const precioNumero = parseInt(datosComponente.precio); // o parseFloat(datosComponente.precio) si los precios pueden tener decimales
+  
+    // Crear la ventana en la interfaz (si es necesario)
+    const nuevaVentana = document.createElement('div');
+    nuevaVentana.classList.add('ventana');
+    const nuevaVentanaId = obtenerIniciales(categoria); // Aquí se llama a la función obtenerIniciales solo con la categoría
+    nuevaVentana.setAttribute('id', nuevaVentanaId);
+    
+    // Crear el elemento h4 para el texto de la ventana
+    const h4 = document.createElement('h4');
+    h4.textContent = `${categoria}: ${componente}`;
+    nuevaVentana.appendChild(h4);
+    
+    // Agregar imagen de acuerdo a la categoría
+    if (imagenesPorCategoria[categoria]) {
+      nuevaVentana.style.backgroundImage = imagenesPorCategoria[categoria];
+    }
+  
+    if (filtroColorPorMarca[datosComponente.marca]) {
+      nuevaVentana.classList.add(filtroColorPorMarca[datosComponente.marca]);
+    }
+  
+    const contenedorVentanas = document.querySelector('.ventanas');
+    contenedorVentanas.insertBefore(nuevaVentana, contenedorVentanas.firstChild); // Inserta la nueva ventana antes de la primera ventana existente
+  
+    nuevaVentana.addEventListener('mousedown', iniciarArrastreVentana);
+  
+    // Eliminar los datos anteriores de la categoría
+    ventanasPorCategoria[categoria] = [];
+  
+    // Agregar el nuevo componente al array correspondiente con el precio convertido
+    ventanasPorCategoria[categoria].push({
+        componente: componente,
+        precio: precioNumero,
+        marca: datosComponente.marca // Guardar la marca del componente para el filtro de color
+    });
+  
+    mostrarInfo();
+  }
 
 
 // Función auxiliar para obtener las iniciales de una categoría
