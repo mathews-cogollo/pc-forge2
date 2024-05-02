@@ -3,43 +3,38 @@
     --color-2: rgb(238, 238, 238);
     --color-3: rgb(118, 171, 174);
     --color-4: rgb(49, 54, 63);
-  }
+}
 
-  .cateConten{
+.cateConten {
     background-color: var(--color-1);
     color: var(--color-2);
-  }
-    body{
-        color: var(--color-2);
-        overflow-x: hidden;
-    }
-    h1{
-        text-align: center;
-        font-size: xxxlarge;
-        padding: 20px;
-        background-color: var(--color-1);
-        margin-left: 20%;
-        margin-right: 20%;
-        border-radius: 5px;
-    }
-    div{
-        border-radius: 5px;
-    }
+}
 
-    form{
-        padding-left: 20%;
-        padding-right: 20%;  
-    }
-    
+body {
+    color: var(--color-2);
+    overflow-x: hidden;
+}
 
-    
+h1 {
+    text-align: center;
+    font-size: xxxlarge;
+    padding: 20px;
+    background-color: var(--color-1);
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 5px;
+}
 
-.formcot{
+form {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.formcot {
     background-color: var(--color-1);
     padding: 10px;
-    display: flex;
     justify-content: space-between;
-    
+    grid-column: 2;
 }
 
 .gameopcion {
@@ -47,62 +42,109 @@
 }
 
 #juegos:checked ~ .gameopcion {
-    display: block; /* Mostrar cuando el checkbox está marcado */
+    display: block;
 }
 
-#juego{
+#juego {
     background-color: var(--color-3);
     padding: 10px;
 }
-    body {
-        margin: 0;
-        padding: 0;
-        position: relative;
-    }
 
+#preguntas_ocultas {
+    display: none;
+    grid-column: 1;
+}
 
+input {
+    background: #222222;
+    border: none;
+    color: var(--color-3);
+}
 
-    input {
-        background: #222222;
-        border: none;
-        color: var(--color-3);
-    }
-    input[type="range"] {
-        /* Estilos del riel */
-        background-color: var(--color-3); /* Cambia este valor al color que desees */
-        height: 5px; /* Alto del riel */
-        border-radius: 5px; /* Bordes redondeados */
-      }
-    select{
-        background: #222222;
-        border: none;
-        color: var(--color-3);
-    }
+input[type="range"] {
+    /* Estilos del riel */
+    background-color: var(--color-3); /* Cambia este valor al color que desees */
+    height: 5px; /* Alto del riel */
+    border-radius: 5px; /* Bordes redondeados */
+}
 
-    /* Agregado para el formato grid del fieldset */
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        grid-gap: 10px;
-    }
+select {
+    background: #222222;
+    border: none;
+    color: var(--color-3);
+}
 
-    .cateConten {
-        border: none;
-        padding: 10px;
-    }
+/* Agregado para el formato grid del fieldset */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    grid-column: 1;
+    grid-row: span 4;
+}
 
-    .slider-container {
-        margin-top: 10px;
-    }  
-    
-    .cateConten {
-        margin-bottom: 10px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        transition: background-color 0.3s ease;
-    }
+.cateConten {
+    border: none;
+    padding: 10px;
+}
 
-    /* Estilo cuando el checkbox está activo */
-    .cateConten input:checked ~ .slider-container {
-        background-color: lightgreen;
-    }
+.slider-container {
+    margin-top: 10px;
+}
+
+.cateConten {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo cuando el checkbox está activo */
+.cateConten input:checked ~ .slider-container {
+    background-color: lightgreen;
+}
+
+.cateConten input:checked {
+    background-color: lightgreen;
+}
+
+.categoria {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-1);
+    padding: 1vw;
+    align-items: center;
+}
+
+.categoria .tooltip {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 0%;
+    left: -105%; /* Cambiado de 50% a 110% para moverlo hacia la derecha */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.categoria:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.categoria:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.allform {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
