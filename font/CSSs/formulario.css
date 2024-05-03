@@ -13,6 +13,7 @@
 body {
     color: var(--color-2);
     overflow-x: hidden;
+    height: 100%;
 }
 
 h1 {
@@ -20,43 +21,30 @@ h1 {
     font-size: xxxlarge;
     padding: 20px;
     background-color: var(--color-1);
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
     border-radius: 5px;
 }
 
 form {
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .formcot {
     background-color: var(--color-1);
     padding: 10px;
     justify-content: space-between;
-    grid-column: 2;
+    display: flex;
+    flex-direction: row;
+}
+.formcot label{
+    width: 85%;
 }
 
-.gameopcion {
-    display: none; /* Inicialmente oculto */
-}
-
-#juegos:checked ~ .gameopcion {
-    display: block;
-}
-
-#juego {
-    background-color: var(--color-3);
-    padding: 10px;
-}
-
-#preguntas_ocultas {
-    display: none;
-    grid-column: 1;
-}
 
 input {
-    background: #222222;
+    background: var(--color-4);
     border: none;
     color: var(--color-3);
 }
@@ -69,7 +57,7 @@ input[type="range"] {
 }
 
 select {
-    background: #222222;
+    background: var(--color-4);
     border: none;
     color: var(--color-3);
 }
@@ -80,7 +68,7 @@ select {
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     grid-column: 1;
-    grid-row: span 4;
+    grid-row: span 4 ;
 }
 
 .cateConten {
@@ -95,7 +83,7 @@ select {
 .cateConten {
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid --color-2;
     transition: background-color 0.3s ease;
 }
 
@@ -120,17 +108,19 @@ select {
 .categoria .tooltip {
     visibility: hidden;
     width: 200px;
-    background-color: black;
-    color: white;
+    background-color:var(--color-4);
+    color: var(--color-2);
     text-align: center;
     border-radius: 6px;
     padding: 5px;
     position: absolute;
     z-index: 1;
     bottom: 0%;
-    left: -105%; /* Cambiado de 50% a 110% para moverlo hacia la derecha */
+    left: 120%; /* Cambiado de 50% a 110% para moverlo hacia la derecha */
     opacity: 0;
     transition: opacity 0.3s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .categoria:hover .tooltip {
@@ -142,9 +132,171 @@ select {
     visibility: visible;
     opacity: 1;
 }
-
+.allform div {
+    border-radius: 5px;
+}
 .allform {
+
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
 }
+#preguntas_videojuegos{
+    grid-gap: 10px;
+    margin: 10px;
+    grid-row: span 5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 60px;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-2);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--color-1);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--color-3);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--color-3);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  .respuesta{
+    display: flex;
+    flex-direction: column;
+  }
+  label.switch {
+    width: 60px;
+  }
+
+
+
+
+
+
+
+  input[type='range'] {
+    display: block;
+    width: 250px;
+  }
+  
+  input[type='range']:focus {
+    outline: none;
+  }
+  
+  input[type='range'],
+  input[type='range']::-webkit-slider-runnable-track,
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    background-color: #777;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #333;
+    border-radius: 50%;
+    margin-top: -9px;
+  }
+  
+  input[type=range]::-moz-range-thumb {
+    background-color: #777;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #333;
+    border-radius: 50%;
+  }
+  
+  input[type=range]::-ms-thumb {
+    background-color: #777;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #333;
+    border-radius: 50%;
+  }
+  
+  input[type=range]::-webkit-slider-runnable-track {
+    background-color: #777;
+    height: 3px;
+  }
+  
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    outline: none;
+  }
+  
+  input[type=range]::-moz-range-track {
+    background-color: #777;
+    height: 3px;
+  }
+  
+  input[type=range]::-ms-track {
+    background-color: #777;
+    height: 3px;
+  }
+  
+  input[type=range]::-ms-fill-lower {
+    background-color: HotPink
+  }
+  
+  input[type=range]::-ms-fill-upper {
+    background-color: black;
+  } 
