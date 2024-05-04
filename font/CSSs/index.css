@@ -9,10 +9,12 @@
 
 /* Estilos del cuerpo */
 body {
-  overflow-x: hidden;
+  overflow-x: hidden; 
   background: linear-gradient(to bottom, var(--color-4), var(--color-4), var(--color-1));
   font-family: sans-serif;
   background-repeat: no-repeat;
+  width: 100%;
+  
 }
 
 a {
@@ -99,6 +101,7 @@ a {
   height: 20vh;
   justify-content: space-between;
   overflow: hidden;
+  box-shadow: 5px 0 5px -3px rgba(255, 255, 255, 0.5), -5px 0 5px -3px rgba(255, 255, 255, 0.5);
 }
 
 /* Grupo de elementos */
@@ -197,7 +200,7 @@ p {
 }
 
 .cerrar-camino {
-  pointer-events: none;
+  -webkit-touch-callout: none;
   color: var(--color-2);
   position: absolute;
   top: 5px;
@@ -212,26 +215,32 @@ p {
 }
 
 /* Contenedor de información sobre recuadro */  
+.InfoRECU_S{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
   .InfoRECU {
   display: flex;
-  width: 100vw;
+  width: 90%;
   text-align: center;
   flex-direction: column;
-  padding: 3vw;
+  margin: 15px;
 }
 
 .imgtex {
   display: flex;
-  flex-direction: row
+  flex-direction: row;
+  align-items: center;
 }
 .parrafo{
   max-width: 40vw;
   display: flex;
   flex-direction: column;
+  margin: 15px;
 }
-#rev{
-  flex-direction: row-reverse;
-}
+
 
 .textoexp {
   font-size: 35px;
@@ -239,66 +248,50 @@ p {
 }
 
 .imagenesdesc {
-  max-width: 50vw;
+  max-width: 50vw; /* Ancho máximo relativo al viewport */
+  max-height: calc(50vw * 870 / 1920);
 }
 /* Contenedor de imágenes y descripciones */
-.miCaminoContent {
-  display: flex;
-}
 
 
 /* Diseño de la página de inicio */
-.inicio {
-  display: grid;
-  width: 100vw;
-  height: 90vh;
-  height: 120vh;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
-  margin-bottom: 10px;
-}
-
-#der {
-  grid-column: 1;
-}
-
-#izq {
-  grid-column: 4;
-  transform: scaleX(-1);
-}
 
 #centro {
-  padding-bottom: 30vh;
   grid-column: 2/4;
   display: flex;
-  flex-direction: column-reverse;
   align-items: center;
+  height: 100vh;
+  flex-direction: column-reverse;
+  background-color: #f0f0f000;
+
 }
 
 /* Contenedor de carrusel de imágenes */
-.imagenes-carrusel {
-  height: 100%;
+
+.carousel {
+  width: 100%;
+  height: 100vh; /* Altura deseada del carrusel */
   overflow: hidden;
-  position: relative;
+  z-index: -200; /* Color de fondo del carrusel */
 }
 
-/* Carrusel de imágenes */
-.carrusel {
-  height: 100%;
+.carousel img {
   position: absolute;
   top: 0;
-  left: -50%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  overflow: hidden;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out; /* Transición de desvanecimiento */
 }
 
-.carrusel.mostrar {
+.carousel img.active {
   opacity: 1;
 }
 
-#der,
-#izq {
-  align-items: center;
+.carousel img:not(.active) {
+  opacity: 0;
 }
-
+.botom{
+  margin-bottom: 20vh;
+}

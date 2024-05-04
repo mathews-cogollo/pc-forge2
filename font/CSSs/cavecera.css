@@ -79,7 +79,7 @@ button:hover {
 .popup h2 {
   margin-top: 0;
 }
-.popup input[type="text"],
+.popup input[type="text"],input[type="email"],
 .popup input[type="password"],
 .popup input[type="submit"] {
   width: 100%;
@@ -97,7 +97,7 @@ button:hover {
 .popup input[type="submit"]:hover {
   background-color: var(--color-3);
 }
-.popup input[type="text"],
+.popup input[type="text"],input[type="email"],
 .popup input[type="password"] {
   background: var(--color-5);
   color: var(--color-2);
@@ -117,5 +117,25 @@ button:hover {
   object-fit: cover;
 }
 #pagactu {
+  background-color: var(--color-4);
+}
+.password-container{
+  display: flex;
+  flex-direction: column;
+}
+.toggle-password{
+  position: relative;
+  align-self: flex-end;
+  background-color: rgba(0,0,0,0);
+  border:none; 
+  color: var(--color-2);
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 10px;
+  top: -35px;
+  right: 3px;
+}
+
+.toggle-password:hover {
   background-color: var(--color-4);
 }

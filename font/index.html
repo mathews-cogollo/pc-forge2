@@ -22,53 +22,11 @@
 
 </head>
 <body>
-<div class="inicio">
-    <div id="der">
-        <div id="imagenes-carrusel1"class="imagenes-carrusel">
-            <img src="recursos/imagen_plano14.jpg" alt="" class="carrusel">
-            <img src="recursos/imagen_plano13.jpg" alt="" class="carrusel">
-            <img src="recursos/imagen_plano17.jpg" alt="" class="carrusel">
-          </div>
-    </div>
     <div id="centro" >
+
         <div class="lema">
             <h2 id="textoLema">d</h2>
-            <script>
-            document.addEventListener("DOMContentLoaded", function() {
-  // Carrusel 1
-  var carruseles1 = document.querySelectorAll("#imagenes-carrusel1 .carrusel");
-  var index1 = 0;
-  
-  function mostrarSiguienteCarrusel1() {
-    carruseles1[index1].classList.remove("mostrar");
-    index1 = (index1 + 1) % carruseles1.length;
-    carruseles1[index1].classList.add("mostrar");
-  }
-  
-  // Mostrar el primer carrusel 1 inicialmente
-  carruseles1[index1].classList.add("mostrar");
-  
-  // Cambiar de carrusel 1 cada 5 segundos (5000 milisegundos)
-  setInterval(mostrarSiguienteCarrusel1, 5000);
-
-  // Carrusel 2
-  var carruseles2 = document.querySelectorAll("#imagenes-carrusel2 .carrusel");
-  var index2 = 0;
-  
-  function mostrarSiguienteCarrusel2() {
-    carruseles2[index2].classList.remove("mostrar");
-    index2 = (index2 + 1) % carruseles2.length;
-    carruseles2[index2].classList.add("mostrar");
-  }
-  
-  // Mostrar el primer carrusel 2 inicialmente
-  carruseles2[index2].classList.add("mostrar");
-  
-  // Cambiar de carrusel 2 cada 5 segundos (5000 milisegundos)
-  setInterval(mostrarSiguienteCarrusel2, 5000);
-});
-
-              </script>
+ 
             
             <script>
                 // Lista de lemas
@@ -99,7 +57,8 @@
             <div class="botom" role="button" id="miCamino" onclick="mostrarCamino()">inicar forjado</div>
         </center>
 
-        <div id="miCaminoContent" class="camino"><center>
+        <div id="miCaminoContent" class="camino">
+            <center>
         <p>para poder iniciar el ensanblaje de su equipo necesitamos conocer cuanta experiencia posee </p>
           <div class="camino-contenido">
             <div class="botom1">
@@ -108,38 +67,45 @@
         <div class="botom2">
            <a  href="ventanas.html">tengo experiencia <br> armando computaores </a>
         </div>
-            <a class="cerrar-camino" onclick="cerrarCamino()">+</a>
-          </div>
-        </center>
+    </div>
+</center>
+<a class="cerrar-camino" onclick="cerrarCamino()">+</a>
         </div>
+        <script> 
 
-    </div>
-    <div id="izq">
-        <div id="imagenes-carrusel2"class="imagenes-carrusel">
-            <img src="recursos/imagen_plano14.jpg" alt="" class="carrusel">
-            <img src="recursos/imagen_plano13.jpg" alt="" class="carrusel">
-            <img src="recursos/imagen_plano17.jpg" alt="" class="carrusel">
+            function mostrarCamino() {
+                document.getElementById("miCaminoContent").style.display = "flex";
+              }
+              
+              function cerrarCamino() {
+              document.getElementById("miCaminoContent").style.display = "none";
+            }
+              </script>
+        <div class="carousel">
+            <img src="recursos/forja.jpg" class="active">
+            <img src="recursos/fondo_inicio.jpg">
+            <img src="recursos/imagen_plano17.jpg">
           </div>
+          <script>
+            const carouselImages = document.querySelectorAll('.carousel img');
+            let currentIndex = 0;
+          
+            setInterval(() => {
+              carouselImages[currentIndex].classList.remove('active');
+              currentIndex = (currentIndex + 1) % carouselImages.length;
+              carouselImages[currentIndex].classList.add('active');
+            }, 5000); // Cambia la imagen cada 3 segundos (3000 milisegundos)
+          </script>
     </div>
-</div>
 
-<script> 
 
-function mostrarCamino() {
-    document.getElementById("miCaminoContent").style.display = "flex";
-  }
-  
-  function cerrarCamino() {
-  document.getElementById("miCaminoContent").style.display = "none";
-}
-  </script>
   <div class="news">
     <div id="news-container" class="news-container">
         
     </div>
 </div>
 <br>
-
+    <div class="InfoRECU_S">
 
     <div class="InfoRECU">
         <div class="imgtex">
@@ -153,10 +119,10 @@ function mostrarCamino() {
     <div class="InfoRECU">
         <div class="imgtex" id="rev">
             <br><br>
+            <img src="recursos/forja.jpg"class="imagenesdesc" alt="">
             <div class="parrafo">
             <h1 class="textoexp">armeria</h1>
             <P class="textoexp">Al terminar de elegir los componentes que deseaspasaras a la armeria, aqui se guardaran todos los proyectos que hagas y a su vez podras publicarlos  para quemas personas puedan verlo</P></div>
-            <img src="recursos/forja.jpg"class="imagenesdesc" alt="">
         </div>
     </div>
     <div class="InfoRECU">
@@ -167,7 +133,8 @@ function mostrarCamino() {
             <P class="textoexp"> Al termines de armar un proyecton pueedes consultar el instructivo de armado dentro de la armeria, el instructivo incluye las indicaciones para que puedas armar la pc que elegiste</P></div>
             <img src="recursos/forja.jpg"class="imagenesdesc" alt="">
     </div>
-</div>
+    </div>
+    
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
@@ -187,6 +154,7 @@ function mostrarCamino() {
         </div>
       </div>
       <br><br><br>
+
     </body>
 </html>  
 

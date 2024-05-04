@@ -49,12 +49,6 @@ input {
     color: var(--color-3);
 }
 
-input[type="range"] {
-    /* Estilos del riel */
-    background-color: var(--color-3); /* Cambia este valor al color que desees */
-    height: 5px; /* Alto del riel */
-    border-radius: 5px; /* Bordes redondeados */
-}
 
 select {
     background: var(--color-4);
@@ -71,7 +65,7 @@ select {
     grid-row: span 4 ;
 }
 
-.cateConten {
+.cateConten{
     border: none;
     padding: 10px;
 }
@@ -80,7 +74,7 @@ select {
     margin-top: 10px;
 }
 
-.cateConten {
+.cateConten{
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid --color-2;
@@ -229,74 +223,39 @@ select {
   }
 
 
-
-
-
-
-
-  input[type='range'] {
-    display: block;
-    width: 250px;
-  }
-  
-  input[type='range']:focus {
-    outline: none;
-  }
-  
-  input[type='range'],
-  input[type='range']::-webkit-slider-runnable-track,
-  input[type='range']::-webkit-slider-thumb {
+  input[type="range"] {
     -webkit-appearance: none;
-  }
-  
-  input[type=range]::-webkit-slider-thumb {
-    background-color: #777;
-    width: 20px;
-    height: 20px;
-    border: 3px solid #333;
-    border-radius: 50%;
-    margin-top: -9px;
-  }
-  
-  input[type=range]::-moz-range-thumb {
-    background-color: #777;
-    width: 15px;
-    height: 15px;
-    border: 3px solid #333;
-    border-radius: 50%;
-  }
-  
-  input[type=range]::-ms-thumb {
-    background-color: #777;
-    width: 20px;
-    height: 20px;
-    border: 3px solid #333;
-    border-radius: 50%;
-  }
-  
-  input[type=range]::-webkit-slider-runnable-track {
-    background-color: #777;
-    height: 3px;
-  }
-  
-  input[type=range]:focus::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    background: var(--color-1);
+    border-radius: 5px;
     outline: none;
-  }
-  
-  input[type=range]::-moz-range-track {
-    background-color: #777;
-    height: 3px;
-  }
-  
-  input[type=range]::-ms-track {
-    background-color: #777;
-    height: 3px;
-  }
-  
-  input[type=range]::-ms-fill-lower {
-    background-color: HotPink
-  }
-  
-  input[type=range]::-ms-fill-upper {
-    background-color: black;
-  } 
+    margin: 10px 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: var(--color-3);
+    border-radius: 50%;
+    cursor: pointer;
+    top: -50%;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: var(--color-4);
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+    background: var(--color-4);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 10px;
+  background: var(--color-2);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
