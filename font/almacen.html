@@ -1,17 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-        <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="es">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pc Almacen</title>
+        <link rel="icon" href="recursos/logo_Pn.ico">
         <link rel="stylesheet" href="CSSs/prins.css">
-        <link rel="stylesheet" href="CSSs/cavecera.css">
-        <link rel="stylesheet" href="CSSs/index.css">
-        <script async src="scripts/CargarNoticias.js"></script>
-        <script async src="scripts/Cargarplanos.js"></script>
-        
+        <link rel="stylesheet" href="CSSs/Almacen.css">
+        <script src="scripts/Cargarplanos.js"></script>
+</head>
+<body>
+    <div class="planos">
+        <div id="planos-container" class="planos-container">
+            <!-- Aquí se cargarán las noticias -->
+        </div>
+    </div>
+            <script>
+                // Aquí puedes ejecutar tu función de carga de datos después de que se haya cargado el DOM
+                document.addEventListener("DOMContentLoaded", function() {
+                    cargarDatosplano();
+                });
+            </script>
+
+
+
+</body>
+</html>
 
 
         
