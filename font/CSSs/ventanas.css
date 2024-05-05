@@ -263,24 +263,24 @@ h4{
     top: calc(-10% + 10px);
     left: 190%;
     transform: translateX(-50%);
-    height: fit-content;
+    height: 300px;
     width: 150%;
-    z-index: 999;
+    z-index: 9;
   }
   
   .ventanas .ventana:hover .contenidoHover {
     display: block;
 }
-.ventana:hover {
-    z-index: 999;
+.ventana::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    border: 10px solid transparent;
+    border-right-color: var(--color-3);
+    z-index: 99;
+    opacity: 0;
 }
-  
-  .contenidoHover::before {
-      content: "";
-      position: absolute;
-      top: 20%;
-      right: 100%;
-      border: 10px solid transparent;
-      border-right-color: var(--color-3);
-    }
-    
+.ventana:hover::before {
+    opacity: 1;
+}

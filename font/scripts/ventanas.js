@@ -200,7 +200,7 @@ var datoscomponentes = {
         return distancia <= distanciaAnclaje;
     }
     
-    function actualizarPosicionVentana(ventana, anclaje,contenidoHover) {
+    function actualizarPosicionVentana(ventana, anclaje) {
       if (estaCercaDelAnclaje(ventana, anclaje)) {
           const rectAnclaje = anclaje.getBoundingClientRect();
           const rectVentana = ventana.getBoundingClientRect();
@@ -210,7 +210,6 @@ var datoscomponentes = {
           ventana.style.top = nuevoY + 'px';
           ventana.style.zIndex = '10';
           anclaje.style.zIndex = '0';
-          contenidoHover.style.zIndex = 15;
           // Cambiar el color del anclaje dependiendo de si coincide con la ventana anclada
           const categoriaVentana = ventana.textContent.split(': ')[0];
           const categoriaAnclaje = anclaje.dataset.categoria;
@@ -278,7 +277,6 @@ var datoscomponentes = {
             anclajes.forEach(anclaje => {
                 actualizarPosicionVentana(ventana, anclaje);
             });
-            ventana.style.opacity = '1';
             mostrarInfo(); 
         }
     }
@@ -398,6 +396,9 @@ const imagenesPorCategoria = {
     contenedorVentanas.insertBefore(nuevaVentana, contenedorVentanas.firstChild); // Inserta la nueva ventana antes de la primera ventana existente
   
     nuevaVentana.addEventListener('mousedown', iniciarArrastreVentana);
+
+    // Ajustar posición del contenidoHover después de crear la ventana
+    ajustarPosicionPopup(contenidoHover);
   
     // Eliminar los datos anteriores de la categoría
     ventanasPorCategoria[categoria] = [];
@@ -410,7 +411,25 @@ const imagenesPorCategoria = {
     });
   
     mostrarInfo();
+    nuevaVentana.addEventListener('mouseover', function() {
+        const contenidoHover = this.querySelector('.contenidoHover');
+        contenidoHover.style.display = 'block';
+        ajustarPosicionPopup(contenidoHover);
+
+        // Ejecutar la función de ajuste de posición cada 100 milisegundos
+        ajusteInterval = setInterval(() => {
+            ajustarPosicionPopup(contenidoHover);
+        }, 100);
+    });
+
+    nuevaVentana.addEventListener('mouseleave', function() {
+        this.querySelector('.contenidoHover').style.display = 'none';
+        
+        // Limpiar el temporizador cuando se quite el cursor
+        clearInterval(ajusteInterval);
+    });
 }
+
 
 
 
@@ -539,7 +558,7 @@ function ajustarPosicionPopup(contenidoHover) {
     const windowHeight = window.innerHeight;
 
     // Verificar si el popup se encuentra cerca de los bordes
-    const limite = 10; // Puedes ajustar este valor según tu preferencia
+    const limite = 20; // Puedes ajustar este valor según tu preferencia
     const cercaBordeSuperior = rectPopup.top < limite;
     const cercaBordeInferior = rectPopup.bottom > (windowHeight - limite);
     const cercaBordeIzquierdo = rectPopup.left < limite;
@@ -547,33 +566,37 @@ function ajustarPosicionPopup(contenidoHover) {
 
     // Ajustar la posición del popup si está demasiado cerca de algún borde
     if (cercaBordeSuperior) {
-        contenidoHover.style.top = '20%';
+        contenidoHover.style.top = "";
+        contenidoHover.style.bottom = "100%";
+        document.documentElement.style.setProperty('--before-top', '20%');
     }
     if (cercaBordeInferior) {
-        contenidoHover.style.top = '-160%';
-    }
-    if (cercaBordeIzquierdo) {
-        contenidoHover.style.left = '20%';
-    }
-    if (cercaBordeDerecho) {
-        contenidoHover.style.left = '-160%';
+        contenidoHover.style.top = "-125%";
+        contenidoHover.style.bottom = "";
+        document.documentElement.style.setProperty('--before-top', '80%');
     }
 }
 
-// Llamar a la función ajustarPosicionPopup después de mostrar el popup
 document.querySelectorAll('.ventanas .ventana').forEach(ventana => {
+    let ajusteInterval; // Variable para almacenar el identificador del temporizador
+
     ventana.addEventListener('mouseover', function() {
         const contenidoHover = this.querySelector('.contenidoHover');
-        contenidoHover.style.display = 'flex';
+        contenidoHover.style.display = 'block';
         ajustarPosicionPopup(contenidoHover);
+
+        // Ejecutar la función de ajuste de posición cada 100 milisegundos
+        ajusteInterval = setInterval(() => {
+            ajustarPosicionPopup(contenidoHover);
+        }, 100);
     });
 
     ventana.addEventListener('mouseleave', function() {
-        const contenidoHover = this.querySelector('.contenidoHover');
-        contenidoHover.style.display = 'none';
-        // Restaurar la posición inicial al salir del hover
-        contenidoHover.style.top = '';
-        contenidoHover.style.left = '';
+        this.querySelector('.contenidoHover').style.display = 'none';
+        
+        // Limpiar el temporizador cuando se quite el cursor
+        clearInterval(ajusteInterval);
     });
 });
+
 
