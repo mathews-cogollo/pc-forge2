@@ -67,7 +67,9 @@ var noticiasJSON = {
     newsContainer.classList.add('newsInfo');
     var contenido = `
     <a href="${noticia.enlace}" target="_blank">
+      <div class="imgnot">
       <img src="${noticia.imagen}" alt="${noticia.titulo}">
+      </div>
       <h1>${noticia.titulo}</h1>
       <p class="newsText">${noticia.resumen}</p>
       <p class="fecha">${noticia.fecha}</p>

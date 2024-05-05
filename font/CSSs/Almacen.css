@@ -1,47 +1,87 @@
+:root {
+  --color-1: rgb(34, 40, 49);
+  --color-2: rgb(238, 238, 238);
+  --color-3: rgb(118, 171, 174);
+  --color-4: rgb(49, 54, 63);
+}
+
 .planos{
-    height: 100%;
-    max-height: fit-content;
-    margin: 2em auto;
-    overflow-x: auto;
-    color: var(--color-2);
-  }
-  .planos img{
-    width: 5vw;
-    height: 5vh;
-    filter: blur(0px)
-  }
-  
-  .planos-container {
-    display: flex; 
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    margin: 0 auto;
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-  
-  .planos-container > div {
-    flex: 0 0 auto;
-  }
-  
-  .planosInfo {
-    padding: 10px;
-    background-color: rgba(var(--color-15),0.5);  
-    width: 33vw; 
-    height: fit-content;
-    margin: 0 auto;
-    overflow-x: auto;
-    color: var(--color-2);
-    text-align: center;
-    font-size: 1.2em;
-    padding: 2vh;
-  }
-  
-  .planosText {
-    text-align: justify;
-    word-wrap: break-word; /* Indica al navegador que rompa las palabras largas */
-  }
-  .fecha {
-    font-size: x-small;
-    text-align: right;
-  }
+  display: grid;
+  grid-template-columns: repeat(7 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+  align-items: center;
+}
+
+.planoInfo {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  margin: 20px;
+}
+
+.contenidoHover {
+  display: none;
+  position: absolute;
+  background-color: var(--color-2);
+  color: var(--color-1);
+  padding: 10px;
+  border: 1px solid var(--color-3);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  top: 70%;
+  left: 180%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  z-index: 1000;
+}
+
+.planoInfo:hover .contenidoHover {
+  display: block;
+}
+
+.contenidoHover h2 {
+  color: var(--color-4);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.contenidoHover ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contenidoHover ul li {
+  margin-bottom: 5px;
+}
+
+.contenidoHover ul li strong {
+  font-weight: bold;
+  color: var(--color-3);
+}
+
+.fecha {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.planoInfo:hover .contenidoHover::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  border: 10px solid transparent;
+  border-right-color: var(--color-3); /* Cambia el color a tu preferencia */
+}
+
+.planoInfo:hover .contenidoHover::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  border: 10px solid transparent;
+  border-left-color: var(--color-3); /* Cambia el color a tu preferencia */
+}

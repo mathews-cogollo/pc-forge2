@@ -70,7 +70,7 @@
                 sliders.forEach(function(slider) {
                     total += parseInt(slider.value);
                 });
-                if (total > 102) {
+                if (total > 104) {
                     sliders.forEach(function(slider) {
                         if (parseInt(slider.value) > 0) {
                             slider.value = parseInt(slider.value) - 1;
@@ -91,11 +91,196 @@
             });
         </script>
     </fieldset>
-    </form>
+    <div class="formcot">
+        <label for="preferencia_marca">¿Tienes alguna preferencia de marca o componentes?</label>
+        <select id="preferencia_marca" name="preferencia_marca">
+            <!-- Las opciones serán cargadas dinámicamente aquí -->
+        </select>
+    </div>
+    
+    <script>
+        // Simula la carga de datos desde una base de datos
+        const marcas = ["Marca 1", "Marca 2", "Marca 3", "Marca 4"];
+    
+        // Función para cargar las opciones del select
+        function cargarOpciones() {
+            const select = document.getElementById("preferencia_marca");
+            marcas.forEach(marca => {
+                const option = document.createElement("option");
+                option.text = marca;
+                option.value = marca;
+                select.appendChild(option);
+            });
+        }
+    
+        // Llama a la función para cargar las opciones cuando se cargue la página
+        window.onload = cargarOpciones;
+    </script>
+    
+    <div class="formcot">
+        <label for="espacio_almacenamiento">¿Cuánto espacio de almacenamiento crees que necesitarás para tus archivos y programas?</label>
+        <div class="respuesta">
+        <input type="range" id="espacio_almacenamiento" name="espacio_almacenamiento" min="0" max="3" step="1" list="espacio_almacenamiento_list">
+        <output for="espacio_almacenamiento" id="output_almacenamiento">1 TB    </output>
+        <datalist id="espacio_almacenamiento_list">
+            <option value="250">250 GB</option>
+            <option value="500">500 GB</option>
+            <option value="1000">1 TB</option>
+            <option value="2000">2 TB</option>
+        </datalist>
+    </div>
+    </div>
+    <script>
+        document.getElementById('espacio_almacenamiento').addEventListener('input', function() {
+            var output = document.getElementById('output_almacenamiento');
+            var selectedValue = this.value;
+            switch(selectedValue) {
+                case '0':
+                    output.textContent = '250 GB';
+                    break;
+                case '1':
+                    output.textContent = '500 GB';
+                    break;
+                case '2':
+                    output.textContent = '1 TB';
+                    break;
+                case '3':
+                    output.textContent = '2 TB';
+                    break;
+                default:
+                    output.textContent = '0 GB';
+            }
+        });
+    </script>
+    
+    <div class="formcot">
+        <label for="portabilidad">¿Prefieres que tu computadora de escritorio sea fácil de transportar o más robusta?</label>
+        <select id="portabilidad" name="portabilidad">
+            <option value="facil_transportar">Fácil de transportar</option>
+            <option value="mas_robusta">Más robusta</option>
+        </select>
+    </div>
+    
+    <div class="formcot">
+        <label for="jugar_videojuegos">¿Planeas jugar videojuegos en tu computadora de escritorio?</label>
+        <label class="switch">
+            <input type="checkbox" id="jugar_videojuegos" class="switch-container" name="jugar_videojuegos" onchange="mostrarPreguntasVideojuegos()">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    
+    
+    <div id="preguntas_videojuegos" style="display: none;">
+        <div class="formcot">
+            <label for="juegos_online">¿Juegas juegos online?</label>
+            <label class="switch">
+                <input type="checkbox" id="juegos_online" name="juegos_online">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    
+    
+        <div class="formcot">
+            <label for="tipo_juegos">¿Qué tipo de juegos?</label>
+            <select id="tipo_juegos" name="tipo_juegos">
+                <option value="accion">Acción</option>
+                <option value="aventura">Aventura</option>
+                <option value="estrategia">Estrategia</option>
+                <option value="simulacion">Simulación</option>
+                <option value="deportes">Deportes</option>
+                <option value="otros">Otros</option>
+            </select>
+        </div>
+    
+        <div class="formcot">
+            <label for="calidad_grafica">¿Con qué nivel de calidad gráfica?</label>
+            <select id="calidad_grafica" name="calidad_grafica">
+                <option value="baja">Baja</option>
+                <option value="media">Media</option>
+                <option value="alta">Alta</option>
+                <option value="ultra">Ultra</option>
+            </select>
+        </div>
+    
+        <div class="formcot">
+            <label for="genero_juegos">¿Cuál es tu género de juegos favorito?</label>
+            <input type="text" id="genero_juegos" name="genero_juegos">
+        </div>
+    
+        <div class="formcot">
+            <label for="perifericos">¿Qué periféricos utilizas para jugar (ratón, teclado, mando, etc.)?</label>
+            <input type="text" id="perifericos" name="perifericos">
+        </div>
+    </div>
+    
+    <div class="formcot">
+        <label for="programas_preinstalados">¿Necesitas que se incluyan programas preinstalados en tu computadora de escritorio?</label>
+        <label class="switch">
+            <input type="checkbox" id="programas_preinstalados" name="programas_preinstalados">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    
+    <div class="formcot">
+        <label for="wifi">¿Es importante para ti tener conectividad inalámbrica (Wi-Fi) en tu computadora de escritorio?</label>
+        <label class="switch">
+            <input type="checkbox" id="wifi" name="wifi">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    
+    <div class="formcot">
+        <label for="puertos_usb">¿Cuántos puertos USB y de otros tipos necesitas en tu computadora de escritorio?</label>
+        <div class="respuesta">
+        <input type="range" id="puertos_usb" name="puertos_usb" min="4" max="10" value="4">
+        <output for="puertos_usb" id="output_puertos_usb">4 puertos USB</output>
+    </div>
+    </div>
+    <script>
+        document.getElementById('puertos_usb').addEventListener('input', function() {
+            var output = document.getElementById('output_puertos_usb');
+            output.textContent = this.value+" puertos USB";
+        });
+    </script>
+    
+    
+    <div class="formcot">
+        <label for="actualizaciones">¿Planeas hacer futuras actualizaciones o mejoras en tu computadora de escritorio?</label>
+        <label class="switch">
+            <input type="checkbox" id="actualizaciones" name="actualizaciones">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    
+    <div class="formcot">
+        <label for="multitarea">¿Qué tan importante es para ti la capacidad de multitarea de tu computadora de escritorio?</label>
+        <select id="multitarea" name="multitarea">
+            <option value="muy_importante">Muy importante</option>
+            <option value="importante">Importante</option>
+            <option value="poco_importante">Poco importante</option>
+            <option value="no_importante">No importante</option>
+        </select>
+    </div>
+    
+    
 </div>
+<center>
+    <input type="submit" class="botom" value="Enviar">
+</center>
+</form>
 
 
-
+<script>
+    function mostrarPreguntasVideojuegos() {
+        var checkbox = document.getElementById("jugar_videojuegos");
+        var preguntasVideojuegos = document.getElementById("preguntas_videojuegos");
+        if (checkbox.checked) {
+            preguntasVideojuegos.style.display = "grid";
+        } else {
+            preguntasVideojuegos.style.display = "none";
+        }
+    }
+</script>
 
 
 </form>
