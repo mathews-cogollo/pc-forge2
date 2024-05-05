@@ -39,14 +39,14 @@ button:hover {
   margin-bottom: 10px;
   margin-right: 3vh;
 }
-.menu-item {
+.menu-barra button {
   background-color: var(--color-1);
   color: var(--color-2);
   text-decoration: none;
   padding: 10px;
   border: none;
 }
-.menu-item:hover {
+.menu-barra button:hover {
   background-color: var(--color-3);
 }
 
