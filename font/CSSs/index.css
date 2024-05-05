@@ -282,7 +282,7 @@ p {
   width: 100%;
   height: 100vh;
   object-fit: cover;
-  transition: opacity 0.5s ease-in-out; /* Transición de desvanecimiento */
+  transition: opacity 1s ease-in-out; /* Transición de desvanecimiento */
 }
 
 .carousel img.active {
