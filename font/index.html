@@ -85,18 +85,25 @@
             <img src="recursos/carru (1).jpg" class="active">
             <img src="recursos/carru (2).jpg">
             <img src="recursos/carru (3).jpg">
+            <img src="recursos/carru (7).jpg">
             <img src="recursos/carru (4).jpg">
-          </div>
-          <script>
-            const carouselImages = document.querySelectorAll('.carousel img');
+            <img src="recursos/carru (5).jpg">
+            <img src="recursos/carru (6).jpg">
+        </div>
+        <script>// JavaScript para controlar el carrusel
+            const carousel = document.querySelector('.carousel');
+            const images = carousel.querySelectorAll('img');
             let currentIndex = 0;
-          
-            setInterval(() => {
-              carouselImages[currentIndex].classList.remove('active');
-              currentIndex = (currentIndex + 1) % carouselImages.length;
-              carouselImages[currentIndex].classList.add('active');
-            }, 5000); // Cambia la imagen cada 3 segundos (3000 milisegundos)
-          </script>
+            
+            // Función para mostrar la siguiente imagen en el carrusel
+            function showNextImage() {
+              images[currentIndex].classList.remove('active');
+              currentIndex = (currentIndex + 1) % images.length;
+              images[currentIndex].classList.add('active');
+            }
+            
+            // Intervalo para cambiar automáticamente las imágenes cada 5 segundos
+            setInterval(showNextImage, 5000);</script>
     </div>
 
 
