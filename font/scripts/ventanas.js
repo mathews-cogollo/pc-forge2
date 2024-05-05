@@ -200,7 +200,7 @@ var datoscomponentes = {
         return distancia <= distanciaAnclaje;
     }
     
-    function actualizarPosicionVentana(ventana, anclaje) {
+    function actualizarPosicionVentana(ventana, anclaje,contenidoHover) {
       if (estaCercaDelAnclaje(ventana, anclaje)) {
           const rectAnclaje = anclaje.getBoundingClientRect();
           const rectVentana = ventana.getBoundingClientRect();
@@ -210,6 +210,7 @@ var datoscomponentes = {
           ventana.style.top = nuevoY + 'px';
           ventana.style.zIndex = '10';
           anclaje.style.zIndex = '0';
+          contenidoHover.style.zIndex = 15;
           // Cambiar el color del anclaje dependiendo de si coincide con la ventana anclada
           const categoriaVentana = ventana.textContent.split(': ')[0];
           const categoriaAnclaje = anclaje.dataset.categoria;
@@ -223,7 +224,7 @@ var datoscomponentes = {
       } else {
           // Si no hay ventana anclada, volver al color original del anclaje y su borde
           anclaje.style.backgroundColor = 'rgb(34, 40, 49)';
-          //anclaje.style.borderColor = 'rgb(49, 54, 63)';
+        //   anclaje.style.borderColor = 'rgb(49, 54, 63)';
       }
   }
   
@@ -254,7 +255,7 @@ var datoscomponentes = {
     
     function detenerArrastreVentana(e) {
         const ventana = e.currentTarget;
-        ventana.style.zIndex = '10';
+        ventana.style.opacity = '1';
         ventana.removeEventListener('mousemove', arrastrarVentana);
         ventana.removeEventListener('mouseup', detenerArrastreVentana);
         const anclaElimina = document.querySelector('.ancla-elimina');
@@ -531,3 +532,48 @@ mostrarInfo();
 function obtenerIniciales(texto) {
   return texto.split(' ').map(word => word.slice(0, 2)).join('');
 }
+
+function ajustarPosicionPopup(contenidoHover) {
+    const rectPopup = contenidoHover.getBoundingClientRect();
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    // Verificar si el popup se encuentra cerca de los bordes
+    const limite = 10; // Puedes ajustar este valor según tu preferencia
+    const cercaBordeSuperior = rectPopup.top < limite;
+    const cercaBordeInferior = rectPopup.bottom > (windowHeight - limite);
+    const cercaBordeIzquierdo = rectPopup.left < limite;
+    const cercaBordeDerecho = rectPopup.right > (windowWidth - limite);
+
+    // Ajustar la posición del popup si está demasiado cerca de algún borde
+    if (cercaBordeSuperior) {
+        contenidoHover.style.top = '20%';
+    }
+    if (cercaBordeInferior) {
+        contenidoHover.style.top = '-160%';
+    }
+    if (cercaBordeIzquierdo) {
+        contenidoHover.style.left = '20%';
+    }
+    if (cercaBordeDerecho) {
+        contenidoHover.style.left = '-160%';
+    }
+}
+
+// Llamar a la función ajustarPosicionPopup después de mostrar el popup
+document.querySelectorAll('.ventanas .ventana').forEach(ventana => {
+    ventana.addEventListener('mouseover', function() {
+        const contenidoHover = this.querySelector('.contenidoHover');
+        contenidoHover.style.display = 'flex';
+        ajustarPosicionPopup(contenidoHover);
+    });
+
+    ventana.addEventListener('mouseleave', function() {
+        const contenidoHover = this.querySelector('.contenidoHover');
+        contenidoHover.style.display = 'none';
+        // Restaurar la posición inicial al salir del hover
+        contenidoHover.style.top = '';
+        contenidoHover.style.left = '';
+    });
+});
+
