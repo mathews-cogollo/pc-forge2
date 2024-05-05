@@ -362,11 +362,28 @@ const imagenesPorCategoria = {
     const nuevaVentanaId = obtenerIniciales(categoria); // Aquí se llama a la función obtenerIniciales solo con la categoría
     nuevaVentana.setAttribute('id', nuevaVentanaId);
     
+    // Crear el div para el contenidoHover y agregar los datos del componente
+    const contenidoHover = document.createElement('div');
+    contenidoHover.classList.add('contenidoHover');
+
     // Crear el elemento h4 para el texto de la ventana
     const h4 = document.createElement('h4');
     h4.textContent = `${categoria}: ${componente}`;
-    nuevaVentana.appendChild(h4);
-    
+    contenidoHover.appendChild(h4);
+
+    for (const [clave, valor] of Object.entries(datosComponente)) {
+        if(clave !== 'nombre') {
+            const p = document.createElement('p');
+            if (clave === 'precio') {
+                p.textContent = `precio: $${valor}`;
+            } else {
+                p.textContent = `${clave}: ${typeof valor === 'string' ? `"${valor}"` : valor}`;
+            }
+            contenidoHover.appendChild(p);
+        }
+    }
+    nuevaVentana.appendChild(contenidoHover);
+
     // Agregar imagen de acuerdo a la categoría
     if (imagenesPorCategoria[categoria]) {
       nuevaVentana.style.backgroundImage = imagenesPorCategoria[categoria];
@@ -392,7 +409,10 @@ const imagenesPorCategoria = {
     });
   
     mostrarInfo();
-  }
+}
+
+
+
 
 
 // Función auxiliar para obtener las iniciales de una categoría
