@@ -223,7 +223,7 @@ var datoscomponentes = {
       } else {
           // Si no hay ventana anclada, volver al color original del anclaje y su borde
           anclaje.style.backgroundColor = 'rgb(34, 40, 49)';
-          //anclaje.style.borderColor = 'rgb(49, 54, 63)';
+        //   anclaje.style.borderColor = 'rgb(49, 54, 63)';
       }
   }
   
@@ -254,7 +254,7 @@ var datoscomponentes = {
     
     function detenerArrastreVentana(e) {
         const ventana = e.currentTarget;
-        ventana.style.zIndex = '10';
+        ventana.style.opacity = '1';
         ventana.removeEventListener('mousemove', arrastrarVentana);
         ventana.removeEventListener('mouseup', detenerArrastreVentana);
         const anclaElimina = document.querySelector('.ancla-elimina');
@@ -277,7 +277,6 @@ var datoscomponentes = {
             anclajes.forEach(anclaje => {
                 actualizarPosicionVentana(ventana, anclaje);
             });
-            ventana.style.opacity = '1';
             mostrarInfo(); 
         }
     }
@@ -397,6 +396,9 @@ const imagenesPorCategoria = {
     contenedorVentanas.insertBefore(nuevaVentana, contenedorVentanas.firstChild); // Inserta la nueva ventana antes de la primera ventana existente
   
     nuevaVentana.addEventListener('mousedown', iniciarArrastreVentana);
+
+    // Ajustar posición del contenidoHover después de crear la ventana
+    ajustarPosicionPopup(contenidoHover);
   
     // Eliminar los datos anteriores de la categoría
     ventanasPorCategoria[categoria] = [];
@@ -409,7 +411,25 @@ const imagenesPorCategoria = {
     });
   
     mostrarInfo();
+    nuevaVentana.addEventListener('mouseover', function() {
+        const contenidoHover = this.querySelector('.contenidoHover');
+        contenidoHover.style.display = 'block';
+        ajustarPosicionPopup(contenidoHover);
+
+        // Ejecutar la función de ajuste de posición cada 100 milisegundos
+        ajusteInterval = setInterval(() => {
+            ajustarPosicionPopup(contenidoHover);
+        }, 100);
+    });
+
+    nuevaVentana.addEventListener('mouseleave', function() {
+        this.querySelector('.contenidoHover').style.display = 'none';
+        
+        // Limpiar el temporizador cuando se quite el cursor
+        clearInterval(ajusteInterval);
+    });
 }
+
 
 
 
@@ -531,3 +551,52 @@ mostrarInfo();
 function obtenerIniciales(texto) {
   return texto.split(' ').map(word => word.slice(0, 2)).join('');
 }
+
+function ajustarPosicionPopup(contenidoHover) {
+    const rectPopup = contenidoHover.getBoundingClientRect();
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    // Verificar si el popup se encuentra cerca de los bordes
+    const limite = 20; // Puedes ajustar este valor según tu preferencia
+    const cercaBordeSuperior = rectPopup.top < limite;
+    const cercaBordeInferior = rectPopup.bottom > (windowHeight - limite);
+    const cercaBordeIzquierdo = rectPopup.left < limite;
+    const cercaBordeDerecho = rectPopup.right > (windowWidth - limite);
+
+    // Ajustar la posición del popup si está demasiado cerca de algún borde
+    if (cercaBordeSuperior) {
+        contenidoHover.style.top = "";
+        contenidoHover.style.bottom = "100%";
+        document.documentElement.style.setProperty('--before-top', '20%');
+    }
+    if (cercaBordeInferior) {
+        contenidoHover.style.top = "-125%";
+        contenidoHover.style.bottom = "";
+        document.documentElement.style.setProperty('--before-top', '80%');
+    }
+}
+
+document.querySelectorAll('.ventanas .ventana').forEach(ventana => {
+    let ajusteInterval; // Variable para almacenar el identificador del temporizador
+
+    ventana.addEventListener('mouseover', function() {
+        const contenidoHover = this.querySelector('.contenidoHover');
+        contenidoHover.style.display = 'block';
+        ajustarPosicionPopup(contenidoHover);
+
+        // Ejecutar la función de ajuste de posición cada 100 milisegundos
+        ajusteInterval = setInterval(() => {
+            ajustarPosicionPopup(contenidoHover);
+        }, 100);
+    });
+
+    ventana.addEventListener('mouseleave', function() {
+        this.querySelector('.contenidoHover').style.display = 'none';
+        
+        // Limpiar el temporizador cuando se quite el cursor
+        clearInterval(ajusteInterval);
+    });
+});
+
+

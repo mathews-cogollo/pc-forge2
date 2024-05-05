@@ -982,6 +982,8 @@ function cargarDatosplano() {
           </ul>
           <p class="fecha">Fecha de montaje: ${plano.fecha}</p>
         </div>
+   
+
       </div>
     `;
 

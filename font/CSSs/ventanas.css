@@ -4,6 +4,7 @@
     --color-3: rgb(118, 171, 174);
     --color-4: rgb(49, 54, 63);
     --color-5: rgb(20, 24, 29);
+    --before-top: 20%;
   }
   
 
@@ -101,7 +102,10 @@ margin: 5px;
 box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-
+  .anclaje img{
+    height: 100%;
+    filter: brightness(0.5);
+  }
 .ancla-elimina {
     width: 195px;
     height: 145px;
@@ -247,6 +251,7 @@ h4{
 
 .contenidoHover {
     display: none;
+    flex-direction: column;
     position: absolute;
     background-color: var(--color-2);
     color: var(--color-1);
@@ -256,27 +261,26 @@ h4{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     font-family: Arial, sans-serif;
     top: calc(-10% + 10px);
-    left: 160%;
+    left: 190%;
     transform: translateX(-50%);
-    width: 200px; /* Ajusta el ancho según sea necesario */
-    z-index: 1000;
+    height: 300px;
+    width: 150%;
+    z-index: 9;
   }
   
   .ventanas .ventana:hover .contenidoHover {
     display: block;
-  }
-  
-  .contenidoHover::before {
+}
+.ventana::before {
     content: "";
     position: absolute;
-    top: 20%;
-    right: 100%;
+    top: 50%;
+    left: 100%;
     border: 10px solid transparent;
     border-right-color: var(--color-3);
-  }
-
-
-  .anclaje img{
-    height: 100%;
-    filter: brightness(0.5);
-  }
+    z-index: 99;
+    opacity: 0;
+}
+.ventana:hover::before {
+    opacity: 1;
+}
