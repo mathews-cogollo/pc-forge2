@@ -11,6 +11,8 @@
   grid-gap: 10px;
   padding: 10px;
   align-items: center;
+  color: var(--color-3);
+
 }
 
 .planoInfo {
@@ -84,4 +86,9 @@
   left: 100%;
   border: 10px solid transparent;
   border-left-color: var(--color-3); /* Cambia el color a tu preferencia */
+}
+.titualma{
+  text-align: center;
+  color: var(--color-3);
+
 }
