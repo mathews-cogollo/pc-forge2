@@ -4,10 +4,15 @@
   --color-3: rgb(118, 171, 174);
   --color-4: rgb(49, 54, 63);
 }
+body {
+ overflow: hidden;
+}
 
+body div{
+  border-radius: 5px;
+}
 .planos{
   display: grid;
-  grid-template-columns: repeat(7 1fr);
   grid-gap: 10px;
   padding: 10px;
   align-items: center;
@@ -95,3 +100,28 @@
 h1{
   margin-top: 160px
 }
+
+.paginacompleta{
+  width: 100%;
+  display: grid; /* Utilizamos grid layout */
+  grid-template-columns: 1fr 2fr; /* El contenido ocupa 3 partes y la barra lateral 1 parte */
+  height: 100%; /* Ocupa toda la altura de la ventana */
+}
+
+.barralateral{
+  grid-column: 1;
+  height: 80vh;
+  background-color: aqua;
+  margin: 20px;
+
+}
+.planos{
+  grid-column: 2;
+  height: 80vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 60vw;  
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  padding: 20px;
+}
+
