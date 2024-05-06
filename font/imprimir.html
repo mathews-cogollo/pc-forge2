@@ -11,56 +11,7 @@
 </head>
 <body>
  
-    <div id="head">
-        <header class="encabezado">
-            <header>
-                <nav>
-                    <a href="index.html">
-                        <img src="recursos/logo_Pn.png" alt="logo_texto" style="width: 80px;cursor: pointer;">
-                        <img src="recursos/logo_texto.png" alt="logo_texto" style="width: 200px;">
-                    </a>
-                    <div class="menu-barra">
-                        <a href="index.html" class="menu-item" id="pagactu">Inicio</a>
-                        <a href="ventanas.html" class="menu-item">Armado</a>
-                        <button class="menu-item" onClick="mostrarPopup('popup-registro')">Registro</button>
-                        <button class="menu-item" onClick="mostrarPopup('popup-login')">Iniciar Sesión</button>
-                        
-                </nav>
-            </header>
-            
-            <div id="popup-login" class="popup">
-                <h2>Iniciar Sesión</h2>
-                <div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-login')">&times;</div>
-                <form action="#" method="post" class="formulario-login">
-                    <input type="text" name="usuario" placeholder="Usuario">
-                    <input type="password" name="contraseña" placeholder="Contraseña">
-                    <input type="submit" value="Iniciar Sesión">
-                </form>
-            </div>
-            
-            <div id="popup-registro" class="popup">
-                <h2>Registro</h2>
-                <div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-registro' )">&times;</div>
-                <form action="#" method="post" class="formulario-registro">
-                    <input type="text" name="nombre" placeholder="Nombre">
-                    <input type="text" name="apellido" placeholder="Apellido">
-                    <input type="text" name="correo" placeholder="Correo Electrónico">
-                    <input type="password" name="contraseña" placeholder="Contraseña">
-                    <input type="submit" value="Registrarse">
-                </form>
-            </div>
-            <script>
-                    function mostrarPopup(idPopup) {
-                    var popup = document.getElementById(idPopup);
-                    popup.style.display = "block";
-                }
-                function ocultarPopup(idPopup) {
-                    var popup = document.getElementById(idPopup);
-                    popup.style.display = "none";
-                }
-            </script>
-        </header><br><br><br><br><br><br>
-        </div>
+  
   
     <div class="container">
         <div class="info-box">
@@ -108,74 +59,74 @@
                     </td>
                 </tr>
             </table>
+<div class="texto">
+    <h1>Preparación</h1>
+    <li>Organiza todas las piezas y herramientas en un área limpia y espaciosa.</li>
+    <li>Descarga los controladores necesarios para tu placa base y tarjeta gráfica desde el sitio web del fabricante y guárdalos en una unidad USB si es necesario.</li>
+  
+</div>
+<div class="texto">
+    <h1>Montaje de la placa base</h1>
+    <li>Coloca la placa base sobre la caja del embalaje para evitar dañar los componentes en la superficie.</li>
+    <li>Instala el procesador en la placa base siguiendo las instrucciones específicas del zócalo de la CPU y asegúrate de que esté en la orientación correcta.</li>
+    <li>Abre la palanca del zócalo, coloca el procesador con cuidado y cierra la palanca para fijarlo en su lugar.</li>
+</div >
+<div class="texto">
+    <h1>Instalación del disipador de calor del procesador</h1>
+    <li>Aplica una pequeña cantidad de pasta térmica en el centro del procesador.</li>
+    <li>Coloca el disipador de calor sobre el procesador y alinea los tornillos o las pestañas de montaje</li>
+    <li>Asegura el disipador de calor girando los tornillos o enganchando las pestañas según las instrucciones del fabricante.</li>
+</div>
+<div class="texto">
+    <h1>Instalación de la memoria RAM</h1>
+    <li>Abre las pestañas de retención en los slots de memoria RAM de la placa base.</li>
+    <li>Inserta los módulos de memoria RAM en los slots correspondientes asegurándote de que estén alineados correctamente con la muesca en el conector.</li>
+    <li>Presiona firmemente hacia abajo en ambos extremos de la memoria RAM hasta que las pestañas de retención se cierren automáticamente.</li>
+</div>
+<div class="texto">
+    <h1>Instalación de la tarjeta gráfica</h1>
+    <li>Retira las placas de expansión en la parte trasera de la carcasa donde se encuentra la ranura PCI-Express.</li>
+    <li>Inserta la tarjeta gráfica en la ranura PCI-Express principal asegurándote de que esté completamente asentada en la ranura.</li>
+    <li>Fija la tarjeta gráfica con el tornillo de sujeción en la parte trasera de la carcasa.</li>
+</div>
+<div class="texto">
+    <h1> Instalación de las unidades de almacenamiento</h1>
+    <li>Monta las unidades de almacenamiento (disco duro o SSD) en las bahías correspondientes de la carcasa utilizando los tornillos suministrados.</li>
+    <li>Conecta los cables SATA de datos y alimentación a las unidades de almacenamiento y a la placa base.</li>
 
-            <div class="salto-de-pagina"></div>
-            <div class="instructions">
-                <ol>
-                    <li><strong>Preparación:</strong></li>
-                    <ul>
-                        <li>Trabaja en un área limpia y sin estática.</li>
-                    </ul>
-                    <li><strong>Instalación de la Placa Base:</strong></li>
-                    <ul>
-                        <li>Coloca la placa base en la carcasa, alineando los agujeros con los soportes preinstalados.</li>
-                        <li>Asegura la placa base atornillándola a la carcasa.</li>
-                    </ul>
-                    <li><strong>Instalación de la CPU:</strong></li>
-                    <ul>
-                        <li>Abre la palanca del zócalo de la CPU en la placa base.</li>
-                        <li>Alinea la marca en la CPU con la marca en la placa base y colócala con cuidado.</li>
-                        <li>Baja la palanca del zócalo para asegurar la CPU.</li>
-                    </ul>
-                    <li><strong>Instalación del Disipador de Calor:</strong></li>
-                    <ul>
-                        <li>Aplica una pequeña cantidad de pasta térmica en el centro de la CPU.</li>
-                        <li>Coloca el disipador de calor sobre la CPU y asegúralo siguiendo las instrucciones del fabricante.</li>
-                    </ul>
-                    <li><strong>Instalación de la RAM:</strong></li>
-                    <ul>
-                        <li>Abre las pestañas en los slots de RAM.</li>
-                        <li>Alinea las muescas de la RAM con las de la placa base y presiona hasta que hagas clic.</li>
-                    </ul>
-                    <li><strong>Disco Duro (SSD vs HDD):</strong></li>
-                    <ul>
-                        <li><strong>SSD (Solid State Drive):</strong> Conéctalo a la placa base utilizando un cable SATA o M.2, según el tipo de SSD que tengas.</li>
-                        <li><strong>HDD (Hard Disk Drive):</strong> Utiliza cables SATA para conectar el HDD a la placa base y la fuente de poder.</li>
-                    </ul>
-                    <li><strong>Conexión de Cables:</strong></li>
-                    <ul>
-                        <li>Conecta el cable de alimentación de la fuente de poder a la placa base.</li>
-                        <li>Conecta los cables SATA de los discos duros y SSD a la placa base.</li>
-                        <li>Conecta los cables de alimentación y datos de la unidad óptica si la tienes.</li>
-                    </ul>
-                    <li><strong>Tarjeta Gráfica (Integrada o Externa):</strong></li>
-                    <ul>
-                        <li><strong>Integrada:</strong> Conéctala a la placa base y aliméntala desde la fuente de poder.</li>
-                        <li><strong>Externa:</strong> Inserta la tarjeta en el slot PCIe correspondiente y conecta los cables de alimentación. Conecta el monitor a los puertos de la tarjeta.</li>
-                    </ul>
-                    <li><strong>Conexiones de Panel Frontal:</strong></li>
-                    <ul>
-                        <li>Conecta los cables del panel frontal (botones de encendido, reinicio, LED, etc.) a la placa base siguiendo el manual.</li>
-                    </ul>
-                    <li><strong>Unidad de Enfriamiento:</strong></li>
-                    <ul>
-                        <li><strong>Enfriamiento por Aire:</strong> Instala el disipador de calor según las instrucciones del fabricante.</li>
-                        <li><strong>Enfriamiento por Agua:</strong> Conecta el bloque de agua a la CPU y el radiador a un lugar con flujo de aire.</li>
-                    </ul>
-                    <li><strong>Encendido Inicial:</strong></li>
-                    <ul>
-                        <li>Conecta el monitor, el teclado y el ratón.</li>
-                        <li>Enciende el PC y verifica que todos los componentes y ventiladores funcionen.</li>
-                    </ul>
-                    <li><strong>Instalación del Sistema Operativo:</strong></li>
-                    <ul>
-                        <li>Inserta el medio de instalación del sistema operativo y sigue las instrucciones en pantalla.</li>
-                        <li>Inserta la unidad USB con los controladores y sigue las instrucciones para instalarlos.</li>
-                    </ul>
-                </ol>
-            </div>
-        </div>
-
+</div>
+<div class="texto">
+    <h1> Instalación de la fuente de alimentación</h1>
+    <li>Coloca la fuente de alimentación en la posición designada en la carcasa y asegúrala con los tornillos suministrados.</li>
+    <li>Conecta los cables de alimentación de la fuente a la placa base, la tarjeta gráfica, las unidades de almacenamiento y otros dispositivos periféricos según sea necesario.</li>
+ 
+</div>
+<div class="texto">
+    <h1>Conexión de cables y ensamblaje final</h1>
+    <li>Conecta los cables del panel frontal de la carcasa (encendido, reinicio, USB, audio, etc.) a los headers correspondientes de la placa base según el manual.</li>
+    <li>Asegúrate de que todos los cables estén correctamente enrutados y que no haya obstrucciones en el flujo de aire dentro de la carcasa.</li>
+    <li>Cierra la carcasa y asegúrala con los tornillos suministrados.</li>
+</div>
+<div class="texto">
+    <h1>Pruebas y encendido</h1>
+    <li>Antes de encender la PC, verifica nuevamente que todos los componentes estén correctamente instalados y conectados.</li>
+    <li>Conecta el cable de alimentación y enciende la PC.</li>
+    <li>Si todo está en orden, la BIOS debería cargar y podrás proceder con la instalación del sistema operativo desde un medio de arranque (DVD, USB, etc.).</li>
+</div>
+<div class="texto">
+    <h1>Herramientas</h1>
+    <p>tenga en cuenta que puede necesitar varias de estas herramientas durante el armado de su equipo </p>
+    <li>Destornilladores: Necesitarás destornilladores de diferentes tamaños, como Phillips y planos, para apretar tornillos en la carcasa, fijar la placa base, asegurar el disipador de calor, etc.</li>
+    <li>Pinzas: Las pinzas pueden ser útiles para manipular cables y conectar componentes en áreas de difícil acceso.</li>
+    <li>Juego de llaves hexagonales (Allen): Algunos componentes, como los disipadores de CPU, pueden requerir llaves hexagonales para fijarse correctamente.</li>
+    <li>Pasta térmica: Se necesita para aplicar una fina capa entre el procesador y el disipador de calor para mejorar la transferencia de calor.</li>
+    <li>Cable ties (bridas/cintas de sujeción): Ayudan a organizar y asegurar los cables dentro de la carcasa para mejorar el flujo de aire y mantener el interior ordenado.</li>
+    <li>Linterna o luz LED: Una fuente de luz adicional puede ser útil para iluminar áreas oscuras dentro de la carcasa mientras trabajas.</li>
+    <li>Pulsera antiestática: Para evitar dañar los componentes electrónicos por descargas estáticas, especialmente en condiciones de baja humedad, es recomendable usar una pulsera antiestática conectada a una superficie metálica a tierra.</li>
+    <li>Manual del usuario: Cada componente generalmente viene con un manual que proporciona instrucciones específicas de instalación y precauciones a seguir. Es importante leer estos manuales antes de comenzar.</li>
+    <li>Superficie de trabajo limpia: Trabajar en una superficie limpia y plana puede ayudar a prevenir daños a los componentes y facilitar el ensamblaje.</li>
+    <li>Guantes antiestáticos: Opcionalmente, puedes usar guantes antiestáticos para reducir aún más el riesgo de descargas estáticas.</li>
+</div>
 
         <div class="button-group">
             <button class="btn"><a href="builder.html">Regresar</a></button>
@@ -189,19 +140,5 @@
         </div>
     </div>
     <br><br><br>
-    <footer>
-        <div class="hide">
-            <div class="pie">
-                <p>Correo electrónico: <a href="mailto:info@example.com">info@example.com</a></p>
-                <p>Teléfono: 123-456-789</p>
-            </div><hr>
-            <div class="pie">
-                <p>&copy; 2023 Mi Sitio Web. Todos los derechos reservados.</p>
-            </div>
-            <hr>
-            <div class="pie">adadasdw</div>
-        </div>
-
-    </footer>
-</body>
+  
 </html>

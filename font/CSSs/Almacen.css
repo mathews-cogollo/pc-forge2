@@ -12,7 +12,7 @@
   padding: 10px;
   align-items: center;
   color: var(--color-3);
-
+  overflow: hidden;
 }
 
 .planoInfo {
@@ -91,4 +91,7 @@
   text-align: center;
   color: var(--color-3);
 
+}
+h1{
+  margin-top: 160px
 }

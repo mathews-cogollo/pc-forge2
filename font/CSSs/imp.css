@@ -3,13 +3,18 @@ font-family: 'gameplaya';
 src: url('recursos/Gameplaya.ttf') format('truetype');
 
 }
-
+:root {
+    --color-1: rgb(34, 40, 49);
+    --color-2: rgb(238, 238, 238);
+    --color-3: rgb(118, 171, 174);
+    --color-4: rgb(49, 54, 63);
+  }
 body 
 {  
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color:rgb(233, 233, 233);
+    background-color:var(--color-1);
 }
 
 .container {
@@ -81,7 +86,7 @@ color:rgb(32, 103, 255) ;
 font-size: xx-large;
 }
 .info-box {
-    background-color:rgb(233, 233, 233);
+    background-color:var(--color-4);
     padding: 20px;
     margin-top: 20px;
 }
@@ -130,8 +135,8 @@ font-size: xx-large;
 }
 
 .button-group .btn {
-    background-color: #00f;
-    color: #fff;
+    background-color: var(--color-1);
+    color: white;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -139,7 +144,8 @@ font-size: xx-large;
 }
 
 .button-group .btn:hover {
-    background-color: #007acc;
+    background-color:var(--color-3) ;
+   
 }
 .pie{
 
@@ -162,16 +168,35 @@ footer{
     display: flex;
     flex-direction: row;
 }
+
+p{
+    color: white;
+} 
+span{
+    color: white;
+}
+.texto{
+    color: white;
+}
 @media print {
-    .instructions {
-        font-size: 15px; 
+
+    p{
+        color: black;
+    } 
+    span{
+        color: black;
     }
-    .button-group {
-        display: none;
+    .texto{
+        color: black;
     }
-    .encabezado {
-        display: none;
+    body{
+        background-color:white;
+
     }
-    .hide {
-        display: none;}
+.info-box{
+    background-color:white;
+}
+.button-group{
+    display: none;
+}
 }
