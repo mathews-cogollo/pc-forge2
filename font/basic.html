@@ -52,42 +52,14 @@
             <img src="recursos/logo_texto.png" alt="logo_texto" style="width: 200px;">
         </a>
         <div class="menu-barra">
-<<<<<<< Updated upstream
-            <button class="pag" onclick="mostrarElemento('index'),ocultarPopup('popup-login'),ocultarPopup('popup-registro')" id="pagactu">Inicio</button>
-            <button class="pag" onclick="mostrarElemento('almacen'),ocultarPopup('popup-login'),ocultarPopup('popup-registro')" >armeria</button>
-            <button class="pag" onclick="mostrarElemento('ventanas'),ocultarPopup('popup-login'),ocultarPopup('popup-registro')" >Forja</button>
-=======
             <button class="menu-item" onclick="mostrarElemento('index'),ocultarPopup('popup-login'),ocultarPopup('popup-registro')">Inicio</button>
             <button class="menu-item" onclick="mostrarElemento('almacen'),ocultarPopup('popup-login'),ocultarPopup('popup-registro')">Armeria</button>
             <button class="menu-item" onclick="mostrarElemento('ventanas'),ocultarPopup('popup-login'),ocultarPopup('popup-registro')">Forja</button>
->>>>>>> Stashed changes
             <button class="menu-item" onClick="mostrarPopup('popup-registro'),ocultarPopup('popup-login')">Registro</button>
-            <button class="menu-item" onClick="mostrarPopup('popup-login'), ocultarPopup('popup-registro')">Iniciar Sesión</button>
-        </div> 
-        <script>
-            var botones = document.querySelectorAll('.pag');
-
-// Iterar sobre cada botón
-botones.forEach(function(boton) {
-    // Agregar un event listener para el clic
-    boton.addEventListener('click', function() {
-        // Cambiar el ID del botón actual a "pagactu"
-        boton.id = "pagactu";
-        
-        // Obtener todos los botones nuevamente para verificar si hay otro con el ID "pagactu"
-        var otrosBotones = document.querySelectorAll('.pag');
-        otrosBotones.forEach(function(otroBoton) {
-            // Verificar si este botón no es el mismo que el botón actual y tiene el ID "pagactu"
-            if (otroBoton !== boton && otroBoton.id === "pagactu") {
-                // Cambiar el ID de vuelta a su estado original
-                otroBoton.id = "";
-            }
-        });
-    });
-});
-        </script>
-    </nav>
-</header>
+            <button class="menu-item" onClick="mostrarPopup('popup-login'),ocultarPopup('popup-registro')">Iniciar Sesión</button>
+            
+        </nav>
+    </header>
     <div id="popup-login" class="popup">
         <h2>Iniciar Sesión</h2>
         <div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-login')">&times;</div>
@@ -122,20 +94,22 @@ botones.forEach(function(boton) {
     <object type="text/html" data="formilario.html" id="formulario"></object>
     <object type="text/html" data="ventanas.html" id="ventanas"></object>
     <object type="text/html" data="almacen.html" id="almacen"></object>
-    
+    <object type="text/html" data="imprimir.html" id="imprimir"></object>
     <script>
-function mostrarElemento(id) {
+        function mostrarElemento(id) {
     var elementos = document.querySelectorAll('object[type="text/html"]');
-    var botones = document.querySelectorAll('.menu-item');
-
     elementos.forEach(function(elemento) {
         if (elemento.id === id) {
             elemento.style.display = 'block';
         } else {
             elemento.style.display = 'none';
         }
-    });
-}
+        });
+    }
+
+    // Ejemplo de uso:
+    mostrarElemento('index');
+
     </script>
 
 </body>
