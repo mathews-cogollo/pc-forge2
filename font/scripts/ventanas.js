@@ -210,20 +210,20 @@ var datoscomponentes = {
           ventana.style.top = nuevoY + 'px';
           ventana.style.zIndex = '10';
           anclaje.style.zIndex = '0';
-          // Cambiar el color del anclaje dependiendo de si coincide con la ventana anclada
+          
           const categoriaVentana = ventana.textContent.split(': ')[0];
           const categoriaAnclaje = anclaje.dataset.categoria;
           if (categoriaVentana === categoriaAnclaje) {
-              anclaje.style.backgroundColor = 'rgba(0, 255, 0, 0.3)'; // Verde si coincide
-              anclaje.style.borderColor = 'green'; // Cambio de color del borde
+              anclaje.style.backgroundColor = 'rgba(0, 255, 0, 0.3)'; 
+              anclaje.style.borderColor = 'green'; 
           } else {
-              anclaje.style.backgroundColor = 'rgba(255, 0, 0, 0.3)'; // Rojo si no coincide
-              anclaje.style.borderColor = 'red'; // Cambio de color del borde
+              anclaje.style.backgroundColor = 'rgba(255, 0, 0, 0.3)'; 
+              anclaje.style.borderColor = 'red'; 
           }
       } else {
-          // Si no hay ventana anclada, volver al color original del anclaje y su borde
+         
           anclaje.style.backgroundColor = 'rgb(34, 40, 49)';
-        //   anclaje.style.borderColor = 'rgb(49, 54, 63)';
+    
       }
   }
   
@@ -266,12 +266,12 @@ var datoscomponentes = {
             }
             ventana.remove();
     
-            // Eliminar la ventana del array de ventanasPorCategoria
+            
             if (ventanasPorCategoria[categoria]) {
-                ventanasPorCategoria[categoria] = []; // Establecer en "..." los datos de la categoría
+                ventanasPorCategoria[categoria] = []; 
             }
     
-            // Mostrar la información actualizada
+          
             mostrarInfo();
         } else {
             anclajes.forEach(anclaje => {
@@ -290,11 +290,11 @@ var datoscomponentes = {
     function resetearColoresAnclajes() {
         anclajes.forEach(anclaje => {
             anclaje.style.backgroundColor = 'rgb(34, 40, 49)';
-            //anclaje.style.borderColor = 'rgb(49, 54, 63)'; // Color original
+    
         });
     }
     
-    window.addEventListener('load', resetearColoresAnclajes); // Restablecer colores al cargar la página
+    window.addEventListener('load', resetearColoresAnclajes);
     
     document.getElementById('formCrearVentana').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -313,7 +313,7 @@ var datoscomponentes = {
     });
     
 
-// Array para almacenar las ventanas según su categoría
+
 const ventanasPorCategoria = {
   "Unidad de Almacenamiento": [],
   "Placa Base": [],
@@ -345,27 +345,25 @@ const imagenesPorCategoria = {
     "ASUS": "hue-rotate(225deg)",
     "Intel": "hue-rotate(315deg)",
     "AMD": "hue-rotate(90deg)",
-    // Puedes agregar más marcas y filtros de color según sea necesario
+  
   };
   function crearVentana(componente, categoria) {
-    // Obtener los datos del componente seleccionado
+    
     const componentes = datoscomponentes.componentes[0][categoria];
     const datosComponente = componentes.find(comp => comp.nombre === componente);
   
-    // Convertir el precio a número
-    const precioNumero = parseInt(datosComponente.precio); // o parseFloat(datosComponente.precio) si los precios pueden tener decimales
-  
-    // Crear la ventana en la interfaz (si es necesario)
+    
+    const precioNumero = parseInt(datosComponente.precio); 
     const nuevaVentana = document.createElement('div');
     nuevaVentana.classList.add('ventana');
-    const nuevaVentanaId = obtenerIniciales(categoria); // Aquí se llama a la función obtenerIniciales solo con la categoría
+    const nuevaVentanaId = obtenerIniciales(categoria); 
     nuevaVentana.setAttribute('id', nuevaVentanaId);
     
-    // Crear el div para el contenidoHover y agregar los datos del componente
+ 
     const contenidoHover = document.createElement('div');
     contenidoHover.classList.add('contenidoHover');
 
-    // Crear el elemento h4 para el texto de la ventana
+   
     const h4 = document.createElement('h4');
     h4.textContent = `${categoria}: ${componente}`;
     contenidoHover.appendChild(h4);
@@ -383,7 +381,7 @@ const imagenesPorCategoria = {
     }
     nuevaVentana.appendChild(contenidoHover);
 
-    // Agregar imagen de acuerdo a la categoría
+
     if (imagenesPorCategoria[categoria]) {
       nuevaVentana.style.backgroundImage = imagenesPorCategoria[categoria];
     }
@@ -393,21 +391,18 @@ const imagenesPorCategoria = {
     }
   
     const contenedorVentanas = document.querySelector('.ventanas');
-    contenedorVentanas.insertBefore(nuevaVentana, contenedorVentanas.firstChild); // Inserta la nueva ventana antes de la primera ventana existente
-  
+    contenedorVentanas.insertBefore(nuevaVentana, contenedorVentanas.firstChild); 
     nuevaVentana.addEventListener('mousedown', iniciarArrastreVentana);
 
-    // Ajustar posición del contenidoHover después de crear la ventana
+
     ajustarPosicionPopup(contenidoHover);
-  
-    // Eliminar los datos anteriores de la categoría
+
     ventanasPorCategoria[categoria] = [];
-  
-    // Agregar el nuevo componente al array correspondiente con el precio convertido
+
     ventanasPorCategoria[categoria].push({
         componente: componente,
         precio: precioNumero,
-        marca: datosComponente.marca // Guardar la marca del componente para el filtro de color
+        marca: datosComponente.marca 
     });
   
     mostrarInfo();
@@ -416,7 +411,7 @@ const imagenesPorCategoria = {
         contenidoHover.style.display = 'block';
         ajustarPosicionPopup(contenidoHover);
 
-        // Ejecutar la función de ajuste de posición cada 100 milisegundos
+        
         ajusteInterval = setInterval(() => {
             ajustarPosicionPopup(contenidoHover);
         }, 100);
@@ -425,7 +420,7 @@ const imagenesPorCategoria = {
     nuevaVentana.addEventListener('mouseleave', function() {
         this.querySelector('.contenidoHover').style.display = 'none';
         
-        // Limpiar el temporizador cuando se quite el cursor
+    
         clearInterval(ajusteInterval);
     });
 }
@@ -435,12 +430,10 @@ const imagenesPorCategoria = {
 
 
 
-// Función auxiliar para obtener las iniciales de una categoría
 function obtenerIniciales(categoria) {
   return categoria.split(' ').map(word => word.charAt(0)).join('');
 }
 
-// Llamar a la función para crear las ventanas para cada categoría con los datos proporcionados
 crearVentana("NZXT H510", "Gabinete");
 crearVentana("ASUS ROG Strix X570-E Gaming", "Placa Base");
 crearVentana("Corsair Vengeance RGB Pro", "Tarjeta RAM");
@@ -509,10 +502,10 @@ ventanas.forEach(ventana => {
     ventana.addEventListener('mousedown', iniciarArrastreVentana);
 });
 
-// La regla S2814 de SonarQube sugiere cambiar la concatenación de cadenas con el operador "+" en favor de utilizar plantillas de cadenas (template literals) para mejorar la legibilidad y prevenir errores de sintaxis.
+
 function mostrarInfo() {
   const infoDiv = document.querySelector('.info');
-  infoDiv.innerHTML = ''; // Limpiar el contenido anterior
+  infoDiv.innerHTML = ''; 
 
   let total = 0;
 
@@ -532,7 +525,7 @@ function mostrarInfo() {
         </div>
       `;
       categoriaDiv.appendChild(ventanaInfoDiv);
-      total += ventana.precio; // Suma el precio de cada componente al total
+      total += ventana.precio; 
     });
 
     infoDiv.appendChild(categoriaDiv);
@@ -546,7 +539,6 @@ function mostrarInfo() {
 
 
 
-// Llamar a la función mostrarInfo para inicializar
 mostrarInfo();
 function obtenerIniciales(texto) {
   return texto.split(' ').map(word => word.slice(0, 2)).join('');
@@ -557,14 +549,13 @@ function ajustarPosicionPopup(contenidoHover) {
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
-    // Verificar si el popup se encuentra cerca de los bordes
-    const limite = 20; // Puedes ajustar este valor según tu preferencia
+    const limite = 20; 
     const cercaBordeSuperior = rectPopup.top < limite;
     const cercaBordeInferior = rectPopup.bottom > (windowHeight - limite);
     const cercaBordeIzquierdo = rectPopup.left < limite;
     const cercaBordeDerecho = rectPopup.right > (windowWidth - limite);
 
-    // Ajustar la posición del popup si está demasiado cerca de algún borde
+  
     if (cercaBordeSuperior) {
         contenidoHover.style.top = "";
         contenidoHover.style.bottom = "100%";
@@ -578,14 +569,13 @@ function ajustarPosicionPopup(contenidoHover) {
 }
 
 document.querySelectorAll('.ventanas .ventana').forEach(ventana => {
-    let ajusteInterval; // Variable para almacenar el identificador del temporizador
+    let ajusteInterval; 
 
     ventana.addEventListener('mouseover', function() {
         const contenidoHover = this.querySelector('.contenidoHover');
         contenidoHover.style.display = 'block';
         ajustarPosicionPopup(contenidoHover);
 
-        // Ejecutar la función de ajuste de posición cada 100 milisegundos
         ajusteInterval = setInterval(() => {
             ajustarPosicionPopup(contenidoHover);
         }, 100);
@@ -593,8 +583,7 @@ document.querySelectorAll('.ventanas .ventana').forEach(ventana => {
 
     ventana.addEventListener('mouseleave', function() {
         this.querySelector('.contenidoHover').style.display = 'none';
-        
-        // Limpiar el temporizador cuando se quite el cursor
+
         clearInterval(ajusteInterval);
     });
 });

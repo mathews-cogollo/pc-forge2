@@ -2,13 +2,13 @@ const listUsers = async () => {
     const response = await fetch("http://localhost:8080/person");
     const users = await response.json();
 
-     // Obtener un índice aleatorio
+   
      var indiceAleatorio = Math.floor(Math.random() * users.length);
 
-     // Obtener el elemento donde se mostrará el lema
+  
       var lemaElemento = document.getElementById('textoLema');
 
-     // Mostrar el lema aleatorio en el elemento
+ 
      lemaElemento.innerText = users[indiceAleatorio].name;
 
 
@@ -22,7 +22,7 @@ const listUsers = async () => {
         <td class='centered'>${user.name}</td>
         </tr>`;
     });
-    // document.getElementById("tableBody_Users").innerHTML = tableBody;
+
     tableBody_Users.innerHTML = tableBody;
 };
 
@@ -44,8 +44,8 @@ const savePersonPost = async (dniReq, nameReq) => {
     var data = { dni: dniReq, name: nameReq };
     
     fetch(url, {
-      method: "POST", // or 'PUT'
-      body: JSON.stringify(data), // data can be `string` or {object}!
+      method: "POST",
+      body: JSON.stringify(data), 
       headers: {
         "Content-Type": "application/json",
       },

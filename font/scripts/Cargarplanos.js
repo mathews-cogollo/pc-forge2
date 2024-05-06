@@ -1,4 +1,4 @@
-// Datos JSON simulados (puedes reemplazarlos con una solicitud HTTP para obtener datos reales)
+
 var datosplano = {
   "planos": [
     {

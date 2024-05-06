@@ -81,7 +81,7 @@ body div{
   top: 50%;
   right: 100%;
   border: 10px solid transparent;
-  border-right-color: var(--color-3); /* Cambia el color a tu preferencia */
+  border-right-color: var(--color-3); 
 }
 
 .planoInfo:hover .contenidoHover::after {
@@ -90,7 +90,7 @@ body div{
   top: 50%;
   left: 100%;
   border: 10px solid transparent;
-  border-left-color: var(--color-3); /* Cambia el color a tu preferencia */
+  border-left-color: var(--color-3);
 }
 .titualma{
   text-align: center;
@@ -103,9 +103,9 @@ h1{
 
 .paginacompleta{
   width: 100%;
-  display: grid; /* Utilizamos grid layout */
-  grid-template-columns: 1fr 2fr; /* El contenido ocupa 3 partes y la barra lateral 1 parte */
-  height: 100%; /* Ocupa toda la altura de la ventana */
+  display: grid;
+  grid-template-columns: 1fr 2fr; 
+  height: 100%; 
 }
 
 .barralateral{

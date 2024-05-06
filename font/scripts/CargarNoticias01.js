@@ -1,7 +1,7 @@
 fetch("http://localhost:9998/news")
   .then(response => response.json())
   .then(noticiasJSON => {
-    // Función para cargar las noticias en el contenedor
+   
     function cargarNoticias() {
       var contenedor = document.getElementById('news-container');
 
@@ -23,7 +23,7 @@ fetch("http://localhost:9998/news")
       });
     }
 
-    // Llamar a la función para cargar las noticias al cargar la página
+
     window.addEventListener("load", cargarNoticias);
   })
   .catch(error => console.error("Error al obtener las noticias:", error));
