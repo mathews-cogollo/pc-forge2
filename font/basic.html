@@ -9,6 +9,7 @@
 <link rel="icon" href="recursos/logo_Pn.ico"    >
 <link rel="stylesheet" href="CSSs/prins.css">
 <link rel="stylesheet" href="CSSs/cavecera.css">
+<script src="scripts/control-basico.js"></script>
 </head>
 
 
@@ -95,21 +96,6 @@
     <object type="text/html" data="ventanas.html" id="ventanas"></object>
     <object type="text/html" data="almacen.html" id="almacen"></object>
     <object type="text/html" data="imprimir.html" id="imprimir"></object>
-    <script>
-        function mostrarElemento(id) {
-    var elementos = document.querySelectorAll('object[type="text/html"]');
-    elementos.forEach(function(elemento) {
-        if (elemento.id === id) {
-            elemento.style.display = 'block';
-        } else {
-            elemento.style.display = 'none';
-        }
-        });
-    }
 
-   
-    mostrarElemento('index');
-
-    </script>
 
 </body>

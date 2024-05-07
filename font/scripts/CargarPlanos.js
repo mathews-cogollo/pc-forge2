@@ -955,6 +955,8 @@ var datosplano = {
   ]
 };
 
+
+
 function cargarDatosplano() {
   var contenedor = document.getElementById('planos-container');
 
@@ -964,26 +966,28 @@ function cargarDatosplano() {
     planoContainer.style.backgroundImage = `url('${plano.imagen}')`; // Establecer la imagen como fondo
 
     var contenido = `
-      <div>
-        <h1>plano ${plano.ID}</h1>
-        <div class="contenidoHover">
-          <h2>Componentes:</h2>
-          <ul>
-            <li><strong>Unidad de Almacenamiento:</strong> ${plano["Unidad de Almacenamiento"].tipo} ${plano["Unidad de Almacenamiento"].capacidad}</li>
-            <li><strong>Placa Base:</strong> ${plano["Placa Base"].marca} ${plano["Placa Base"].modelo}</li>
-            <li><strong>Fuente de Poder:</strong> ${plano["Fuente de Poder"].marca} ${plano["Fuente de Poder"].potencia}</li>
-            <li><strong>Procesador:</strong> ${plano.Procesador.marca} ${plano.Procesador.modelo} (${plano.Procesador.velocidad})</li>
-            <li><strong>Tarjeta RAM:</strong> ${plano["Tarjeta RAM"].marca} ${plano["Tarjeta RAM"].capacidad} (${plano["Tarjeta RAM"].velocidad})</li>
-            <li><strong>Tarjeta de Red:</strong> ${plano["Tarjeta de Red"].tipo} (${plano["Tarjeta de Red"].velocidad})</li>
-            <li><strong>Tarjeta de Sonido:</strong> ${plano["Tarjeta de Sonido"].tipo}</li>
-            <li><strong>Tarjeta Gráfica:</strong> ${plano["Tarjeta Gráfica"].marca} ${plano["Tarjeta Gráfica"].modelo} (${plano["Tarjeta Gráfica"].memoria})</li>
-            <li><strong>Unidad de Enfriamiento:</strong> ${plano["Unidad de Enfriamiento"].tipo}</li>
-            <li><strong>Gabinete:</strong> ${plano.Gabinete.marca} ${plano.Gabinete.modelo}</li>
-          </ul>
-          <p class="fecha">Fecha de montaje: ${plano.fecha}</p>
+      <div class="plandiv">
+      <h1>plano ${plano.ID}</h1>        
+      <button class="btnpla" onclick="mostrarMenu(event)">∙∙∙</button>
+      </div>
+      <div class="contenidoHover">
+        <h2>Componentes:</h2>
+        <ul>
+          <li><strong>Unidad de Almacenamiento:</strong> ${plano["Unidad de Almacenamiento"].tipo} ${plano["Unidad de Almacenamiento"].capacidad}</li>
+          <li><strong>Placa Base:</strong> ${plano["Placa Base"].marca} ${plano["Placa Base"].modelo}</li>
+          <li><strong>Fuente de Poder:</strong> ${plano["Fuente de Poder"].marca} ${plano["Fuente de Poder"].potencia}</li>
+          <li><strong>Procesador:</strong> ${plano.Procesador.marca} ${plano.Procesador.modelo} (${plano.Procesador.velocidad})</li>
+          <li><strong>Tarjeta RAM:</strong> ${plano["Tarjeta RAM"].marca} ${plano["Tarjeta RAM"].capacidad} (${plano["Tarjeta RAM"].velocidad})</li>
+          <li><strong>Tarjeta de Red:</strong> ${plano["Tarjeta de Red"].tipo} (${plano["Tarjeta de Red"].velocidad})</li>
+          <li><strong>Tarjeta de Sonido:</strong> ${plano["Tarjeta de Sonido"].tipo}</li>
+          <li><strong>Tarjeta Gráfica:</strong> ${plano["Tarjeta Gráfica"].marca} ${plano["Tarjeta Gráfica"].modelo} (${plano["Tarjeta Gráfica"].memoria})</li>
+          <li><strong>Unidad de Enfriamiento:</strong> ${plano["Unidad de Enfriamiento"].tipo}</li>
+          <li><strong>Gabinete:</strong> ${plano.Gabinete.marca} ${plano.Gabinete.modelo}</li>
+        </ul>
+        <p class="fecha">Fecha de montaje: ${plano.fecha}</p>
+        <div class="componente" data-componente="${plano.ID}"> <!-- Ejemplo de atributo de datos con el ID del plano -->
+          <!-- Contenido del componente aquí -->
         </div>
-   
-
       </div>
     `;
 
@@ -992,4 +996,52 @@ function cargarDatosplano() {
   });
 }
 
+function mostrarMenu(event) {
+  var menu = document.createElement('div');
+  menu.classList.add('menuContextual');
 
+  var abrirBtn = document.createElement('button');
+  abrirBtn.textContent = 'Abrir';
+  abrirBtn.onclick = function() {
+    mostrarElemento('ventanas');
+    var componente = obtenerComponente(event.target);
+    // Ejemplo de cómo puedes usar el componente obtenido
+    console.log('Componente asociado:', componente);
+    // Lógica adicional aquí
+  };
+
+  var imprimirBtn = document.createElement('button');
+  imprimirBtn.textContent = 'Imprimir';
+  imprimirBtn.onclick = function() {
+    var datosDiv = event.target.closest('.planoInfo').querySelector('.contenidoHover').innerHTML;
+    var datosArray = [datosDiv];
+    mostrarElemento('imprimir');
+  };
+
+  var eliminarBtn = document.createElement('button');
+  eliminarBtn.textContent = 'Eliminar';
+  eliminarBtn.onclick = function() {
+    // Aquí debes implementar la lógica para eliminar de la base de datos
+  };
+
+  menu.appendChild(abrirBtn);
+  menu.appendChild(imprimirBtn);
+  menu.appendChild(eliminarBtn);
+
+  event.target.parentNode.appendChild(menu);
+}
+
+function obtenerComponente(target) {
+  var divContenido = target.closest('.planoInfo').querySelector('.contenidoHover');
+  var componente = divContenido.querySelector('.componente').dataset.componente;
+  return componente;
+}
+
+document.addEventListener('click', function(event) {
+  var menus = document.querySelectorAll('.menuContextual');
+  menus.forEach(function(menu) {
+    if (!menu.contains(event.target)) {
+      menu.parentNode.removeChild(menu);
+    }
+  });
+});
