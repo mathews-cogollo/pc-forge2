@@ -5,30 +5,752 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pc Almacen</title>
         <link rel="icon" href="recursos/logo_Pn.ico">
-
-
         <link rel="stylesheet" href="CSSs/prins.css">
         <link rel="stylesheet" href="CSSs/Almacen.css">
-        <script src="scripts/Cargarplanos.js"></script>
 </head>
 <body>
-
-    <h1 class="titualma">bienbenido a la armeria </h1>
-    <div class="planos">
-        <div id="planos-container" class="planos-container">
-     
+    <div id="titulo">
+        <h1>Almacen</h1>
+        <div class="dertit">
+            <div class="filtro">Filtrar por
+                <div class="opciones">
+                  <a href="#">Opción 1</a>
+                  <a href="#">Opción 2</a>
+                  <a href="#">Opción 3</a>
+                </div>
+              </div>
+              
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  var filtro = document.querySelector(".filtro");
+                  var opciones = document.querySelector(".opciones");
+              
+                  filtro.addEventListener("click", function() {
+                    opciones.style.display = opciones.style.display === "block" ? "none" : "block";
+                  });
+              
+                  document.addEventListener("click", function(event) {
+                    if (!filtro.contains(event.target)) {
+                      opciones.style.display = "none";
+                    }
+                  });
+                });
+              </script>
+            <button>nuevo plano</button>
         </div>
     </div>
-            <script>
-              
-                document.addEventListener("DOMContentLoaded", function() {
-                    cargarDatosplano();
-                });
-            </script>
+    <div class="mostrador">
+
+            <div class="plano">
+                <div class="planodatos">🛠️
+                    <div class="datosflot">
+                        <h1>nombre del plano</h1>
+<ol>
+    <li>
+        <h3>componente1</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente2</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente3</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente4</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente5</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente6</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente7</h3>
+        <h4>dato componente</h4>
+    </li>
+</ol>
+
+
+
+                    </div>
+                </div>
+                <button class="edit">editar plano</button>
+
+                <div class="planoinfo">
+                    <h2>Plano 1</h2>
+                    <button>•••</button>
+            </div>
+        </div>
+            <div class="plano">
+                <div class="planodatos">🛠️
+                    <div class="datosflot">
+                        <h1>nombre del plano</h1>
+<ol>
+    <li>
+        <h3>componente1</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente2</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente3</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente4</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente5</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente6</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente7</h3>
+        <h4>dato componente</h4>
+    </li>
+</ol>
+
+
+                    </div>
+                </div>
+                <button class="edit">editar plano</button>
+
+                <div class="planoinfo">
+                    <h2>Plano 1</h2>
+                    <button>•••</button>
+            </div>
+        </div>
+            <div class="plano">
+                <div class="planodatos">🛠️
+                    <div class="datosflot">
+                        <h1>nombre del plano</h1>
+<ol>
+    <li>
+        <h3>componente1</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente2</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente3</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente4</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente5</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente6</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente7</h3>
+        <h4>dato componente</h4>
+    </li>
+</ol>
+
+
+                    </div>
+                </div>
+                <button class="edit">editar plano</button>
+
+                <div class="planoinfo">
+                    <h2>Plano 1</h2>
+                    <button>•••</button>
+            </div>
+        </div>
+            <div class="plano">
+                <div class="planodatos">🛠️
+                    <div class="datosflot">
+                        <h1>nombre del plano</h1>
+<ol>
+    <li>
+        <h3>componente1</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente2</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente3</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente4</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente5</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente6</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente7</h3>
+        <h4>dato componente</h4>
+    </li>
+</ol>
+
+
+                    </div>
+                </div>
+                <button class="edit">editar plano</button>
+
+                <div class="planoinfo">
+                    <h2>Plano 1</h2>
+                    <button>•••</button>
+            </div>
+        </div>
+            <div class="plano">
+                <div class="planodatos">🛠️
+                    <div class="datosflot">
+                        <h1>nombre del plano</h1>
+<ol>
+    <li>
+        <h3>componente1</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente2</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente3</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente4</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente5</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente6</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente7</h3>
+        <h4>dato componente</h4>
+    </li>
+</ol>
+
+
+                    </div>
+                </div>
+                <button class="edit">editar plano</button>
+
+                <div class="planoinfo">
+                    <h2>Plano 1</h2>
+                    <button>•••</button>
+            </div>
+        </div>
+            <div class="plano">
+                <div class="planodatos">🛠️
+                    <div class="datosflot">
+                        <h1>nombre del plano</h1>
+<ol>
+    <li>
+        <h3>componente1</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente2</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente3</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente4</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente5</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente6</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente7</h3>
+        <h4>dato componente</h4>
+    </li>
+</ol>
+
+
+                    </div>
+                </div>
+                <button class="edit">editar plano</button>
+
+                <div class="planoinfo">
+                    <h2>Plano 1</h2>
+                    <button>•••</button>
+            </div>
+        </div>
+            <div class="plano">
+                <div class="planodatos">🛠️
+                    <div class="datosflot">
+                        <h1>nombre del plano</h1>
+<ol>
+    <li>
+        <h3>componente1</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente2</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente3</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente4</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente5</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente6</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente7</h3>
+        <h4>dato componente</h4>
+    </li>
+</ol>
+
+
+                    </div>
+                </div>
+                <button class="edit">editar plano</button>
+
+                <div class="planoinfo">
+                    <h2>Plano 1</h2>
+                    <button>•••</button>
+            </div>
+        </div>
+            <div class="plano">
+                <div class="planodatos">🛠️
+                    <div class="datosflot">
+                        <h1>nombre del plano</h1>
+<ol>
+    <li>
+        <h3>componente1</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente2</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente3</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente4</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente5</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente6</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente7</h3>
+        <h4>dato componente</h4>
+    </li>
+</ol>
+
+
+                    </div>
+                </div>
+                <button class="edit">editar plano</button>
+
+                <div class="planoinfo">
+                    <h2>Plano 1</h2>
+                    <button>•••</button>
+            </div>
+        </div>
+            <div class="plano">
+                <div class="planodatos">🛠️
+                    <div class="datosflot">
+                        <h1>nombre del plano</h1>
+<ol>
+    <li>
+        <h3>componente1</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente2</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente3</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente4</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente5</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente6</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente7</h3>
+        <h4>dato componente</h4>
+    </li>
+</ol>
+
+
+                    </div>
+                </div>
+                <button class="edit">editar plano</button>
+
+                <div class="planoinfo">
+                    <h2>Plano 1</h2>
+                    <button>•••</button>
+            </div>
+        </div>
+            <div class="plano">
+                <div class="planodatos">🛠️
+                    <div class="datosflot">
+                        <h1>nombre del plano</h1>
+<ol>
+    <li>
+        <h3>componente1</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente2</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente3</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente4</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente5</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente6</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente7</h3>
+        <h4>dato componente</h4>
+    </li>
+</ol>
+
+
+                    </div>
+                </div>
+                <button class="edit">editar plano</button>
+
+                <div class="planoinfo">
+                    <h2>Plano 1</h2>
+                    <button>•••</button>
+            </div>
+        </div>
+            <div class="plano">
+                <div class="planodatos">🛠️
+                    <div class="datosflot">
+                        <h1>nombre del plano</h1>
+<ol>
+    <li>
+        <h3>componente1</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente2</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente3</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente4</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente5</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente6</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente7</h3>
+        <h4>dato componente</h4>
+    </li>
+</ol>
+
+
+                    </div>
+                </div>
+                <button class="edit">editar plano</button>
+
+                <div class="planoinfo">
+                    <h2>Plano 1</h2>
+                    <button>•••</button>
+            </div>
+        </div>
+            <div class="plano">
+                <div class="planodatos">🛠️
+                    <div class="datosflot">
+                        <h1>nombre del plano</h1>
+<ol>
+    <li>
+        <h3>componente1</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente2</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente3</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente4</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente5</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente6</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente7</h3>
+        <h4>dato componente</h4>
+    </li>
+</ol>
+
+
+                    </div>
+                </div>
+                <button class="edit">editar plano</button>
+
+                <div class="planoinfo">
+                    <h2>Plano 1</h2>
+                    <button>•••</button>
+            </div>
+            </div>
+            <div class="plano">
+                <div class="planodatos">🛠️
+                    <div class="datosflot">
+                        <h1>nombre del plano</h1>
+<ol>
+    <li>
+        <h3>componente1</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente2</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente3</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente4</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente5</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente6</h3>
+        <h4>dato componente</h4>
+        <h4>dato componente</h4>
+    </li>
+    <li>
+        <h3>componente7</h3>
+        <h4>dato componente</h4>
+    </li>
+</ol>
+
+
+                    </div>
+                </div>
+                <button class="edit">editar plano</button>
+
+                <div class="planoinfo">
+                    <h2>Plano 1</h2>
+                    <button>•••</button>
+            </div>
+        </div>
+           
+    </div>
+
+<script>
+
+
+
+</script>
 </body>
 </html>
-
-<div>
-    <button href="basic.html" ></button>
-    <button></button>
-</div>

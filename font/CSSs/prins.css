@@ -176,12 +176,12 @@ a {
   cursor: pointer;
 }
 
-/* Placeholder del textarea */
+
 textarea::placeholder {
   color: var(--color-2);
 }
 
-/* Efecto de hover en botones del popup */
+
 #popup button:hover {
   background-color: var(--color-3);
 }

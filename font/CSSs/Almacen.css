@@ -1,58 +1,250 @@
+/* Variables de color */
 :root {
   --color-1: rgb(34, 40, 49);
   --color-2: rgb(238, 238, 238);
   --color-3: rgb(118, 171, 174);
   --color-4: rgb(49, 54, 63);
+  --color-5: rgba(9, 21, 28, 0.596);
 }
 
-.planos{
-  display: grid;
-  grid-template-columns: repeat(7 1fr);
-  grid-gap: 10px;
-  padding: 10px;
+/* Estilos para botones */
+button {
+  border-color: transparent;
+  border-radius: 5px;
+}
+
+/* Estilos generales del cuerpo */
+body {
+  color: var(--color-2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  height: 100vh;
+  width: 90vw;
   align-items: center;
-  color: var(--color-3);
-
+  justify-items: center;
 }
 
-.planoInfo {
-  position: relative;
-  display: inline-block;
-  width: 200px;
-  height: 200px;
-  background-size: cover;
+/* Estilos para contenedores div */
+body div {
+  border-radius: 5px;
+}
+
+/* Estilos para el título */
+#titulo {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-shadow:  0px 10px 10px var(--color-5);
   margin: 20px;
 }
 
-.contenidoHover {
+/* Estilos para el contenido de la derecha del título */
+.dertit {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Estilos para elementos dentro de .dertit */
+.dertit * {
+  margin-right: 20px;
+}
+
+/* Estilos para el mostrador */
+.mostrador {
+  height: 60%;
+  overflow-y: auto;
+  width: 90%;  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 30px;
+  background-color: var(--color-2);
+  padding: 30px;
+  box-shadow: 10px 10px 10px var(--color-5);
+}
+
+/* Estilos para el contenedor plano */
+.plano {
+  position: relative;
+  background-color: var(--color-4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px var(--color-5);
+  background-image: url("http://127.0.0.1:3000/font/recursos/carru%20(6).jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Pseudoelemento para aplicar el filtro y la opacidad */
+.plano::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Mostrar el pseudoelemento cuando se pasa el mouse */
+.plano:hover::before {
+  opacity: 1;
+}
+
+/* Estilos para la información del plano */
+.planoinfo {
+  height: 33%;
+  background: linear-gradient(to bottom, var(--color-4), var(--color-4), var(--color-1));
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+  color: var(--color-2);
+}
+
+/* Estilos para botones dentro de .planoinfo */
+.planoinfo button {
+  background-color: transparent;
+  border-radius: 50%;
+  border: var(--color-3) solid;
+  width: 30px;
+  height: 30px;
+  padding-top: 3px;
+  color: var(--color-3);
+  opacity: 0.7;
+  justify-items: center;
+}
+
+/* Cambiar estilos de botones cuando se pasa el mouse */
+.planoinfo button:hover {
+  background-color: var(--color-3);
+  color: var(--color-2);
+  border-color: var(--color-2);
+  opacity: 1;
+}
+
+/* Estilos para el icono de edición */
+.edit {
+  position: relative;
+  top: -2%;
+  z-index: 1;
+  opacity: 0;
+}
+
+/* Estilos para los datos del plano */
+.planodatos {
+  display: flex;
+  position: relative;
+  top: 2%;
+  left: 40%;
+  opacity: 0;
+  border-radius: 50%;
+  border: var(--color-3) solid;
+  user-select: none;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1px;
+}
+
+/* Mostrar el icono de edición cuando se pasa el mouse sobre el plano */
+.plano:hover .edit {
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+/* Mostrar los datos del plano cuando se pasa el mouse sobre el plano */
+.plano:hover .planodatos {
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+/* Estilos para el ícono de búsqueda */
+.search-icon {
+  font-size: 24px;
+  color: #000;
+}
+
+/* Estilos para el filtro */
+.filtro {
+  padding: 10px;
+  border: 1px solid var(--color-4);
+  border-radius: 5px;
+  background-color: var(--color-2);
+  cursor: pointer;
+}
+
+/* Cambiar estilos del filtro cuando se pasa el mouse */
+.filtro:hover {
+  background-color: var(--color-3);
+}
+
+/* Estilos para las opciones */
+.opciones {
   display: none;
   position: absolute;
   background-color: var(--color-2);
-  color: var(--color-1);
-  padding: 10px;
-  border: 1px solid var(--color-3);
+  border: 1px solid var(--color-4);
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  font-family: Arial, sans-serif;
-  top: 70%;
-  left: 180%;
-  transform: translate(-50%, -50%);
-  width: 150%;
-  z-index: 1000;
+  padding: 5px;
+  z-index: 1;
 }
 
-.planoInfo:hover .contenidoHover {
+/* Estilos para los enlaces dentro de .opciones */
+.opciones a {
   display: block;
+  padding: 5px;
+  text-decoration: none;
+  color: var(--color-1);
 }
 
-.contenidoHover h2 {
-  color: var(--color-4);
-  font-size: 18px;
-  margin-bottom: 10px;
+/* Cambiar estilos de los enlaces cuando se pasa el mouse sobre ellos */
+.opciones a:hover {
+  background-color: var(--color-3);
 }
 
-.contenidoHover ul {
-  list-style-type: none;
+/* Estilos para los datos flotantes */
+.datosflot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-1);
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  display: none;
+  color: var(--color-2);
+  white-space: nowrap;
+  overflow-x: auto;
+  z-index: 9;
+  font-size: xx-small;
+}
+
+/* Mostrar los datos flotantes cuando se pasa el mouse sobre .planodatos */
+.planodatos:hover .datosflot {
+  display: grid;
+}
+
+/* Estilos para la lista dentro de .datosflot */
+.datosflot ol {
+  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -76,7 +268,7 @@
   top: 50%;
   right: 100%;
   border: 10px solid transparent;
-  border-right-color: var(--color-3); /* Cambia el color a tu preferencia */
+  border-right-color: var(--color-3); 
 }
 
 .planoInfo:hover .contenidoHover::after {
@@ -85,10 +277,97 @@
   top: 50%;
   left: 100%;
   border: 10px solid transparent;
-  border-left-color: var(--color-3); /* Cambia el color a tu preferencia */
+  border-left-color: var(--color-3);
 }
 .titualma{
   text-align: center;
   color: var(--color-3);
 
+}
+.plandiv h1{
+  align-items: end;
+}
+
+.paginacompleta{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr; 
+  height: 100%;
+  background-color: var(--color-4); 
+}
+
+.barralateral{
+  grid-column: 1;
+  height: 80vh;
+  background-color: var(--color-1);
+  margin: 20px;
+
+}
+.planos{
+  grid-column: 2;
+  height: 80vh;
+  width: 60vw;  
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  padding: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.planos-container{
+  overflow: hidden;
+  background-color: var(--color-1);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding: 10px;
+  align-items: center;
+}
+.botonir{
+  border:3px;
+
+}
+
+.btnpla{
+  position: relative;
+  left: 83%;
+  top: 50%;
+  overflow: hidden;
+  display:none;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background-color: transparent;
+  border: rgba(0, 0, 0, 0.5) solid;
+  color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+  padding: 13px;
+}
+.plandiv{
+  align-items:center ;
+  height: fit-content;
+}
+h1{
+  padding: 0%;
+  width: fit-content;
+}
+
+
+.planoInfo:hover button{
+
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* Estilos para los elementos de la lista dentro de .datosflot */
+.datosflot ol li {
+  padding: 0 10px;
+}
+.plano {
+  position: relative;
+  margin: 20px;
+}
+.datosflot {
+  position: fixed;
+  padding: 10px;
 }

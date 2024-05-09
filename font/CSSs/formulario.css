@@ -55,8 +55,6 @@ select {
     border: none;
     color: var(--color-3);
 }
-
-/* Agregado para el formato grid del fieldset */
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -81,7 +79,6 @@ select {
     transition: background-color 0.3s ease;
 }
 
-/* Estilo cuando el checkbox está activo */
 .cateConten input:checked ~ .slider-container {
     background-color: lightgreen;
 }
@@ -110,7 +107,7 @@ select {
     position: absolute;
     z-index: 1;
     bottom: 0%;
-    left: 120%; /* Cambiado de 50% a 110% para moverlo hacia la derecha */
+    left: 120%; 
     opacity: 0;
     transition: opacity 0.3s;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
@@ -152,7 +149,7 @@ select {
 
 
 
-/* The switch - the box around the slider */
+
 .switch {
     position: relative;
     display: inline-block;
@@ -160,14 +157,13 @@ select {
     height: 34px;
   }
   
-  /* Hide default HTML checkbox */
   .switch input {
     opacity: 0;
     width: 60px;
     height: 0;
   }
   
-  /* The slider */
+ 
   .slider {
     position: absolute;
     cursor: pointer;
@@ -206,7 +202,7 @@ select {
     transform: translateX(26px);
   }
   
-  /* Rounded sliders */
+
   .slider.round {
     border-radius: 34px;
   }
