@@ -9,6 +9,6 @@ if (elemento.id === id) {
 }
 });
 }
-
+ 
 
 mostrarElemento('index');
