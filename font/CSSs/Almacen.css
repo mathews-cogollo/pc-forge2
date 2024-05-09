@@ -247,6 +247,114 @@ body div {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.contenidoHover ul li {
+  margin-bottom: 5px;
+}
+
+.contenidoHover ul li strong {
+  font-weight: bold;
+  color: var(--color-3);
+}
+
+.fecha {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.planoInfo:hover .contenidoHover::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  border: 10px solid transparent;
+  border-right-color: var(--color-3); 
+}
+
+.planoInfo:hover .contenidoHover::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  border: 10px solid transparent;
+  border-left-color: var(--color-3);
+}
+.titualma{
+  text-align: center;
+  color: var(--color-3);
+
+}
+.plandiv h1{
+  align-items: end;
+}
+
+.paginacompleta{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr; 
+  height: 100%;
+  background-color: var(--color-4); 
+}
+
+.barralateral{
+  grid-column: 1;
+  height: 80vh;
+  background-color: var(--color-1);
+  margin: 20px;
+
+}
+.planos{
+  grid-column: 2;
+  height: 80vh;
+  width: 60vw;  
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  padding: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.planos-container{
+  overflow: hidden;
+  background-color: var(--color-1);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding: 10px;
+  align-items: center;
+}
+.botonir{
+  border:3px;
+
+}
+
+.btnpla{
+  position: relative;
+  left: 83%;
+  top: 50%;
+  overflow: hidden;
+  display:none;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background-color: transparent;
+  border: rgba(0, 0, 0, 0.5) solid;
+  color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+  padding: 13px;
+}
+.plandiv{
+  align-items:center ;
+  height: fit-content;
+}
+h1{
+  padding: 0%;
+  width: fit-content;
+}
+
+
+.planoInfo:hover button{
+
   display: flex;
   flex-wrap: nowrap;
 }

@@ -72,15 +72,15 @@ position: absolute;
 cursor: pointer;
 display: flex;
 align-items: center;
--webkit-user-select: none; /* Safari */
--moz-user-select: none; /* Firefox */
--ms-user-select: none; /* IE10+/Edge */
-user-select: none; /* Standard */
+-webkit-user-select: none; 
+-moz-user-select: none; 
+-ms-user-select: none; 
+user-select: none;
 padding: 3px;
 opacity: 1;
 box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-background-size:contain ; /* Ajusta la imagen para cubrir todo el div */
-background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+background-size:contain ; 
+background-repeat: no-repeat;
 background-position: center;
 color: var(--color-2);
 text-shadow: 1;
@@ -126,7 +126,7 @@ pointer-events: none;
 
 #cantidadVentanas {
 width: 50px;
-font-size: x-large; /* Cambia el valor según tu preferencia */
+font-size: x-large; 
 }
 
 
@@ -141,7 +141,6 @@ content: url('recursos/HAMMERG 2.gif');
 filter: grayscale(100%);
 }
 
-/* Estilos adicionales para resaltar el efecto de hover */
 .back-icon:hover {
 background-color: #0056b3;
 }
@@ -155,7 +154,7 @@ justify-content: space-around;
     background-color: var(--color-13);
 }
 
-/* Estilo para el botón */
+
 button {
 padding: 10px 20px;
 border: none;
@@ -172,7 +171,7 @@ background-color: var(--color-3);
 color: var(--color-2);
 }
 
-/* Estilos para selects */
+
 select {
 padding: 10px;
 font-size: 16px;
@@ -192,7 +191,7 @@ option{
     border: var(--color-1);
 }
 
-/* Estilo para los selectores */
+
 #categoriaSeleccionada,
 #componenteSeleccionado {
 margin-right: 5px;
