@@ -48,6 +48,7 @@ const savePersonPost = async (dniReq, nameReq) => {
       body: JSON.stringify(data), 
       headers: {
         "Content-Type": "application/json",
+        "Authorization": "application/json",
       },
     })
       .then((res) => res.json())
