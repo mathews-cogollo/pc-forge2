@@ -29,7 +29,7 @@
  
             
             <script>
-                // Lista de lemas
+                
                 var lemas = [
                     "Potencia y rendimiento, juntos en cada PC.",
                     "Innovación personalizada para tu experiencia digital.",
@@ -43,13 +43,13 @@
                     "Diseño sin fronteras, rendimiento sin límites."
                 ];
 
-                // Obtener un índice aleatorio
+               
                 var indiceAleatorio = Math.floor(Math.random() * lemas.length);
 
-                // Obtener el elemento donde se mostrará el lema
+               
                 var lemaElemento = document.getElementById('textoLema');
 
-                // Mostrar el lema aleatorio en el elemento
+               
                 lemaElemento.innerText = lemas[indiceAleatorio];
             </script>
         </div>
@@ -91,19 +91,19 @@
             <img src="recursos/carru (5).jpg">
             <img src="recursos/carru (6).jpg">
         </div>
-        <script>// JavaScript para controlar el carrusel
+        <script>
             const carousel = document.querySelector('.carousel');
             const images = carousel.querySelectorAll('img');
             let currentIndex = 0;
             
-            // Función para mostrar la siguiente imagen en el carrusel
+            
             function showNextImage() {
               images[currentIndex].classList.remove('active');
               currentIndex = (currentIndex + 1) % images.length;
               images[currentIndex].classList.add('active');
             }
             
-            // Intervalo para cambiar automáticamente las imágenes cada 5 segundos
+          
             setInterval(showNextImage, 5000);</script>
     </div>
 

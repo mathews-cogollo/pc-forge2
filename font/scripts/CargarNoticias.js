@@ -1,4 +1,4 @@
-// Datos JSON simulados (puedes reemplazarlos con una solicitud HTTP para obtener datos reales)
+
 var noticiasJSON = {
   "noticias": [
     {
@@ -59,7 +59,7 @@ var noticiasJSON = {
     }
   ]
 }
- // Función para cargar las noticias en el contenedor
+
  function cargarNoticias() {
   var contenedor = document.getElementById('news-container');
   noticiasJSON.noticias.forEach(function(noticia) {

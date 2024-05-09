@@ -75,13 +75,13 @@
                         if (parseInt(slider.value) > 0) {
                             slider.value = parseInt(slider.value) - 1;
                             slider.nextElementSibling.textContent = slider.value;
-                            updateTotal(); // Recalculate total after decreasing value
+                            updateTotal();
                         }
                     });
                 }
             }
         
-            // Script para actualizar el valor del output en tiempo real
+           
             document.querySelectorAll('input[type="range"]').forEach(function(input) {
                 var output = document.getElementById(input.getAttribute('id').replace('slider_', 'output_'));
                 input.addEventListener('input', function() {
@@ -94,15 +94,15 @@
     <div class="formcot">
         <label for="preferencia_marca">¿Tienes alguna preferencia de marca o componentes?</label>
         <select id="preferencia_marca" name="preferencia_marca">
-            <!-- Las opciones serán cargadas dinámicamente aquí -->
+           
         </select>
     </div>
     
     <script>
-        // Simula la carga de datos desde una base de datos
+
         const marcas = ["Marca 1", "Marca 2", "Marca 3", "Marca 4"];
     
-        // Función para cargar las opciones del select
+     
         function cargarOpciones() {
             const select = document.getElementById("preferencia_marca");
             marcas.forEach(marca => {
@@ -113,7 +113,7 @@
             });
         }
     
-        // Llama a la función para cargar las opciones cuando se cargue la página
+       
         window.onload = cargarOpciones;
     </script>
     

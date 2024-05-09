@@ -4,24 +4,27 @@
   --color-3: rgb(118, 171, 174);
   --color-4: rgb(49, 54, 63);
 }
+body {
+ overflow: hidden;
+}
 
+body div{
+  border-radius: 5px;
+}
 .planos{
-  display: grid;
-  grid-template-columns: repeat(7 1fr);
-  grid-gap: 10px;
-  padding: 10px;
-  align-items: center;
+
   color: var(--color-3);
   overflow: hidden;
 }
 
 .planoInfo {
   position: relative;
-  display: inline-block;
+  display: flex;
   width: 200px;
   height: 200px;
   background-size: cover;
   margin: 20px;
+  flex-direction: column-reverse;
 }
 
 .contenidoHover {
@@ -35,7 +38,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   font-family: Arial, sans-serif;
   top: 70%;
-  left: 180%;
+  left: 200%;
   transform: translate(-50%, -50%);
   width: 150%;
   z-index: 1000;
@@ -76,7 +79,7 @@
   top: 50%;
   right: 100%;
   border: 10px solid transparent;
-  border-right-color: var(--color-3); /* Cambia el color a tu preferencia */
+  border-right-color: var(--color-3); 
 }
 
 .planoInfo:hover .contenidoHover::after {
@@ -85,13 +88,83 @@
   top: 50%;
   left: 100%;
   border: 10px solid transparent;
-  border-left-color: var(--color-3); /* Cambia el color a tu preferencia */
+  border-left-color: var(--color-3);
 }
 .titualma{
   text-align: center;
   color: var(--color-3);
 
 }
-h1{
-  margin-top: 160px
+.plandiv h1{
+  align-items: end;
 }
+
+.paginacompleta{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr; 
+  height: 100%;
+  background-color: var(--color-4); 
+}
+
+.barralateral{
+  grid-column: 1;
+  height: 80vh;
+  background-color: var(--color-1);
+  margin: 20px;
+
+}
+.planos{
+  grid-column: 2;
+  height: 80vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 60vw;  
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  padding: 20px;
+}
+.planos-container{
+  background-color: var(--color-1);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding: 10px;
+  align-items: center;
+}
+.botonir{
+  border:3px;
+
+}
+
+.btnpla{
+  position: relative;
+  left: 83%;
+  top: 50%;
+  overflow: hidden;
+  display:none;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background-color: transparent;
+  border: rgba(0, 0, 0, 0.5) solid;
+  color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+  padding: 13px;
+}
+.plandiv{
+  align-items:center ;
+  height: fit-content;
+}
+h1{
+  padding: 0%;
+  width: fit-content;
+}
+
+
+.planoInfo:hover button{
+  display: flex;
+}
+
+
