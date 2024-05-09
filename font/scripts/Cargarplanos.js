@@ -968,7 +968,7 @@ function cargarDatosplano() {
     var contenido = `
       <div class="plandiv">
       <h1>plano ${plano.ID}</h1>        
-      <button class="btnpla" onclick="mostrarMenu(event)">∙∙∙</button>
+      <button class="btnpla">∙∙∙</button>
       </div>
       <div class="contenidoHover">
         <h2>Componentes:</h2>
@@ -996,52 +996,4 @@ function cargarDatosplano() {
   });
 }
 
-function mostrarMenu(event) {
-  var menu = document.createElement('div');
-  menu.classList.add('menuContextual');
 
-  var abrirBtn = document.createElement('button');
-  abrirBtn.textContent = 'Abrir';
-  abrirBtn.onclick = function() {
-    mostrarElemento('ventanas');
-    var componente = obtenerComponente(event.target);
-    // Ejemplo de cómo puedes usar el componente obtenido
-    console.log('Componente asociado:', componente);
-    // Lógica adicional aquí
-  };
-
-  var imprimirBtn = document.createElement('button');
-  imprimirBtn.textContent = 'Imprimir';
-  imprimirBtn.onclick = function() {
-    var datosDiv = event.target.closest('.planoInfo').querySelector('.contenidoHover').innerHTML;
-    var datosArray = [datosDiv];
-    mostrarElemento('imprimir');
-  };
-
-  var eliminarBtn = document.createElement('button');
-  eliminarBtn.textContent = 'Eliminar';
-  eliminarBtn.onclick = function() {
-    // Aquí debes implementar la lógica para eliminar de la base de datos
-  };
-
-  menu.appendChild(abrirBtn);
-  menu.appendChild(imprimirBtn);
-  menu.appendChild(eliminarBtn);
-
-  event.target.parentNode.appendChild(menu);
-}
-
-function obtenerComponente(target) {
-  var divContenido = target.closest('.planoInfo').querySelector('.contenidoHover');
-  var componente = divContenido.querySelector('.componente').dataset.componente;
-  return componente;
-}
-
-document.addEventListener('click', function(event) {
-  var menus = document.querySelectorAll('.menuContextual');
-  menus.forEach(function(menu) {
-    if (!menu.contains(event.target)) {
-      menu.parentNode.removeChild(menu);
-    }
-  });
-});
