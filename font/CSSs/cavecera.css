@@ -29,16 +29,18 @@ button {
 button:hover {
   pointer-events: painted;
 }
+.menu-item{
+  cursor: pointer;
+}
 
-.menu-barra {
+
+.menu-barra button {
   border-radius: 5px;
   background-color: var(--color-1);
   width: auto;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 3vh;
-}
-.menu-barra button {
   background-color: var(--color-1);
   color: var(--color-2);
   text-decoration: none;
@@ -115,6 +117,11 @@ button:hover {
 }
 #pagactu {
   background-color: var(--color-4);
+  cursor: default;
+}
+#pagactu a{
+  background-color: var(--color-4);
+  cursor:default;
 }
 .password-container{
   display: flex;

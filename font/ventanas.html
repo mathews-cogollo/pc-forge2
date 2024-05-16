@@ -3,21 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Divs como Ventanas</title>
+<title>armador</title>
 <link rel="stylesheet" href="CSSs/prins.css">
 <link rel="stylesheet" href="CSSs/ventanas.css">
 <script async src="scripts/ventanas.js"></script>
 
 </head>
 <body>
-    
-    </script>
+
     <div class="base">
         
         <div class="opciones">
             <center>
             <form id="formCrearVentana"><br>
-                <label for="componenteSeleccionado">Seleccione un componente:</label><br><br>
+                <label for="componenteSeleccionado" style="pointer-events: none;">Seleccione un componente:</label><br><br>
             </form><br>
             <div class="ventanas">
                 <img id="newven" src="recursos/newindow.png" alt="basura">
@@ -25,21 +24,6 @@
             <div class="ancla-elimina">
                 <img id="trash" src="recursos/trash-can.png" alt="basura">
             </div>
-                <img class="gif-hover" src="recursos/HAMMER 2.PNG" alt="martillo">
-            </center>
-            <button class="otog" type="button" onclick="location.href='imprimir.html'" onmouseover="cambiarImagen(true)" onmouseout="cambiarImagen(false)">terminar</button>
-        
-            <script>
-                function cambiarImagen(hover) {
-                    var img = document.querySelector('.gif-hover');
-                    if (hover) {
-                        img.src = 'recursos/HAMMERG 2.gif';
-                    } else {
-                        img.src = 'recursos/HAMMER 2.PNG';
-                    }
-                }
-            </script>
-
         </div>
 
         <div class="cont-ancla">    
