@@ -27,7 +27,7 @@ a {
   color: var(--color-2);
   font-size: xxx-large;
   -webkit-text-stroke: 4px rgba(0, 0, 0, 0.295);
-  top: 0%;
+  top: 5%;
   right: 20vw;
   left: 20vw;
   width: 59vw;

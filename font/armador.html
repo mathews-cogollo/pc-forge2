@@ -10,49 +10,39 @@
 <link rel="icon" href="recursos/logo_Pn.ico"    >
 <link rel="stylesheet" href="CSSs/prins.css">
 <link rel="stylesheet" href="CSSs/cavecera.css">
+<link rel="stylesheet" href="CSSs/ventanas.css">
 <script src="scripts/control-basico.js"></script>
 <script>
     function setPage(pageName) {
     localStorage.setItem('currentPage', pageName);
     
 }
+
 </script>
+<style>
+    object{
+        width: 100vw;
+        height: 100vh;
+    }
+    .flot{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80vh;
+        width: 20vw;
+    }
+    .flot img{
+        width: 30%;
+    }
+</style>
 </head>
 
 
 
 
-<body style="overflow: hidden" onload="setPage('index')">
+<body style="overflow: hidden;" onload="setPage('index')">
     
-    <div id="circular-button" role="button" tabindex="0" onclick="togglePopup()">+</div>
-    <div id="popup">
-        <textarea placeholder="Escribe aquí..." id="message"></textarea>
-        <button onclick="sendMessage()">Enviar</button>
-    </div>
-    <script>
-        function togglePopup() {
-            var popup = document.getElementById("popup");
-            var button = document.getElementById("circular-button");
-        if (popup.style.display === "none") {
-            popup.style.display = "block";
-            button.classList.add("rotate");
-            
-            
-        } else {
-            popup.style.display = "none";
-            button.classList.remove("rotate");
-            
-        }
-    }
-    
-    function sendMessage() {
-        var message = document.getElementById("message").value;
-        console.log("Mensaje enviado:", message);
-        document.getElementById("message").value = "";
-        document.getElementById("circular-button").classList.remove("rotate");
-        document.getElementById("popup").style.display = "none";
-    }
-</script>
+
 <header>
     <nav>
         <a onclick="campag('index')">
@@ -60,10 +50,10 @@
             <img src="recursos/logo_texto.png" alt="logo_texto" style="width: 200px;">
         </a>
         <div class="menu-barra">
-            <button class="index"  onclick="ocultarPopup('popup-login'),ocultarPopup('popup-registro'),campag('index')" id="pagactu">Inicio</button>
-            <button class="almacen" onclick="ocultarPopup('popup-login'),ocultarPopup('popup-registro'),campag('almacen')">Armeria</button>
-            <button class="ventanas" onclick="ocultarPopup('popup-login'),ocultarPopup('popup-registro'),campag('ventanas')">Forja</button>
-            
+            <button class="index"  onclick="ocultarPopup('popup-login'),ocultarPopup('popup-registro'),campag('index')" ><a href="index.html"> Inicio</a></button>
+            <button class="almacen" onclick="ocultarPopup('popup-login'),ocultarPopup('popup-registro'),campag('almacen')"><a href="almacen copy.html">Armeria</a></button>
+            <button class="ventanass" onclick="ocultarPopup('popup-login'),ocultarPopup('popup-registro'),campag('ventanas')" id="pagactu"><a href="armador.html">Forja</a></button>
+
             <button class="menu-item" onClick="mostrarPopup('popup-registro'),ocultarPopup('popup-login')">Registro</button>
             <button class="menu-item" onClick="mostrarPopup('popup-login'),ocultarPopup('popup-registro')">Iniciar Sesión</button>
         </div>
@@ -99,30 +89,30 @@
     </div>
     </div>
 
-    <h1>Planos</h1>
-    <div id="planos-container"></div>
+    
+
+    <object type="text/html" data="ventanas.html" id="contenido" onload="detectarContenido()"></object>
+
+
+
+
+    <div class="flot">
+        <center>
+        <img class="gif-hover" src="recursos/HAMMER 2.PNG" alt="martillo">
+    </center>
+    <button class="otog" type="button" onclick="location.href='almacen copy.html'" onmouseover="cambiarImagen(true)" onmouseout="cambiarImagen(false)">terminar</button>
 
     <script>
-        // Hacer una solicitud GET al backend para obtener los planos
-        fetch('http://localhost:8099/api/planos') // Modifica la URL del backend según tu puerto
-            .then(response => response.json())
-            .then(planos => {
-                const planosContainer = document.getElementById('planos-container');
-
-                // Limpiar el contenedor de planos
-                planosContainer.innerHTML = '';
-
-                // Iterar sobre los planos y agregarlos al contenedor
-                planos.forEach(plano => {
-                    const planoElement = document.createElement('div');
-                    planoElement.textContent = `Nombre: ${plano.nombreA}, Fecha: ${plano.fecha}`;
-
-                    planosContainer.appendChild(planoElement);
-                });
-            })
-            .catch(error => console.error('Error al obtener los planos:', error));
+        function cambiarImagen(hover) {
+            var img = document.querySelector('.gif-hover');
+            if (hover) {
+                img.src = 'recursos/HAMMERG 2.gif';
+            } else {
+                img.src = 'recursos/HAMMER 2.PNG';
+            }
+        }
     </script>
-
+    </div>
 
 
 </body>
