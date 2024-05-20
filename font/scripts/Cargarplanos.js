@@ -311,7 +311,7 @@ function crearContenidoHTML() {
 
       html += '<div class="componentes-flotantes">';
       html += '<button><a href="imprimir.html">Imprimir</a></button>';
-      html += '<button><a href="armador.html">Armar</a></button>';  
+      html += '<button><a href="armador.html">editar</a></button>';  
       html += '<ul>';
       plano.componentes.forEach(function(componente) {
           html += '<li>';

@@ -1,17 +1,13 @@
-// Función para enviar la solicitud de inicio de sesión
-function login() {
-    // Obtener los valores del formulario de inicio de sesión
-    var nombreUsuario = document.getElementById('nombreUsuario').value;
-    var contraseñaUsuario = document.getElementById('contraseñaUsuario').value;
-
-    // Crear objeto de datos para enviar al controlador
+async function login() {
+    const response = await fetch("http://localhost:8099/person");
+    var nombreUsuario = document.getElementById("nombreUsuario").value;
+    var contraseñaUsuario = document.getElementById("contraseñaUsuario").value;
     var data = {
         nombreUsuario: nombreUsuario,
         contraseñaUsuario: contraseñaUsuario
     };
 
-    // Realizar una solicitud POST al controlador
-    fetch('/token/generate', {
+    fetch('/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -19,24 +15,29 @@ function login() {
         body: JSON.stringify(data)
     })
     .then(response => {
-        if (response.ok) {
-            // Si la respuesta es exitosa, obtener el token
-            return response.text();
-        } else {
-            // Si la respuesta es un error, mostrar un mensaje de error
-            throw new Error('Error de autenticación');
+        if (!response.ok) {
+            throw new Error('Credenciales inválidas');
         }
+        return response.text();
     })
     .then(token => {
-        // Manejar el token JWT, por ejemplo, guardar en el almacenamiento local
+        // Guardar el token de sesión en el almacenamiento local
         localStorage.setItem('token', token);
-        // Redirigir a otra página o realizar otra acción después de iniciar sesión
-        window.location.href = '/perfil';
+        console.log('Token de sesión guardado:', token);
+        // Redirigir o realizar otras acciones después del inicio de sesión exitoso
     })
     .catch(error => {
-        // Manejar cualquier error de autenticación
-        console.error('Error de autenticación:', error.message);
-        // Mostrar un mensaje de error en la interfaz de usuario
-        document.getElementById('error').innerText = 'Credenciales incorrectas';
+        // Manejar el error de inicio de sesión
+        console.error('Error de inicio de sesión:', error.message);
+        document.getElementById("error").innerText = error.message;
     });
 }
+
+window.onload = function() {
+    var token = localStorage.getItem('token');
+    if (token) {
+        // Aquí puedes realizar una verificación adicional del token si es necesario
+        console.log('Token de sesión encontrado:', token);
+        // Redirigir o realizar otras acciones para autenticar al usuario automáticamente
+    }
+};

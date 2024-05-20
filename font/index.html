@@ -27,15 +27,6 @@
 <body>
 
 
-
-
-
-
-
-
-
-
-
     <nav>
         <a onclick="campag('index')">
             <img src="recursos/logo_Pn.png" alt="logo_texto" style="width: 80px;">
@@ -56,16 +47,18 @@
     </header>
     <div id="popup-login" class="popup">
         <h2>Iniciar Sesión</h2>
-<div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-login')">&times;</div>
-<form id="login-form" class="formulario-login" onsubmit="event.preventDefault(); login()">
-    <input type="text" id="nombreUsuario" placeholder="Usuario" required>
-    <div class="password-container">
-        <input type="password" id="contraseñaUsuario" placeholder="Contraseña" title="La contraseña debe cumplir los siguientes requisitos: al menos una letra mayúscula (A-Z), al menos una letra minúscula (a-z), al menos un dígito (0-9), y tener una longitud mínima de 8 caracteres." pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{8,}$" required>
-        <button type="button" class="toggle-password" onclick="togglePassword('login-password')">Mostrar</button>
-    </div>
-    <input type="submit" value="Iniciar Sesión">
-    <p id="error" style="color: red;"></p> <!-- Aquí se mostrarán los errores de autenticación -->
-</form>
+        <div class="close" role="button" tabindex="0" onclick="ocultarPopup('popup-login')">&times;</div>
+        <form id="login-form" class="formulario-login">
+            <input type="text" id="nombreUsuario" placeholder="Usuario" required>
+            <div class="password-container">
+                <input type="password" id="contraseñaUsuario" placeholder="Contraseña" required>
+                <button type="button" class="toggle-password" onclick="togglePassword('login-password')">Mostrar</button>
+            </div>
+            <!-- Botón "Iniciar Sesión" -->
+            <button class="menu-item" onclick="login()">Iniciar Sesión</button>
+            <!-- Mostrar errores de autenticación -->
+            <p id="error" style="color: red;"></p>
+        </form>
     </div>
     
     <div id="popup-registro" class="popup">
@@ -108,7 +101,7 @@
     <div id="centro" >
 
         <div class="lema">
-            <h2 id="textoLema">d</h2>
+            <h2 id="textoLema"></h2>
  
             
             <script>
@@ -137,18 +130,18 @@
             </script>
         </div>
         <center>
-            <div class="botom" role="button" id="miCamino" onclick="mostrarCamino()">inicar forjado</div>
+            <div class="botom" role="button" id="miCamino" onclick="mostrarCamino()">Inicar forjado</div>
         </center>
 
         <div id="miCaminoContent" class="camino">
             <center>
-        <p>para poder iniciar el ensanblaje de su equipo necesitamos conocer cuanta experiencia posee </p>
+        <p>Para poder iniciar el ensamblaje de su equipo necesitamos conocer cuanta experiencia posee </p>
           <div class="camino-contenido">
             <div class="botom1" role="button" onclick="mostrarElemento('index')">
-           <a href="formilario.html">no tengo experiencia <br>armando computadores</a>
+           <a href="formilario.html">No tengo experiencia <br>armando computadores</a>
         </div>
         <div class="botom2" role="button" onclick="mostrarElemento('ventanas')">
-           <a  href="ventanas.html">tengo experiencia <br> armando computaores </a>
+           <a  href="armador.html">Tengo experiencia <br> armando computadores </a>
         </div>
         
     </div>
@@ -232,7 +225,7 @@
 <div class="pie">
     <div class="gg">
         <h3>© 2024 Todos los derechos reservados.</h3>
-        <p> [Nombre de tu empresa o sitio web] es una marca registrada.</p>
+        <p> [PCforge] Es una marca registrada.</p>
         </div>
         <div class="gg">
             <h3>Política de privacidad:</h3>
@@ -243,7 +236,6 @@
             <p>Al utilizar este sitio web, aceptas cumplir con nuestros términos y condiciones. Por favor, lee detenidamente los términos y condiciones antes de continuar navegando por el sitio.</p>
         </div>
       </div>
-      <br><br><br>
 
     </body>
 </html>  
