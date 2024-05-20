@@ -3,12 +3,7 @@ font-family: 'gameplaya';
 src: url('recursos/Gameplaya.ttf') format('truetype');
 
 }
-:root {
-    --color-1: rgb(34, 40, 49);
-    --color-2: rgb(238, 238, 238);
-    --color-3: rgb(118, 171, 174);
-    --color-4: rgb(49, 54, 63);
-  }
+@import url(CSSs/prins.css);
 body 
 {  
     font-family: 'Arial', sans-serif;
