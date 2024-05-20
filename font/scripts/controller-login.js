@@ -1,4 +1,6 @@
-function login() {
+
+async function login() {
+    const response = await fetch("http://localhost:8099/person");
     var nombreUsuario = document.getElementById("nombreUsuario").value;
     var contraseñaUsuario = document.getElementById("contraseñaUsuario").value;
     var data = {

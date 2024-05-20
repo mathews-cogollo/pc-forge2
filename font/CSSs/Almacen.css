@@ -1,12 +1,5 @@
-/* Variables de color */
-:root {
-  --color-1: rgb(34, 40, 49);
-  --color-2: rgb(238, 238, 238);
-  --color-3: rgb(118, 171, 174);
-  --color-4: rgb(49, 54, 63);
-  --color-5: rgba(9, 21, 28, 0.596);
-}
 
+@import url(CSSs/prins.css);
 .planos-container {
   color: var(--color-2);
   overflow-x: hidden;

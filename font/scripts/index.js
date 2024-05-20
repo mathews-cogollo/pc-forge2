@@ -1,25 +1,19 @@
 const listUsers = async () => {
-    const response = await fetch("http://localhost:8080/person");
+    const response = await fetch("http://localhost:8099/api/slogans/random");
     const users = await response.json();
 
    
-     var indiceAleatorio = Math.floor(Math.random() * users.length);
 
   
       var lemaElemento = document.getElementById('textoLema');
 
  
-     lemaElemento.innerText = users[indiceAleatorio].name;
-
-
-
-
+     lemaElemento.innerText = slogans.name;
 
     let tableBody = ``;
-    users.forEach((user, index) => {
+    slogans.forEach((user, index) => {
         tableBody += `<tr>
         <td class='centered'>${user.dni}</td>
-        <td class='centered'>${user.name}</td>
         </tr>`;
     });
 

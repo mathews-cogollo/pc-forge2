@@ -765,14 +765,6 @@ function obtenerIniciales(categoria) {
   return categoria.split(' ').map(word => word.charAt(0)).join('');
 }
 
-crearVentana("NZXT H510", "Gabinete");
-crearVentana("ASUS ROG Strix X570-E Gaming", "Placa Base");
-crearVentana("Corsair Vengeance RGB Pro", "Tarjeta RAM");
-crearVentana("SSD Samsung 970 EVO Plus", "Unidad de Almacenamiento");
-crearVentana("AMD Ryzen 9 5900X", "Procesador");
-crearVentana("NVIDIA GeForce RTX 3080", "Tarjeta Gráfica");
-crearVentana("NZXT Kraken X73", "Unidad de Enfriamiento");
-crearVentana("EVGA SuperNOVA 850 G5", "Fuente de Poder");
 
 
 
