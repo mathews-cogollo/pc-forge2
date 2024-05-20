@@ -1,13 +1,6 @@
 
-:root {
-  --color-1: rgb(245, 66, 14);
-  --color-15: ;
-  --color-2: rgb(250, 250, 250 );
-  --color-3: rgb(0, 0, 0 );
-  --color-4: rgb(222, 222, 222 );
-}
 
-
+@import url(CSSs/prins.css);
 body {
   overflow-x: hidden; 
   background: linear-gradient(to bottom, var(--color-4), var(--color-4), var(--color-1));
@@ -24,7 +17,7 @@ a {
 
 .lema {
   position: absolute;
-  color: var(--color-2);
+  color: rgb(238, 238, 238);
   font-size: xxx-large;
   -webkit-text-stroke: 4px rgba(0, 0, 0, 0.295);
   top: 5%;

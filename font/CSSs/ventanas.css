@@ -1,11 +1,4 @@
-:root {
-    --color-1: rgb(34, 40, 49);
-    --color-2: rgb(238, 238, 238);
-    --color-3: rgb(118, 171, 174);
-    --color-4: rgb(49, 54, 63);
-    --color-5: rgb(20, 24, 29);
-    --before-top: 20%;
-  }
+@import url(CSSs/prins.css);
   
 
 body {

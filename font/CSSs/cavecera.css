@@ -1,11 +1,5 @@
 
-:root {
-  --color-1: rgb(34, 40, 49);
-  --color-2: rgb(238, 238, 238);
-  --color-3: rgb(118, 171, 174);
-  --color-4: rgb(49, 54, 63);
-  --color-5: rgb(20, 24, 29);
-}
+@import url(CSSs/prins.css);
 
 
 nav {
@@ -14,14 +8,15 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: self-end;
   height: 7vh;
   overflow: hidden;
   z-index: 99;
 }
 nav img {
+  position: relative;
   background-color: var(--color-1);
-  width: 10px;
+  top: 20px;
 }
 button {
   border-radius: 5px;
@@ -38,10 +33,7 @@ button:hover {
   border-radius: 5px;
   background-color: var(--color-1);
   width: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 3vh;
-  background-color: var(--color-1);
+  margin-bottom: 8px;
   color: var(--color-2);
   text-decoration: none;
   padding: 10px;
@@ -142,4 +134,17 @@ button:hover {
 
 .toggle-password:hover {
   background-color: var(--color-4);
+}
+#change-colors {
+  position: relative;
+  top: -10px;
+}
+
+#change-colors img{
+  height: 30px;
+  width: 30px;
+}
+#change-colors:hover{
+  cursor: pointer;
+  background-color: var(--color-1);
 }
